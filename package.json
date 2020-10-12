@@ -11,7 +11,7 @@
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
-    "webpack": "^5.0.0"
+    "webpack": "^4.44.2"
   },
   "description": "",
   "version": "1.0.0",
@@ -26,16 +26,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jackyli97/FullStackProject.git"
+    "url": "git+https://github.com/jackyli97/Jumpstarter.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jackyli97/FullStackProject/issues"
+    "url": "https://github.com/jackyli97/Jumpstarter/issues"
   },
-  "homepage": "https://github.com/jackyli97/FullStackProject#readme",
+  "homepage": "https://github.com/jackyli97/Jumpstarter#readme",
   "devDependencies": {
-    "webpack-cli": "^4.0.0"
+    "webpack-cli": "^3.3.12"
   }
 }
