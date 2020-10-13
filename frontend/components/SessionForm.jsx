@@ -30,7 +30,7 @@ class SessionForm extends React.Component {
 
     render() {
         const display = (this.props.formType === 'login') ? (
-            <div>
+            <div >
                 <Link to="/signup">Sign Up</Link>
                 <form onSubmit={this.handleSubmit}>
                     <label>Email

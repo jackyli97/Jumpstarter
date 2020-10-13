@@ -1,0 +1,55 @@
+ @font-face {
+    font-family: 'RNS-B';
+    src:  asset_url('../base/fonts/RNS-B.ttf') format('woff2');
+    font-style: normal;
+    font-weight: 100;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #282828;
+    align-items: center;
+    border-bottom: 0.1rem solid #E8E8E8;
+
+}
+
+.top-nav section {
+    width: 33%
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.nav-container a{
+    margin-right: 10px;
+}
+
+.nav-container-logo {
+    font-family: RNS-B;
+    margin-top: 0;
+    font-size: xx-large;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+
+.nav-greeting-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.greeting-links {
+    padding: 0;
+}
+
+.greeting-links a{
+    text-decoration: none;
+    margin: 0 20px 0 20px;
+}
