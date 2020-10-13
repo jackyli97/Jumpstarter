@@ -12,7 +12,7 @@ user1 = User.create!(name: 'Demo User', email: 'demouser@aa.io', password: 'pass
 user2 = User.create!(name: 'JD Buendia', email: 'buns@aa.io', password: 'password', biography: "cheetahs for life", location: "so cal")
 user3 = User.create!(name: 'Tri Ta', email: 'mamba@aa.io', password: 'password', biography: "cheetahs for life", location: "so cal")
 user4 = User.create!(name: 'Chris Lee', email: 'bookie@aa.io', password: 'password', biography: "cheetahs for life", location: "bay area")
-user5 = User.create!(name: 'Jon Sui', email: '@uber.io', password: 'password', biography: "cheetahs for life", location: "bay area")
+user5 = User.create!(name: 'Jon Siu', email: '@uber.io', password: 'password', biography: "cheetahs for life", location: "bay area")
 user6 = User.create!(name: 'Peter Min', email: '@catlover.io', password: 'password', biography: "cheetahs for life", location: "so cal")
 
 
