@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
             errors: []
         };
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleDemoSubmit = this.handleDemoSubmit.bind(this)
     }
 
     handleSubmit(e) {
@@ -22,6 +23,16 @@ class SessionForm extends React.Component {
             ;
     }
 
+    handleDemoSubmit(e) {
+        e.preventDefault();
+        let demoEmail = 'BigFunder@fundIt.com'.split('');
+        let demoPassword = 'password'.split('');
+        this.setState({
+            email: "",
+            password: ""
+        }, () => this.demoUser(demoEmail, demoPassword))
+    }
+
     handleInput(type) {
         return (e) => {
             this.setState({ [type]: e.target.value });
@@ -30,56 +41,75 @@ class SessionForm extends React.Component {
 
     render() {
         const display = (this.props.formType === 'login') ? (
-            <div >
-                <Link to="/signup">Sign Up</Link>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Email
-                    <input type="text" value={this.state.email}
-                            onChange={this.handleInput('email')}
-                        />
-                    </label>
-                    <label>Password
-                    <input type="password" value={this.state.password}
-                            onChange={this.handleInput('password')}
-                        />
-                    </label>
-                    <button>Log In!</button>
-                </form>
-            </div>
-        ) : (
-                <div>
-                    <Link to="/login">Log In</Link>
-                    <form onSubmit={this.handleSubmit}>
-                        <label>Name
-                <input type="text" value={this.state.name}
-                                onChange={this.handleInput('name')}
-                            />
-                        </label>
-                        <label>Email
-                <input type="text" value={this.state.email}
+            <div className="background-grey">
+                <div className="login-box">
+                    <div className="auth-form-container">
+                        <p class="auth-login-heading">Log in</p>
+                        <Link to="/signup">Sign Up</Link>
+                        <form class="login-form" onSubmit={this.handleSubmit}>
+                            <label>Email
+                            <input id="email" type="text" value={this.state.email}
                                 onChange={this.handleInput('email')}
                             />
-                        </label>
-                        <label>Password
-                <input type="password" value={this.state.password}
+                            </label>
+                            <label>Password
+                            <input id="password" type="password" value={this.state.password}
                                 onChange={this.handleInput('password')}
                             />
-                        </label>
-                        <button>Sign Up!</button>
-                    </form>
+                            </label>
+                            <button className="submit-button">Log In!</button>
+                        </form>
+                    </div>
                 </div>
+            </div>
+        ) : (
+            <div className="background-grey">
+                <div className="login-box">
+                    <div className="auth-form-container">
+                        <p class="auth-login-heading">Log in</p>
+                        <Link to="/login">Log In</Link>
+                        <form class="login-form" onSubmit={this.handleSubmit}>
+                            <label>Name
+                            <input type="text" value={this.state.name}
+                                onChange={this.handleInput('name')}
+                            />
+                            </label>
+                            <label>Email
+                            <input id="email" type="text" value={this.state.email}
+                                            onChange={this.handleInput('email')}
+                                />
+                            </label>
+                            <label>Password
+                            <input id="password" type="password" value={this.state.password}
+                                onChange={this.handleInput('password')}
+                            />
+                            </label>
+                            <button className="submit-button">Sign Up!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
             )
         const errors = this.state.errors.map((error) => {
             return (
-                <li>
-                    {error}
-                </li>
+                <div className="errors-container">
+                    <li className="auth-errors">
+                        {error}
+                    </li>
+                </div>
             )
         })
+
+        const demo = (
+            <div className="demo-button-container">
+                <input type="submit" value="Demo Login" className="submit-button" onClick={this.handleDemoSubmit} />
+            </div>
+        )
         return (
             <div>
                 {display}
                 {errors}
+                {demo}
             </div>
         )
     }

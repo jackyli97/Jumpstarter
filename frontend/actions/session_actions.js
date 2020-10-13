@@ -12,7 +12,6 @@ export const receiveCurrentUser = currentUser => {
 }
 
 export const logoutCurrentUser = () => { // function where we are creating actions
-    // debugger
     return {
         type: LOGOUT_CURRENT_USER
     }
