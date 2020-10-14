@@ -85,7 +85,7 @@ class SessionForm extends React.Component {
                 <label>Log in</label>
                 {/* <Link to="/signup">Sign Up</Link> */}
                 <form className="login-form" onSubmit={this.handleSubmit}>
-                    <input id="email" type="email" placeholder="Email" value={this.state.email}
+                    <input autoFocus id="email" type="email" placeholder="Email" value={this.state.email}
                         onChange={this.handleInput('email')}
                     />
                     <input id="password" type="password" placeholder="Password" value={this.state.password}
@@ -99,21 +99,15 @@ class SessionForm extends React.Component {
                 <label>Sign up</label>
                 {/* <Link to="/login">Log In</Link> */}
                 <form className="login-form" onSubmit={this.handleSubmit}>
-                    <label>Name
-                    <input type="text" value={this.state.name}
+                    <input autoFocus type="text" value={this.state.name} placeholder="Name"
                         onChange={this.handleInput('name')}
                     />
-                    </label>
-                    <label>Email
-                    <input id="email" type="email" value={this.state.email}
+                    <input id="email" type="email" placeholder="Email" value={this.state.email}
                     onChange={this.handleInput('email')}
                     />
-                    </label>
-                    <label>Password
-                    <input id="password" type="password" value={this.state.password}
+                    <input id="password" type="password"  placeholder="Password" value={this.state.password}
                         onChange={this.handleInput('password')}
                     />
-                    </label>
                     <input type="button" className="submit-button" value="Create account" />
                 </form>
             </div>

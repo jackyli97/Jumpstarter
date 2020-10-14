@@ -11,7 +11,9 @@
 
 .login-box label{
     display: block;
-    text-align: center;
+    text-align: start;
+    font-size: 1.4rem;
+    line-height: 2.0rem;
 }
 
 .login-form {
@@ -30,7 +32,7 @@
 }
 
 .auth-form-container{
-    padding: 20px 30px 2px 30px;
+    padding: 25px 30px 2px 30px;
     background: white;
     border: 0.1rem solid #E8E8E8;
     border-bottom: none;
@@ -75,4 +77,8 @@
     color:red;
     font-size: 12px;
     align-items: center;
+}
+
+input:autoFocus {
+    background-color: #009E74;
 }
