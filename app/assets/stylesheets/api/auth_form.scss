@@ -55,7 +55,7 @@
     display: flex;
     background-color: white;
     height: 54px;
-    border: 0.1rem solid #E8E8E8;
+    border-top: 0.1rem solid #E8E8E8;
     align-items: center;
     justify-content: center;
 }
@@ -71,6 +71,7 @@
 .errors-container {
     display: flex;
     justify-content: center;
+    padding-bottom: 12px;
 }
 
 .errors-container .auth-errors {
@@ -79,6 +80,6 @@
     align-items: center;
 }
 
-input:autoFocus {
-    background-color: #009E74;
+input:focus {
+    border-color: #009E74;
 }

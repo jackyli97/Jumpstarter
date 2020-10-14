@@ -20,8 +20,9 @@ const App = () => {
                         <h1>JUMPSTARTER</h1>
                     </Link>
                 </section>
-                <section className="nav-greeting-container">        
-                    <GreetingContainer />
+                <section className="nav-greeting-container">   
+                    <Route path="/" component={GreetingContainer}/>   
+                    {/* <GreetingContainer /> */}
                     {/* <Route exact path="/" component={GreetingContainer} /> */}
                 </section>
             </nav>

@@ -5,7 +5,7 @@ const SessionFooterText = ({ path }) => {
     if (path === '/login') {
         return (
             <div className="auth-form-footer-text" >
-                New to Jumpstarter? <Link to='/signup'> Signup!</Link>
+                New to Jumpstarter? <Link to='/signup'> Sign up</Link>
             </div>
         )
     } else {
@@ -35,8 +35,7 @@ class SessionForm extends React.Component {
         const user = Object.assign({}, this.state);
         let path = '/' + this.props.formType;
         this.props.processForm(user).then(() => this.props.history.push('/'))
-        .fail(() => this.setState({ errors: this.props.errors }))
-        ;
+        .fail(() => this.setState({ errors: this.props.errors }));
     }
 
     handleDemoSubmit(e) {
@@ -78,67 +77,54 @@ class SessionForm extends React.Component {
             this.setState({ [type]: e.target.value });
         }
     }
-
+    
     render() {
-        const display = (this.props.formType === 'login') ? (
-            <div>
-                <label>Log in</label>
-                {/* <Link to="/signup">Sign Up</Link> */}
+        let errors = this.state.errors.map((error) => {
+            return (
+                <li>
+                    {error}
+                </li>
+            )
+        })
+        let path = this.props.location.pathname;
+        const display = (
+            <div className="auth-form-container">
+                {this.props.formType === 'login' ? <label>Log in</label> : <label>Sign up</label>}
                 <form className="login-form" onSubmit={this.handleSubmit}>
-                    <input autoFocus id="email" type="email" placeholder="Email" value={this.state.email}
+                    {this.props.formType === 'signup' ? <input autoFocus type="text" value={this.state.name} placeholder="Name"
+                        onChange={this.handleInput('name')}
+                    /> : null}
+                    {this.props.formType === 'login' ? <input autoFocus id="email" type="email" placeholder="Email" value={this.state.email}
                         onChange={this.handleInput('email')}
-                    />
+                    /> : <input id="email" type="email" placeholder="Email" value={this.state.email}
+                        onChange={this.handleInput('email')}
+                        />}
                     <input id="password" type="password" placeholder="Password" value={this.state.password}
                         onChange={this.handleInput('password')}
                     />
-                    <input type="button" className="submit-button" value="Log in"/>
+                    {this.props.formType === 'login' ? <input type="submit" className="submit-button" value="Log in" /> : 
+                    <input type="submit" className="submit-button" value="Sign up" />
+                    }
                 </form>
-            </div>
-        ) : (
-            <div>
-                <label>Sign up</label>
-                {/* <Link to="/login">Log In</Link> */}
-                <form className="login-form" onSubmit={this.handleSubmit}>
-                    <input autoFocus type="text" value={this.state.name} placeholder="Name"
-                        onChange={this.handleInput('name')}
-                    />
-                    <input id="email" type="email" placeholder="Email" value={this.state.email}
-                    onChange={this.handleInput('email')}
-                    />
-                    <input id="password" type="password"  placeholder="Password" value={this.state.password}
-                        onChange={this.handleInput('password')}
-                    />
-                    <input type="button" className="submit-button" value="Create account" />
-                </form>
-            </div>
-            )
-        const errors = this.state.errors.map((error) => {
-            return (
+                {this.props.formType === 'login' ? <div className="demo-button-container">
+                    <input type="submit" className="submit-button" onClick={this.handleDemoSubmit} value="Demo Login" />
+                </div> : null}
                 <div className="errors-container">
-                    <li className="auth-errors">
-                        {error}
-                    </li>
+                    <div className="auth-errors">
+                        {errors}
+                    </div>
                 </div>
-            )
-        })
-
-        const demo = (
-            <div className="demo-button-container">
-                <input type="submit" className="submit-button" onClick={this.handleDemoSubmit} value="Demo Login" />
             </div>
         )
-        let path = this.props.location.pathname;
         return (
             <div className="background-grey">
                 <div className="login-box">
-                    <div className="auth-form-container">
+                    <div>
                         {display}
-                        {demo}
-                        {errors}
                     </div>
-                    <div className="auth-form-footer">
-                        <SessionFooterText path={path} />
-                    </div>
+                </div>
+                <div className="auth-form-footer auth-text">
+                    <SessionFooterText path={path} />
                 </div>
             </div>
         )

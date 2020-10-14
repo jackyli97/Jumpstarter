@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-export default ({ currentUser, logout }) => {
+export default ({ currentUser, logout, path }) => {
     const icon = 'Search ' + '\uD83D\uDD0D'
     const content = currentUser ? (
         <div>
@@ -10,7 +10,7 @@ export default ({ currentUser, logout }) => {
             <button onClick={logout}>Logout</button>
         </div>
     ) : (
-        <div class="greeting-links">
+        <div className="greeting-links">
             {/* <button>
 
                 <Link to="/signup">Sign Up</Link>
@@ -18,7 +18,7 @@ export default ({ currentUser, logout }) => {
             <br /> */}
             {/* <input type="text" value={icon}/> */}
             {/* add search bar */}
-            <Link to="/login" >Log In</Link>
+            {path ? null : <Link to="/login" >Log In</Link>}
         </div>
         );
     return (
