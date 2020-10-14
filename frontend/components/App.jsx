@@ -1,10 +1,12 @@
 import React from "react";
 import GreetingContainer from "./GreetingContainer";
-import { Route } from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
 import SignupFormContainer from './SignupFormContainer';
 import LoginFormContainer from './LoginFormContainer';
 import { AuthRoute } from '../util/route_util'
 import { Link } from 'react-router-dom'
+import { Switch } from 'react-router-dom'
+
 import Footer from './Footer'
 
 const App = () => {
@@ -21,13 +23,16 @@ const App = () => {
                     </Link>
                 </section>
                 <section className="nav-greeting-container">   
-                    <Route path="/" component={GreetingContainer}/>   
+                    <Route exact path="/" component={GreetingContainer}/>   
                     {/* <GreetingContainer /> */}
                     {/* <Route exact path="/" component={GreetingContainer} /> */}
                 </section>
             </nav>
-            <AuthRoute exact path="/login" component={LoginFormContainer} />
-            <AuthRoute exact path="/signup" component={SignupFormContainer} />
+            <Switch>
+                <AuthRoute exact path="/login" component={LoginFormContainer} />
+                <AuthRoute exact path="/signup" component={SignupFormContainer} />
+                <Redirect to="/"> </Redirect>
+            </Switch>
             <footer>
                 <Footer className="footer"/>
             </footer>
