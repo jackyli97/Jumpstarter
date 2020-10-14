@@ -48,6 +48,7 @@ class SessionForm extends React.Component {
         },
         () => this.demoUser(demoEmail, demoPassword))
     }
+    // handleDemoSubmit logic borrowed from Chris Thompson
 
     demoUser(demoEmail, demoPassword) {
         let rate = 50;
@@ -71,6 +72,7 @@ class SessionForm extends React.Component {
             }
         }
     }
+    // demoUser logic borrowed from Chris Thompson
 
     handleInput(type) {
         return (e) => {
