@@ -83,9 +83,9 @@ class SessionForm extends React.Component {
     render() {
         let errors = this.state.errors.map((error) => {
             return (
-                <li>
+                <div className="auth-errors">
                     {error}
-                </li>
+                </div>
             )
         })
         let path = this.props.location.pathname;
@@ -112,9 +112,7 @@ class SessionForm extends React.Component {
                     <input type="submit" className="submit-button" onClick={this.handleDemoSubmit} value="Demo Login" />
                 </div> : null}
                 <div className="errors-container">
-                    <div className="auth-errors">
-                        {errors}
-                    </div>
+                    {errors}
                 </div>
             </div>
         )
