@@ -1,23 +1,21 @@
 .background-grey{
     background-color: #F7F7F6;
     height: 100%;
-    padding: 60px 18px 0 18px;
-    // min-height: 600px;
+    padding: 60px 18px;
 }
 
-.login-box{
+.login-box, .auth-form-footer{
     max-width: 400px;
     margin: auto;
 }
 
-.login-box label, .auth-form-footer{
+.login-box label{
     display: block;
     text-align: center;
 }
 
 .login-form {
     width: 100%;
-    // padding: 20px;
 }
 
 .login-form input, .demo-button-container input {
@@ -41,7 +39,7 @@
     color: #282828;
 }
 
-.login-form, .submit-button, .demo-button-container{
+.login-form .submit-button, .demo-button-container .submit-button{
     color: white;
     background-color: #009E74;
     cursor: pointer;
@@ -49,6 +47,23 @@
     padding: 0px;
     font-size: 16px;
     width: 100%;
+}
+
+.auth-form-footer{
+    display: flex;
+    background-color: white;
+    height: 54px;
+    border: 0.1rem solid #E8E8E8;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-form-footer-text{
+    display: inline-block;
+    font-size: 14px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #282828;
+   
 }
 
 .errors-container {
