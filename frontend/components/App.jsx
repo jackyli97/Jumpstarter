@@ -5,6 +5,7 @@ import SignupFormContainer from './SignupFormContainer';
 import LoginFormContainer from './LoginFormContainer';
 import { AuthRoute } from '../util/route_util'
 import { Link } from 'react-router-dom'
+import Footer from './Footer'
 
 const App = () => {
     return (
@@ -26,6 +27,9 @@ const App = () => {
             </nav>
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
+            <footer>
+                <Footer className="footer"/>
+            </footer>
         </div>
 
     )

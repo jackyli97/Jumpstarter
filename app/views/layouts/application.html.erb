@@ -8,7 +8,10 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= favicon_link_tag asset_path('favicon.png') %>
-
+    <script type="text/javascript">
+      window.linkedin = "<%= image_url('linkedin.png') %>";
+      window.github = "<%= image_url('github.png') %>";
+    </script>
   </head>
 
 
