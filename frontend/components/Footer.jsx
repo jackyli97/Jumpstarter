@@ -91,7 +91,7 @@ const Footer = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{github}" className="social-link">
+                                        <a href={github} className="social-link">
                                             <img src={window.github} alt="github" />
                                         </a>
                                     </li>

@@ -48,7 +48,7 @@ class SessionForm extends React.Component {
         },
         () => this.demoUser(demoEmail, demoPassword))
     }
-    // handleDemoSubmit logic borrowed from Chris Thompson
+    // handleDemoSubmit logic borrowed from Chris Thompson, SF AA December 2019
 
     demoUser(demoEmail, demoPassword) {
         let rate = 50;
@@ -72,7 +72,7 @@ class SessionForm extends React.Component {
             }
         }
     }
-    // demoUser logic borrowed from Chris Thompson
+    // demoUser logic borrowed from Chris Thompson, SF AA December 2019
 
     handleInput(type) {
         return (e) => {
@@ -83,9 +83,9 @@ class SessionForm extends React.Component {
     render() {
         let errors = this.state.errors.map((error) => {
             return (
-                <div className="auth-errors">
-                    {error}
-                </div>
+                <li className="auth-errors">
+                    {error} 
+                </li>
             )
         })
         let path = this.props.location.pathname;
@@ -105,11 +105,11 @@ class SessionForm extends React.Component {
                         onChange={this.handleInput('password')}
                     />
                     {this.props.formType === 'login' ? <input type="submit" className="submit-button" value="Log in" /> : 
-                    <input type="submit" className="submit-button" value="Sign up" />
+                    <input type="submit" className="submit-button" id="signup" value="Sign up" />
                     }
                 </form>
                 {this.props.formType === 'login' ? <div className="demo-button-container">
-                    <input type="submit" className="submit-button" onClick={this.handleDemoSubmit} value="Demo Login" />
+                    <input type="submit" className="submit-button" id="demo" onClick={this.handleDemoSubmit} value="Demo Login" />
                 </div> : null}
                 <div className="errors-container">
                     {errors}
