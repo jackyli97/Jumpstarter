@@ -15,7 +15,7 @@ const App = () => {
             <nav className="top-nav">
                 <section className="nav-container">
                     <Link to={'/'}>Explore</Link>
-                    <Link to={'/'}>Start A Project</Link>
+                    <Link to={'/'}>Start a Project</Link>
                 </section>
                 <section className="nav-container-logo">
                     <Link to ="/">

@@ -54,3 +54,8 @@
     margin: 0 20px 0 20px;
 }
 
+.greeting-links a:hover, .nav-container a:hover, .right-nav button:hover{
+    text-decoration: none;
+    color: #009E74;
+    cursor: pointer;
+}
