@@ -8,8 +8,9 @@ const mapStateToProps = (state, ownProps) => ({
     path: ownProps.location.pathname === "/login" || ownProps.location.pathname === "/signup"
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
     logout: () => dispatch(logout()),
+    resetUrl: () => ownProps.history.push('/')
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Greeting);

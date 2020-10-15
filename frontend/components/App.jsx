@@ -23,7 +23,7 @@ const App = () => {
                     </Link>
                 </section>
                 <section className="nav-greeting-container">   
-                    <Route exact path="/" component={GreetingContainer}/>   
+                    <Route path="/" component={GreetingContainer}/>   
                     {/* <GreetingContainer /> */}
                     {/* <Route exact path="/" component={GreetingContainer} /> */}
                 </section>
