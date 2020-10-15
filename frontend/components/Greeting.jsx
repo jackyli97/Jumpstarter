@@ -7,6 +7,9 @@ class Greeting extends React.Component{
     }
 
     render() {
+        if (!this.props.path && !this.props.authPath) {
+            this.props.history.push('./')
+        }
         const icon = 'Search ' + '\uD83D\uDD0D'
         const content = this.props.currentUser ? (
             <div className="right-nav">
@@ -22,7 +25,7 @@ class Greeting extends React.Component{
     <br /> */}
                 {/* <input type="text" value={icon}/> */}
                 {/* add search bar */}
-                {this.props.path ? null : <Link to="/login" >Log In</Link>}
+                {this.props.authPath ? null : <Link to="/login" >Log In</Link>}
             </div>
             );
         return (
@@ -36,32 +39,3 @@ class Greeting extends React.Component{
     }
 
 export default Greeting
-
-
-// export default ({ currentUser, logout, path }) => {
-//     const icon = 'Search ' + '\uD83D\uDD0D'
-//     const content = currentUser ? (
-//         <div className="right-nav">
-//             <h1>Welcome {currentUser.name}!</h1>
-//             <button onClick={logout}>Logout</button>
-//         </div>
-//     ) : (
-//         <div className="greeting-links">
-//             {/* <button>
-
-//                 <Link to="/signup">Sign Up</Link>
-//             </button>
-//             <br /> */}
-//             {/* <input type="text" value={icon}/> */}
-//             {/* add search bar */}
-//             {path ? null : <Link to="/login" >Log In</Link>}
-//         </div>
-//         );
-//     return (
-//         <div>
-//             <h1>
-//                 {content}
-//             </h1>
-//         </div>
-//     )
-// }
