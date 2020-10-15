@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  biography       :text
+#  location        :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  name            :string           not null
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#
 class User < ApplicationRecord
 attr_reader :password
 
@@ -5,6 +19,10 @@ attr_reader :password
   validates :email, :session_token, uniqueness: true, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
+  has_many :projects,
+    primary_key: :id, 
+    foreign_key: :author_id,
+    class_name: :Project
   # This allows us to run methods before running validations
   # In this case, we need to have a session_token when a user is first created
   after_initialize :ensure_session_token
