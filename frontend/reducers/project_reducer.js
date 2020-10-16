@@ -1,0 +1,32 @@
+import {
+    RECEIVE_ALL_PROJECTS,
+    RECEIVE_PROJECT,
+    REMOVE_PROJECT,
+} from '../actions/project_actions';
+
+/*
+Export a `PostsReducer` that takes in the old state and appropriately handles
+all post actions.
+*/
+const defaultState = {}
+
+const projectReducer = (oldState = defaultState, action) => {
+    Object.freeze(oldState);
+    let newState = Object.assign({}, oldState);
+    debugger
+    switch (action.type) {
+        case RECEIVE_ALL_PROJECTS:
+            debugger
+            return action.projects.projects
+        case RECEIVE_PROJECT:
+            newState[action.project.project.id] = action.project;
+            return newState;
+        case REMOVE_PROJECT:
+            delete newState[action.projectId]
+            return newState;
+        default:
+            return oldState
+    }
+}
+
+export default projectReducer;

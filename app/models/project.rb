@@ -20,7 +20,7 @@
 class Project < ApplicationRecord
     validates :title, :description, :amount_pledged, :funding_goal, :end_date, :location, :risks_and_challenges, presence: true 
     
-    belongs_to :users,
+    belongs_to :author,
         primary_key: :id,
         foreign_key: :author_id,
         class_name: :User

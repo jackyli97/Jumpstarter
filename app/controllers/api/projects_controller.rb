@@ -1,7 +1,12 @@
 class Api::ProjectsController < ApplicationController
+
+    before_action :logged_in?, only: [:create, :update]
+
     def create
         @project = Project.new(project_params)
+        # debugger
         if @project.save
+        # debugger
         render :show
         else
         render json: @project.errors.full_messages, status: 401
@@ -9,18 +14,18 @@ class Api::ProjectsController < ApplicationController
     end
 
     def index
-        @projects = Project.all
+        @projects = Project.includes(:author).all
         render :index
     end
 
     def show
-        @project = Project.find_by(params[:id])
+        @project = Project.find(params[:id])
         render :show
     end
 
     def destroy
-        @project = Project.find_by(params[:id])
-        if @project
+        @project = Project.find(params[:id])
+        if @project.author_id == current_user.id
             @project.destroy
         else
         render json: ["Could not delete project"], status: 404
@@ -28,16 +33,16 @@ class Api::ProjectsController < ApplicationController
     end
 
     def update
-        @project = Project.find_by(params[:id])
-        if @project.update(project_params)
+        @project = Project.find(params[:id])
+        if @project.author_id === current_user.id && @project.update(project_params) 
             render :show
         else
-            render json: ["Could not delete project"], status: 404
+            render json: @project.errors.full_messages, status: 404
         end
     end
 
     private
     def project_params
-        params.require(:project).permit(:title, :description, :updates, :faq, :funding_goal, :end_date, :location, :risks_and_challenges, :cateogry_id)
+        params.require(:project).permit(:title, :description, :amount_pledged, :category_id, :campaign, :updates, :faq, :funding_goal, :end_date, :location, :risks_and_challenges, :author_id)
     end
 end
