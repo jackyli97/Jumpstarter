@@ -4,9 +4,7 @@ class Api::ProjectsController < ApplicationController
 
     def create
         @project = Project.new(project_params)
-        # debugger
         if @project.save
-        # debugger
         render :show
         else
         render json: @project.errors.full_messages, status: 401
@@ -14,7 +12,7 @@ class Api::ProjectsController < ApplicationController
     end
 
     def index
-        @projects = Project.includes(:author).all
+        @projects = Project.get_ten_projects
         render :index
     end
 

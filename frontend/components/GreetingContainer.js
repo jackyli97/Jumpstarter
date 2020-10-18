@@ -6,7 +6,7 @@ import { logout } from '../actions/session_actions'
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
     authPath: ownProps.location.pathname === "/login" || ownProps.location.pathname === "/signup",
-    path: ownProps.location.pathname === "/" 
+    path: ownProps.location.pathname === "/" || ownProps.location.pathname === "/home"
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

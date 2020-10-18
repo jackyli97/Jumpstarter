@@ -1,5 +1,6 @@
 import React from "react";
 import GreetingContainer from "./GreetingContainer";
+import ProjectContainer from "./projects/ProjectContainer";
 import { Redirect, Route } from 'react-router-dom';
 import SignupFormContainer from './SignupFormContainer';
 import LoginFormContainer from './LoginFormContainer';
@@ -23,14 +24,21 @@ const App = () => {
                     </Link>
                 </section>
                 <section className="nav-greeting-container">   
-                    <Route path="/" component={GreetingContainer}/>   
+                    <Route path="/" component={GreetingContainer}/>
                     {/* <GreetingContainer /> */}
                     {/* <Route exact path="/" component={GreetingContainer} /> */}
                 </section>
             </nav>
+            {/* <div className="home-body">
+                <section className="featured-container">
+                    <Route exact path="/home" component={ProjectContainer} />
+                </section>
+            </div> */}
             <Switch>
+                {/* <Route exact path="/home" component={ProjectContainer} /> */}
                 <AuthRoute exact path="/login" component={LoginFormContainer} />
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
+                <Route exact path="/" component={ProjectContainer} />
                 <Redirect to="/"> </Redirect>
             </Switch>
             <footer>

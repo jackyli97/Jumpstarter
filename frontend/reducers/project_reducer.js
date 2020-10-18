@@ -13,10 +13,8 @@ const defaultState = {}
 const projectReducer = (oldState = defaultState, action) => {
     Object.freeze(oldState);
     let newState = Object.assign({}, oldState);
-    debugger
     switch (action.type) {
         case RECEIVE_ALL_PROJECTS:
-            debugger
             return action.projects.projects
         case RECEIVE_PROJECT:
             newState[action.project.project.id] = action.project;

@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+# ActiveRecord::Base.connection.reset_pk_sequence!('users')
 
 user1 = User.create!(name: 'Demo User', email: 'demouser@aa.io', password: 'password', biography: "An entrepreneur from the Bay Area", location: "San Francisco, CA")
 user2 = User.create!(name: 'JD Buendia', email: 'buns@aa.io', password: 'password', biography: "cheetahs for life")
@@ -80,4 +81,19 @@ project5 = Project.create!(title: "The Gravity Jacket",
         campaign: "The Gravity Jacket is the next generation of insulated jacket. Built from the fiber up by chemists and tested by athletes, the Gravity Jacket is designed to solve all the performance issues of other insulated jackets with a style you can wear anywhere, no matter the weather, season, or occasion.
          This jacket is temperature regulating, breathable, stain-proof, water resistant, durable, packable, and versatile. Providing ultimate freedom, you’ll forget you’re wearing it"
 )
+
+file1 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/rap_academy.jpeg")
+project1.photo.attach(io: file1, filename: "img_#{project1.id}.jpg")
+
+file2 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/flying_skateboard.jpg")
+project2.photo.attach(io: file2, filename: "img_#{project2.id}.jpg")
+
+file3 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/nightbuds.jpg")
+project3.photo.attach(io: file3, filename: "img_#{project3.id}.jpg")
+
+file4 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/smile_book.jpg")
+project4.photo.attach(io: file4, filename: "img_#{project4.id}.jpg")
+
+file5 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/gravityjacket.jpg")
+project5.photo.attach(io: file5, filename: "img_#{project5.id}.jpg")
 

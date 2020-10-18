@@ -24,4 +24,21 @@ class Project < ApplicationRecord
         primary_key: :id,
         foreign_key: :author_id,
         class_name: :User
+
+    has_one_attached :photo
+    # has_one_attached :large_photo
+        # do this when we need a bigger photo
+
+    def self.get_ten_projects()
+        projects = Project.all.to_a
+        filtered_projs = []
+        until filtered_projs.length == 5
+            sample = projects.sample
+            if !filtered_projs.include?(sample)
+                filtered_projs.append(sample)
+            end
+        end
+        filtered_projs
+    end
+
 end
