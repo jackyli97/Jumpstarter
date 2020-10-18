@@ -7,3 +7,29 @@
     height: 250px;
     width: 250px;
 }
+
+.recommendations-numbering {
+    display: flex;
+    flex-direction: row;
+}
+
+.recommendations-numbering li {
+    margin-right: 15px;
+    font-size: 16px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.recommendations-numbering li:hover {
+    cursor: pointer;
+
+}
+
+.highlighted-numbering {
+    color: #003BFF;
+    text-decoration: underline;
+}
+
+.unhighlighted-numbering {
+    color: rgba(43,96,255,0.9);
+    text-decoration: none;
+}

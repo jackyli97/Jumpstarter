@@ -1,13 +1,6 @@
 import React from 'react';
 
 class Featured extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {currentProject: 0}
-        this.changeProject = this.changeProject.bind(this)
-    }
-
-
     render() {
         let projectCheck;
         (this.props.project) ? projectCheck = this.props.project : projectCheck = null;

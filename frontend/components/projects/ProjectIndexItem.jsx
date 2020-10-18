@@ -19,18 +19,3 @@ class ProjectIndexItem extends React.Component {
 }
 
 export default ProjectIndexItem
-
-// const ProjectIndexItem = ({ idx, project }) => {
-//     debugger
-//     let projObj = project[idx]
-//     let percent = ((project.amount_pledged / project.funding_goal).toFixed(2)) * 100 
-//     return (
-//         <>
-//             <li><a href="#">project.title</a></li>
-//             <li>{percent} % funded</li>
-//             <li>By {project.author_name}</li>
-//         </>
-//     )
-// }
-
-// export default ProjectIndexItem;
