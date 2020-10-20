@@ -26,7 +26,7 @@ project1 = Project.create!(title: "Rap Academy",
     funding_goal: 200000, end_date: Date.new(2021,3,12), location: "San Francisco, CA", 
     risks_and_challenges: "Our school has been proven to help artists find success, but a challenge will be gaining and having the resources and
     infrastructure to hold them.",
-    author_id: user2.id, category_id: 1,
+    author_id: user2.id, category_id: 10,
     campaign: "Free Until You're Signed. Learn how to be a successful rapper In 16 Weeks. The Top Ranked Hip-Hop School by Record Companies. Grads Earn An Average of $101,000/Yr and 100,000 views/videos."
 )
 
@@ -37,7 +37,7 @@ project2 = Project.create!(title: "The Flying Skateboard",
         amount_pledged: 500,
         funding_goal: 10000,
         end_date: Date.new(2021,3,2),
-        category_id: 3,
+        category_id: 13,
         location: "Austin, TX",
         campaign: "Ever Imagined about flying skateboards?
 We recently came up with a hoverboard that works with superconducters, liquid nitrogen and magnets."
@@ -50,7 +50,7 @@ project3 = Project.create!(title: "NightPods",
         amount_pledged: 35000,
         funding_goal: 26000,
         end_date: Date.new(2021,1,20),
-        category_id: 3,
+        category_id: 13,
         location: "Palo Alto, CA",
         campaign: "NightBuds are tiny, sleep sensing headphones that work with an app to intelligently look after your sleep. 
 Developed with sleep scientists, NightBuds help you transform your sleep and relaxation naturally through audio. 
@@ -64,7 +64,7 @@ project4 = Project.create!(title: "The Smile Book",
         amount_pledged: 10700,
         funding_goal: 16000,
         end_date: Date.new(2021,5,20),
-        category_id: 1,
+        category_id: 0,
         location: "Indianapolis, IN",
         campaign: "Art- and graphic design-focused, this campaign is to publish a book at the start of the new year intended for anyone who appreciates this iconic image of joy (as well as those who love cheeky culture jamming & logo flipping). With your help, we can bring this book to life—after all, the world could use a few more smiles right now ;)"
 )
@@ -76,7 +76,7 @@ project5 = Project.create!(title: "The Gravity Jacket",
         amount_pledged: 324876,
         funding_goal: 10000,
         end_date: Date.new(2021,5,15),
-        category_id: 5,
+        category_id: 2,
         location: "Detroit, MI",
         campaign: "The Gravity Jacket is the next generation of insulated jacket. Built from the fiber up by chemists and tested by athletes, the Gravity Jacket is designed to solve all the performance issues of other insulated jackets with a style you can wear anywhere, no matter the weather, season, or occasion.
          This jacket is temperature regulating, breathable, stain-proof, water resistant, durable, packable, and versatile. Providing ultimate freedom, you’ll forget you’re wearing it"

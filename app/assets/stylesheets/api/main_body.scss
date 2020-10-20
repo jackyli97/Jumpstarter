@@ -1,27 +1,88 @@
 .home-body-container {
+    // max-width: 1366px;
+    margin: 0px 37px;
+    padding: 0px 60px;
+    box-sizing: border-box;
+}
+
+.home-flex {
+    padding-bottom: 60px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+}
+
+// @media (min-width: 1025px) {
+//     .home-body-container {
+//         padding-left: 60px;
+//         padding-right: 60px;
+//     }
+// }
+// @media (min-width: 795px) {
+//     .home-body-container {
+//         padding-left: 60px;
+//         padding-right: 60px;
+//     }
+// }
+// @media (min-width: 600px) {
+//     .home-body-container {
+//         padding-left: 24px;
+//         padding-right: 24px;
+//     }
+// }
+    
+.project-preview-items a {
+    text-decoration: none;
+}
+
+.project-preview-items a{
+    width: 100;
+    display: block;
+    border: none;
+    max-width: 100%
 }
 
 .project-img {
-    height: 250px;
-    width: 250px;
+    margin-top: 18px;
+    padding: 0;
+    height: 351px;
+    width: 624px;
+}
+
+@media (max-width: 800px) {
+    .featured-container {
+        min-width: 100vw;
+    }
+    .project-img {
+        min-width: 100vw;
+    }
+
 }
 
 .recommendations-numbering {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
 }
 
 .recommendations-numbering li {
-    margin-right: 15px;
+    padding-top: 60px;
+    margin-left: 12px;
+    margin-right: 12px;
     font-size: 16px;
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .recommendations-numbering li:hover {
     cursor: pointer;
+}
 
+.grey-arrow {
+    color:#9B9E9E
+}
+
+.blue-arrow {
+    color: #003BFF;
 }
 
 .highlighted-numbering {
@@ -32,4 +93,124 @@
 .unhighlighted-numbering {
     color: rgba(43,96,255,0.9);
     text-decoration: none;
+}
+
+.project-preview-items {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    transition: opacity 300ms ease-in 0s, transform;
+    opacity: 1;
+    max-height: 126px;
+}
+.project-preview-items{
+    border-bottom: 0.1rem solid #DCDEDD;
+    border-color: #E8E8E8;
+    padding: 18px 0px;
+}
+
+
+.recommended-project-img {
+    height: 90px;
+    width: 176px;
+    padding-right: 24px
+}
+
+.project-preview-items ul {
+    min-height: 440px;
+}
+
+.project-preview-items li:nth-of-type(1) {
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #656969;
+}
+.project-preview-items li:nth-of-type(2) {
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #037362;
+}
+.project-preview-items li:nth-of-type(3) {
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #656969;
+}
+
+.project-preview-items ul, .project-preview-items li {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 6px;
+}
+
+.home-body-container * {
+    box-sizing: inherit;
+}
+
+.featured-container {
+    border-right: 0.1rem solid #DCDEDD;
+    border-bottom: none;
+    border-color: #E8E8E8;
+    margin-top: 24px;
+    padding-top: 30px;
+    padding-right: 60px;
+    list-style-type: none;
+}
+
+// .featured-section {
+//     max-width: 624px;
+// }
+
+
+.recommended-container {
+    margin-top: 24px;
+    padding-top: 30px;
+    padding-left: 60px;
+    width: 100%;
+}
+
+.recommended-section {
+    height: 388px;
+}
+
+.recommendations-title {
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: 1.2rem;
+    font-weight: 500;
+    color: #656969;
+    // margin-bottom: 18px;
+    // margin-block-start: 1em;
+    // margin-block-end: 1em;
+    // margin-inline-start: 0px;
+    // margin-inline-end: 0px;
+}
+
+.featured-title {
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: 1.2rem;
+    font-weight: 500;
+    color: #656969;
+    // margin-bottom: 18px;
+    // margin-block-start: 1em;
+    // margin-block-end: 1em;
+    // margin-inline-start: 0px;
+    // margin-inline-end: 0px;
+}
+
+.featured-project-props li:nth-of-type(1) {
+    padding-top: 18px;
+    padding-bottom: 12px;
+    color: #282828;
+    font-size: 28px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.featured-project-props li:nth-of-type(2) {
+    padding-bottom: 24px;
+    font-family: "Cooper Light", Georgia, Times, "Times New Roman", serif;
+    font-size: 18px;
+    color: #282828;
 }

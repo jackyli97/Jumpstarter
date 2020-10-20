@@ -16,12 +16,38 @@ class ProjectIndex extends React.Component {
 
     changeProject(e) {
         let li = e.target;
-        let currentPage = li.id;
+        let currentPage;
         let kids = document.getElementById('pages').children
-        for (let i=0; i<kids.length;i++) {
-            kids[i].className = "unhighlighted-numbering"
+        let array = Array.from(kids)
+        array.shift()
+        array.pop()
+        if (li.id === 'left-arrow') {
+            if (this.state.currentPage === 1) {
+                currentPage = 1
+            }
+            else{
+                currentPage = (this.state.currentPage) - 1
+            }
         }
-        kids[currentPage - 1].className = "highlighted-numbering"
+        else if (li.id === 'right-arrow') {
+            if (this.state.currentPage === array.length) {
+                currentPage = array.length
+            }
+            else {
+                currentPage = (this.state.currentPage) + 1
+            }
+        }
+        else{
+            currentPage = li.id;
+        }
+
+        // currentPage === 1 ? kids[0].className="grey-arrow" : currentPage === array.length ? 
+        // kids[kids.length - 1].className="grey-arrow" : null;
+
+        for (let i=0; i<array.length;i++) {
+            array[i].className = "unhighlighted-numbering"
+        }
+        array[currentPage - 1].className = "highlighted-numbering"
         this.setState({ currentPage });
     }
 
@@ -34,14 +60,21 @@ class ProjectIndex extends React.Component {
         let project = this.props.project
         return (
             <div className="home-body-container">
-                <section className="featured-container">
-                    <Featured project={project}/>
-                </section>
-                <section className="recommended-container">
-                    <div>
-                        <h4 className="recommendations-title">RECOMMENDED FOR YOU</h4>
-                        {result}
+                <div className="home-flex">
+                    <section className="featured-container">
+                        <Featured project={project}/>
+                    </section>
+                    <section className="recommended-container">
+                        <div className="recommended-section">
+                            <div className="recommendations-title">Recommended For You</div>
+                            {result}
+                        </div>
                         <ul onClick={this.changeProject} className="recommendations-numbering" id="pages">
+                            <li className={
+                                this.state.currentPage === 1 ? "grey-arrow" : "blue-arrow"
+                            }>
+                                <i className="fas fa-chevron-left" id="left-arrow"></i>
+                            </li>
                             {
                             this.props.array.map((num) => {
                                 return (
@@ -52,9 +85,15 @@ class ProjectIndex extends React.Component {
                                     </li>
                                 )})
                             }
+                            <li className={
+                                this.state.currentPage === this.props.array.length + 1 ? "grey-arrow" : "blue-arrow"
+                            }>
+                                <i className="fas fa-chevron-right" id="right-arrow"></i>
+                            </li>
                         </ul>
-                    </div>
-                </section>
+                    </section>
+
+                </div>
             </div>
         )
     }

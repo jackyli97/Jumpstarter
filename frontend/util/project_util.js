@@ -2,7 +2,9 @@ export const createProject = project => {
     return $.ajax({
         url: '/api/projects',
         method: 'POST',
-        data: { project }
+        data: { project },
+        contentType: false,
+        processData: false
     })
 }
 
