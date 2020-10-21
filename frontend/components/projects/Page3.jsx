@@ -16,7 +16,10 @@ class Page3 extends React.Component {
             photoUrl: this.props.project.photoUrl,
             page: 3,
             category: this.props.project.category,
-            amountPledged: 0
+            amountPledged: 0,
+            campaign: this.props.project.campaign,
+            description: this.props.project.description,
+            risks_and_challenges: this.props.project.risks_and_challenges
         }
         this.handleInput = this.handleInput.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -48,7 +51,7 @@ class Page3 extends React.Component {
                     <div className="basics-fields">
                         <div className="create-funding">
                             <label>Funding Goal
-                                <input type="number" required={true} min="1" step="any" onKeyUp={this.handleInput} onInput={this.handleInput} placeholder="USD" />
+                                <input type="number" value="300" required={true} min="1" step="any" onKeyUp={this.handleInput} onInput={this.handleInput} placeholder="USD" />
                             </label>
                         </div>
                     </div>

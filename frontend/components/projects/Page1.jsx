@@ -6,7 +6,14 @@ import Page2 from './Page2'
 class Page1 extends React.Component {
     constructor(props) {
         super(props)
-        this.state = this.props.pageOneProps
+        this.state = {category: this.props.pageOneProps.category,
+            page: 1,
+            title: this.props.pageOneProps.title,
+            location: this.props.pageOneProps.location,
+            endDate: this.props.pageOneProps.endDate,
+            photoFile: this.props.pageOneProps.photoFile,
+            photoUrl: this.props.pageOneProps.photoUrl
+        }
         this.handleSelect = this.handleSelect.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }

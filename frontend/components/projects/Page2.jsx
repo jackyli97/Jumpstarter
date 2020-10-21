@@ -10,6 +10,8 @@ class Page2 extends React.Component {
             title: this.props.pageTwoProps.title,
             location: this.props.pageTwoProps.location,
             endDate: this.props.pageTwoProps.endDate,
+            photoFile: this.props.pageTwoProps.photoFile,
+            photoUrl: this.props.pageTwoProps.photoUrl,
             page: 2,
             category: this.props.pageTwoProps.category,
         }
@@ -55,8 +57,7 @@ class Page2 extends React.Component {
 
     render() {
         const preview = this.state.photoUrl ? <img className="img-preview" src={this.state.photoUrl} /> : null;
-        let pageOneProps = { category: this.state.category, page: 1 }
-        let display = (this.state.page === 1) ? <Page1 createProject={this.props.createProject} pageOneProps={pageOneProps} path={this.props.path} author={this.props.authorId} />  
+        let display = (this.state.page === 1) ? <Page1 createProject={this.props.createProject} pageOneProps={this.state} path={this.props.path} author={this.props.authorId} />  
         : (this.state.page === 3) ? 
         <Page3 project={this.state} path={this.props.path} author={this.props.author} createProject={this.props.createProject} /> : (
             <div>
@@ -79,7 +80,7 @@ class Page2 extends React.Component {
                         </div>
                         <div className="create-image">
                             <label>Project Image
-                                <input type="file" required={true} onChange={this.handleFile}/>
+                                <input type="file" className={this.state.photoUrl !== "" ? "hidden-file-form" : "file-form"} required={true} onChange={this.handleFile}/>
                             </label>
                             {preview}
                         </div>

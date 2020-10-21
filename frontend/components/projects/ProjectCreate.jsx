@@ -6,7 +6,7 @@ class ProjectCreate extends React.Component {
         super(props)
     }
     render() {
-        let pageOneProps = { category: "", page: 1, location: "", endDate: "", title: "" }
+        let pageOneProps = { category: "", page: 1, location: "", endDate: "", title: "", photoFile: null, photoUrl: "" }
         return (
             <div>
                 <div className="create-container">
