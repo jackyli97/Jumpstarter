@@ -6,7 +6,7 @@ import Page2 from './Page2'
 class Page1 extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {category: "", page: 1}
+        this.state = this.props.pageOneProps
         this.handleSelect = this.handleSelect.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -22,7 +22,8 @@ class Page1 extends React.Component {
     }
 
     render() {
-    let display = (this.state.page === 2) ? <Page2 cateogry={this.state.category} createProject={this.props.createProject} /> : (
+        let display = (this.state.page === 2) ? <Page2 pageTwoProps={this.state}
+        path={this.props.path} createProject={this.props.createProject} author={this.props.author} /> : (
         <div className="create-section">
             <nav className="create-nav">1 of 4</nav>
             <h1>First, let's get you set up.</h1>
@@ -31,27 +32,27 @@ class Page1 extends React.Component {
 
             <form className="basics-form" onSubmit={this.handleSubmit}>
                 <div className="basics-fields">
-                    <select className="categories" onChange={this.handleSelect}>
-                        <option value="" selected="true" disabled="true">Select your category</option>
-                        <option value="0">Art</option>
-                        <option value="1">Comics</option>
-                        <option value="2">Crafts</option>
-                        <option value="3" >Dance</option>
-                        <option value="4" >Design</option>
-                        <option value="5" >Fashion</option>
-                        <option value="6" >Film & Video</option>
-                        <option value="7" >Food</option>
-                        <option value="8" >Games</option>
-                        <option value="9" >Journalism</option>
-                        <option value="10" >Music</option>
-                        <option value="11" >Photography</option>
-                        <option value="12" >Publishing</option>
-                        <option value="13" >Technology</option>
-                        <option value="14" >Theater</option>
+                    <select required={true} className="categories" onChange={this.handleSelect}>
+                        <option value="" selected={this.state.category ? false : true} disabled={true}>Select your category</option>
+                        <option value="0" selected={this.state.category === "0" ? true : false}>Art</option>
+                        <option value="1" selected={this.state.category === "1" ? true : false}>Comics</option>
+                        <option value="2" selected={this.state.category === "2" ? true : false}>Crafts</option>
+                        <option value="3" selected={this.state.category === "3" ? true : false}>Dance</option>
+                        <option value="4" selected={this.state.category === "4" ? true : false}>Design</option>
+                        <option value="5" selected={this.state.category === "5" ? true : false}>Fashion</option>
+                        <option value="6" selected={this.state.category === "6" ? true : false}>Film & Video</option>
+                        <option value="7" selected={this.state.category === "7" ? true : false}>Food</option>
+                        <option value="8" selected={this.state.category === "8" ? true : false}>Games</option>
+                        <option value="9" selected={this.state.category === "9" ? true : false}>Journalism</option>
+                        <option value="10" selected={this.state.category === "10" ? true : false}>Music</option>
+                        <option value="11" selected={this.state.category === "11" ? true : false}>Photography</option>
+                        <option value="12" selected={this.state.category === "12" ? true : false}>Publishing</option>
+                        <option value="13" selected={this.state.category === "13" ? true : false}>Technology</option>
+                        <option value="14" selected={this.state.category === "14" ? true : false}>Theater</option>
                     </select>
                 </div>
                 <div className="create-footer-section">
-                    <Link to="/">Hello again!</Link>
+                    <span>Hello, Super Creator.</span>
                     <button>Next: Basics</button>
                 </div>
             </form>

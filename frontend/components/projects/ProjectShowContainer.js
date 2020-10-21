@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import ProjectShow from './ProjectShow';
-import { fetchProjects } from '../../actions/project_actions';
+import { fetchProject } from '../../actions/project_actions';
 
 const mapStateToProps = (state, ownProps) => {
+    // debugger
     return {
         project: state.entities.projects[ownProps.match.params.projectId]
     };
@@ -10,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        fetchProjects: () => dispatch(fetchProjects()),
+        fetchProject: () => dispatch(fetchProject(ownProps.match.params.projectId))
+       
     };
 }
 

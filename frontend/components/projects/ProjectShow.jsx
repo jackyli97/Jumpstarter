@@ -1,12 +1,18 @@
 import React from 'react';
 
 class ProjectShow extends React.Component {
+    constructor(props) {
+        // debugger
+        super(props)
+    }
 
     componentDidMount() {
-        this.props.fetchProjects()
+        // debugger
+        this.props.fetchProject(this.props.match.params.projectId)
     }
 
     render() {
+        // debugger
         let projectCheck;
         (this.props.project) ? projectCheck = this.props.project : projectCheck = null;
         return (
@@ -15,7 +21,7 @@ class ProjectShow extends React.Component {
                 <div className="main-show-container">
                     <div className="big-show-text">
                         <h1>{this.props.project.title}</h1>
-                        <p>{this.props.project.description}</p>
+                        <p>{this.props.project.campaign}</p>
                     </div>
                     <div className="misc-show">
                         <section className="show-img-section">

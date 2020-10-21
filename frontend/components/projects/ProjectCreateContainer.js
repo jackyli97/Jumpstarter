@@ -12,12 +12,14 @@ const mapStateToProps = (state, ownProps) => {
             amount_pledged: "",
             funding_goal: "",
             end_date: "",
-            cateogory_id: "",
+            category_id: "",
             location: "",
             risks_and_challenges: "",
             campaign: "",
             page: 1,
-        }
+        },
+        authorId: state.session.id,
+        path: ownProps.history
     };
 }
 

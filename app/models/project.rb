@@ -20,7 +20,7 @@
 class Project < ApplicationRecord
     validates :title, :description, :amount_pledged, :funding_goal, :end_date, :location, :risks_and_challenges, presence: true 
 
-    validate :ensure_photo
+    # validate :ensure_photo
 
     belongs_to :author,
         primary_key: :id,
@@ -31,10 +31,14 @@ class Project < ApplicationRecord
     # has_one_attached :large_photo
         # do this when we need a bigger photo
 
-    def ensure_photo
-        unless self.photo.attached?
-            errors[:photo] << "Must be attached"
-        end
+    # def ensure_photo
+    #     unless self.photo.attached?
+    #         errors[:photo] << "Must be attached"
+    #     end
+    # end
+
+    def self.convert_to_date(string)
+        Date.new((string[0..3]).to_i, (string[5..6]).to_i, (string[8..9]).to_i)
     end
 
     def self.get_ten_projects()

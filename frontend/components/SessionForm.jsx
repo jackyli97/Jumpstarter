@@ -62,7 +62,6 @@ class SessionForm extends React.Component {
             }, () => window.setTimeout(() => this.demoUser(demoEmail, demoPassword), rate))
 
         } else if (demoPassword.length === 0) {
-            // debugger
             if (!this.props.nextPath) {
                 this.props.processForm(this.state)
                     .then(() => this.props.history.push('/'))
