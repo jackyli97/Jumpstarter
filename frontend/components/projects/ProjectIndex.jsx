@@ -86,7 +86,7 @@ class ProjectIndex extends React.Component {
                                 )})
                             }
                             <li className={
-                                this.state.currentPage === this.props.array.length + 1 ? "grey-arrow" : "blue-arrow"
+                                this.state.currentPage === this.props.array.length  ? "grey-arrow" : "blue-arrow"
                             }>
                                 <i className="fas fa-chevron-right" id="right-arrow"></i>
                             </li>
