@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Featured extends React.Component {
     render() {
@@ -9,6 +10,7 @@ class Featured extends React.Component {
             <div className="featured-section">
                 <div className="featured-title">Featured Project</div>
                 <div className="featured-project-props" >  
+                <Link to={`/projects/${this.props.project.id}`}>
                     <img src={this.props.project.photo_url} className="project-img"/>
                     <li>
                         <a href="#">{this.props.project.title}</a>
@@ -16,7 +18,11 @@ class Featured extends React.Component {
                     <li>
                         {this.props.project.description}
                     </li>
-                    <li>By {this.props.project.author_name}</li>
+                    <li>By <span>
+                            {this.props.project.author_name}
+                        </span> 
+                    </li>
+                </Link>
                 </div>
             </div>
             )

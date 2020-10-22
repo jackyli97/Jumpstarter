@@ -4,6 +4,7 @@ class Api::ProjectsController < ApplicationController
 
     def create
         @project = Project.new(project_params)
+        debugger
         date = Project.convert_to_date(project_params[:end_date])
         @project.end_date = date
         
@@ -44,6 +45,7 @@ class Api::ProjectsController < ApplicationController
 
     private
     def project_params
+        debugger
         params.require(:project).permit(:title, :description, :amount_pledged, :category_id, :campaign, :updates, :faq, :funding_goal, :end_date, :location, :risks_and_challenges, :author_id, :photo)
     end
 end

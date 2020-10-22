@@ -28,7 +28,6 @@ class Page4 extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger
         e.preventDefault();
         const formData = new FormData();
         formData.append('project[title]', this.state.title);
@@ -58,34 +57,40 @@ class Page4 extends React.Component {
 
     render() {
         let display = (this.state.page === 3) ? <Page3 project={this.state} path={this.props.path} author={this.props.author} createProject={this.props.createProject} /> :
-            <div>
-                <h1>Introduce your project</h1>
-                <br/>
-                <h4>Tell people why they should be excited about your project. Get specific but be clear and brief.</h4>
-
+            <div className="create-section">
+                <nav className="create-nav">4 of 4</nav>
                 <form className="basics-form" onSubmit={this.handleSubmit}>
                     <div className="basics-fields">
-                        <div className="create-description">
+                        <div className="create-main">
+                            <h1>Introduce your project</h1>
+                            <br/>
+                            <p className="main-p">Tell people why they should be excited about your project. Get specific but be clear and brief.</p>
                             <label>Project Description
-                                <p>Describe what you're raising funds to do, why you care about it, how you plan to make it happen, and who you are. Your description should tell backers everything they need to know.</p>
-                                <textarea onChange={this.handleInput("description")} required={true}
-                                    placeholder="Write about your project like you're explaining it to a friend..." value={this.props.description}/>
+                            <p>Describe what you're raising funds to do, why you care about it, how you plan to make it happen, and who you are. Your description should tell backers everything they need to know.</p>
+                            <div className="create-description">
+                                    <textarea onChange={this.handleInput("description")} required={true}
+                                        placeholder="Write about your project like you're explaining it to a friend..." value={this.props.description}/>
+                            </div>
                             </label>
                             <label>Risks and Challenges
-                                <p>Be honest about the potential risks and challenges of this project and how you plan to overcome them to complete it.</p>
-                                <textarea onChange={this.handleInput("risks_and_challenges")} required={true}
-                                    placeholder="Common risks and challenges you may want to address include budgeting, timelines for rewards and the project itself, the size of your audience.... " value={this.props.risks_and_challenges}/>
+                            <p>Be honest about the potential risks and challenges of this project and how you plan to overcome them to complete it.</p>
+                            <div className="create-risks">
+                                    <textarea onChange={this.handleInput("risks_and_challenges")} required={true}
+                                        placeholder="Common risks and challenges you may want to address include budgeting, timelines for rewards and the project itself, the size of your audience.... " value={this.props.risks_and_challenges}/>
+                            </div>
                             </label>
                             <label>Campaign
-                                <p>Have an attention grabbing slogan for your campaign that will be displayed alongside your title.</p>
-                                <textarea onChange={this.handleInput("campaign")} required={true}
-                                    placeholder="A gorgeous system of phone cases, mounts, and accessories that brilliantly adapt your phone to every aspect of your life. " value={this.props.campaign}/>
+                            <p>Have an attention grabbing slogan for your campaign that will be displayed alongside your title.</p>
+                            <div className="create-campaign">
+                                    <textarea onChange={this.handleInput("campaign")} required={true}
+                                        placeholder="A gorgeous system of phone cases, mounts, and accessories that brilliantly adapt your phone to every aspect of your life. " value={this.props.campaign}/>
+                            </div>
                             </label>
                         </div>
-                    </div>
-                    <div className="create-footer-section">
-                        <span onClick={this.handleClick}>Funding</span>
-                        <button>Continue</button>
+                        <div className="create-footer-section">
+                            <span onClick={this.handleClick}>Funding</span>
+                            <button>Continue</button>
+                        </div>
                     </div>
                 </form>
             </div>

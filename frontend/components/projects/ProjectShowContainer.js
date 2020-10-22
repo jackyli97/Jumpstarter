@@ -3,7 +3,6 @@ import ProjectShow from './ProjectShow';
 import { fetchProject } from '../../actions/project_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return {
         project: state.entities.projects[ownProps.match.params.projectId]
     };

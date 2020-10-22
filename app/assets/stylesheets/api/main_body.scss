@@ -210,6 +210,21 @@
     // margin-inline-end: 0px;
 }
 
+.featured-section li:first-of-type:hover {
+    color:#009E74;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.featured-project-props li:last-of-type span:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.featured-section Link {
+    cursor: pointer;
+}
+
 .featured-project-props li:nth-of-type(1) {
     padding-top: 18px;
     padding-bottom: 12px;
