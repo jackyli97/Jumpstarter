@@ -11,6 +11,7 @@ class Page4 extends React.Component {
             location: this.props.project.location,
             photoFile: this.props.project.photoFile,
             photoUrl: this.props.project.photoUrl,
+            photoValue: this.props.project.photoValue,
             category: this.props.project.category,
             amountPledged: this.props.project.amountPledged,
             fundingGoal: this.props.project.fundingGoal,
@@ -40,6 +41,7 @@ class Page4 extends React.Component {
         formData.append('project[risks_and_challenges]', this.state.risks_and_challenges);
         formData.append('project[campaign]', (this.state.campaign));
         formData.append('project[author_id]', this.props.author);
+
         if (this.state.photoFile) {
             formData.append('project[photo]', this.state.photoFile);
         }

@@ -5,6 +5,8 @@ class ProjectShow extends React.Component {
         super(props)
         this.state = {navPage: "campaign", article: "story"}
         this.handleClick = this.handleClick.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
+        this.handleClickArticle = this.handleClickArticle.bind(this)
     }
 
     componentDidMount() {
@@ -21,6 +23,13 @@ class ProjectShow extends React.Component {
         return (e) => {
             this.setState({ navPage: page })
         }
+    }
+
+    handleDelete(e) {
+        this.props.deleteProject(this.props.project.id)
+            .then(action => {
+                return this.props.path.push(`/`)
+            }) 
     }
 
     render() {
@@ -41,12 +50,32 @@ class ProjectShow extends React.Component {
                 <p>{this.props.project.risks_and_challenges}</p>
             </section>
             <article className="show-article-right">
+                <div className="creator-box">
+                    <div className="creator-main-info">
+                        <div className="creator-name">{this.props.project.author.name}</div>
+                        <div className="creator-loc">{this.props.project.author.location}</div>
+                    </div>
+                    <div className="creator-biography">{this.props.project.author.biography}</div>
+                </div>
                 <h3>Support</h3>
                 <div className="support-container">
-                    <label>Pledge without a reward</label>
+                    <ol>
+                        <li>
+                            <label>Pledge without a reward</label>
+                            <div className="checkout">
+                                <div className="moneyBox"></div>
+                                <div className="messageBox"></div>
+                                <button>Continue</button>
+                            </div>
+                        </li>
+                        {/* <li>
+                            <label>Pledge $20 or more</label>
+                            <div className="support-info">
+                            </div>
+                        </li> */}
+                    </ol>
                 </div>
                 <div className="support-container">
-                    <label>Pledge $20 or more</label>
                 </div>
             </article>
         </div> ) : this.props.project.navPage === "faq" ? (
@@ -70,6 +99,9 @@ class ProjectShow extends React.Component {
             return (Math.ceil(timeinmilisec / (1000 * 60 * 60 * 24)));
         }
         let daysDisplay = !daysLeft ? null : daysLeft > "0" ? 0 : daysLeft.toString();
+        let destroyBut = !projectCheck ? null : this.props.project.author.id === this.props.currentUser ? 
+        <button className="destroy-button" onClick={this.handleDelete}>Destroy this project</button>
+        : <div></div>;
         return (
             !projectCheck ? <div></div> : (
             <div>
@@ -120,6 +152,7 @@ class ProjectShow extends React.Component {
                                             </li>
                                     </ul>
                                     <button className="back-button">Back this project</button>
+                                    {destroyBut}
                                 </section>
                             </div>
                         </div>

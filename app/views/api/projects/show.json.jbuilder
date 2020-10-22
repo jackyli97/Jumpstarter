@@ -6,9 +6,12 @@ json.project do
     else
         json.photo_url ''
     end
+    json.author do
+        json.extract! @project.author, :id, :name, :biography, :location
+    end
 end
 
 
-json.author do
-    json.extract! @project.author, :name, :biography, :location
-end
+# json.author do
+#     json.extract! @project.author, :name, :biography, :location
+# end

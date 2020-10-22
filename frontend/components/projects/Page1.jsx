@@ -13,7 +13,8 @@ class Page1 extends React.Component {
             endDate: this.props.pageOneProps.endDate,
             photoFile: this.props.pageOneProps.photoFile,
             photoUrl: this.props.pageOneProps.photoUrl,
-            fundingGoal: 0
+            fundingGoal: 0,
+            photoValue: this.props.pageOneProps.photoValue
         }
         this.handleSelect = this.handleSelect.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)

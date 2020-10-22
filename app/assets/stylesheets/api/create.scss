@@ -1,6 +1,14 @@
-// .hidden-file-form {
-//     display: none;
-// }
+.create-image input {
+    display: none
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin-right: 7px;
+}
 
 .create-image img{
     margin-top: 14px;

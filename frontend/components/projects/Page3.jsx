@@ -14,6 +14,7 @@ class Page3 extends React.Component {
             location: this.props.project.location,
             photoFile: this.props.project.photoFile,
             photoUrl: this.props.project.photoUrl,
+            photoValue: this.props.project.photoValue,
             fundingGoal: this.props.project.fundingGoal,
             page: 3,
             category: this.props.project.category,

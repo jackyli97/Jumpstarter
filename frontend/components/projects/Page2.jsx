@@ -14,28 +14,14 @@ class Page2 extends React.Component {
             photoUrl: this.props.pageTwoProps.photoUrl,
             page: 2,
             category: this.props.pageTwoProps.category,
-            fundingGoal: this.props.pageTwoProps.fundingGoal
+            fundingGoal: this.props.pageTwoProps.fundingGoal,
+            photoValue: this.props.pageTwoProps.photoValue
         }
         this.handleInput = this.handleInput.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleFile = this.handleFile.bind(this)
         this.handleClick = this.handleClick.bind(this)
 
-    }
-
-    componentDidMount() {
-        debugger
-        if (this.state.photoFile !== null) {
-            const file = this.state.photoFile;
-            debugger
-            const fileReader = new FileReader();
-            if (file) {
-                debugger
-                fileReader.readAsDataURL(file)
-            } else {
-                this.setState({ photoUrl: "", photoFile: null })
-            }
-        }
     }
 
     handleClick(e) {
@@ -60,16 +46,15 @@ class Page2 extends React.Component {
         fileReader.onloadend = () => {
             this.setState({photoFile: file, photoUrl: fileReader.result})
         }
-        debugger
         if (file) {
             fileReader.readAsDataURL(file)
         }else {
             this.setState({ photoUrl: "", photoFile: null })
         }
-        debugger
         this.setState({
             photoFile: e.currentTarget.files[0],
-            photoUrl: e.currentTarget.files[0]
+            photoUrl: e.currentTarget.files[0],
+            photoValue: e.currentTarget.value.slice(12, (e.currentTarget.value).length)
         })
     }
 
@@ -98,10 +83,15 @@ class Page2 extends React.Component {
                             </label>
                             <label>Project Image
                             <div className="create-image">
-                                    <input type="file" className={this.state.photoUrl !== "" ? "hidden-file-form" : "file-form"} required={true} onChange={this.handleFile}/>
+                            <input type="file" className={this.state.photoUrl !== "" ? "hidden-file-form" : "file-form"} required={this.state.photoFile === null ? true : false} onChange={this.handleFile}/>
+                                <div className="custom-file">
+                                    <span className="custom-file-upload">Upload Image</span>
+                                    <span>{this.state.photoValue !== "" ? this.state.photoValue : "No image uploaded"}</span>
+                                </div>
                                 {preview}
                             </div>
                             </label>
+
                             <label>Campaign End Date 
                             <p>Set a time limit for your campaign. You won’t be able to change this after you launch. Campaigns that last 30 days or less are more likely to be successful.</p>
                             <div className="create-duration">
