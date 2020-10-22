@@ -99,9 +99,9 @@ class ProjectShow extends React.Component {
             return (Math.ceil(timeinmilisec / (1000 * 60 * 60 * 24)));
         }
         let daysDisplay = !daysLeft ? null : daysLeft > "0" ? 0 : daysLeft.toString();
-        let destroyBut = !projectCheck ? null : this.props.project.author.id === this.props.currentUser ? 
+        let productButton = !projectCheck ? null : this.props.project.author.id === this.props.currentUser ? 
         <button className="destroy-button" onClick={this.handleDelete}>Destroy this project</button>
-        : <div></div>;
+        : <button className="back-button">Back this project</button> ;
         return (
             !projectCheck ? <div></div> : (
             <div>
@@ -151,8 +151,7 @@ class ProjectShow extends React.Component {
                                                 </span>
                                             </li>
                                     </ul>
-                                    <button className="back-button">Back this project</button>
-                                    {destroyBut}
+                                    {productButton}
                                 </section>
                             </div>
                         </div>
