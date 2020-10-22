@@ -216,9 +216,17 @@
     text-decoration: underline;
 }
 
+
+
 .featured-project-props li:last-of-type span:hover {
     cursor: pointer;
     text-decoration: underline;
+}
+
+.featured-project-props li:last-of-type {
+    color: #282828;
+    font-size: 12px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .featured-section Link {

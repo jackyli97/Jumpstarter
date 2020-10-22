@@ -19,7 +19,7 @@ class Featured extends React.Component {
                         {this.props.project.description}
                     </li>
                     <li>By <span>
-                            {this.props.project.author_name}
+                            {this.props.project.author.name}
                         </span> 
                     </li>
                 </Link>
