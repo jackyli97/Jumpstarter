@@ -17,7 +17,8 @@ class Page4 extends React.Component {
             fundingGoal: this.props.project.fundingGoal,
             campaign: this.props.project.campaign,
             description: this.props.project.description,
-            risks_and_challenges: this.props.project.risks_and_challenges
+            risks_and_challenges: this.props.project.risks_and_challenges,
+            page: 4
         }
         this.handleInput = this.handleInput.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)

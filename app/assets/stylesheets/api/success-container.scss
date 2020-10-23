@@ -1,0 +1,21 @@
+.success-box {
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
+    margin: 18px 60px;
+    padding-top: 1.2rem !important;
+    padding-bottom: 1.2rem !important;
+    padding-right: 1.8rem !important;
+    padding-left: 1.8rem !important;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    align-items: baseline;
+    display: flex;
+    background-color: #FFFFFF;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.success-box-left span:first-of-type{
+    color: #037362;
+    font-weight: bold;
+    margin-right: 6px;
+}

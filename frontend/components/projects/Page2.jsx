@@ -40,7 +40,6 @@ class Page2 extends React.Component {
     }
 
     handleFile(e) {
-        debugger
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {

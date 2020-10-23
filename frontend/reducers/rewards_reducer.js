@@ -11,9 +11,11 @@ const rewardReducer = (oldState = defaultState, action) => {
     let newState = Object.assign({}, oldState);
     switch (action.type) {
         case RECEIVE_ALL_REWARDS:
-            return action.rewards.rewards
+            return action.reward.reward
         case RECEIVE_REWARD:
-            return action.reward.reward;
+            return action.reward.reward
+            // newState[action.reward.reward.id] = action.reward.reward
+            // return newState;
         case REMOVE_REWARD:
             delete newState[action.rewardId]
             return newState;

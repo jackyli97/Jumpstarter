@@ -25,8 +25,8 @@ export const fetchProject = (projectId) => {
 export const updateProject = project => {
     return $.ajax({
         url: `/api/projects/${project.id}`,
-        method: 'POST',
-        data: project
+        method: 'PATCH',
+        data: {project}
     })
 } 
 

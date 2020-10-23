@@ -8,7 +8,7 @@ class Api::RewardsController < ApplicationController
         if @reward.save
         render :show
         else
-        render json: @project.errors.full_messages, status: 401
+        render json: @reward.errors.full_messages, status: 401
         end
     end
 

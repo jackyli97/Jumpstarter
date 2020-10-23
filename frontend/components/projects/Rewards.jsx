@@ -18,9 +18,13 @@ class Rewards extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createBacking({backing_amount: this.state.amountPledged, backer_id: this.props.currentUser.id, reward_id: this.state.rewardId})
-            .then(action => {
-                return this.props.path.push(`/projects/${action.backing.project_id}`)
+        this.props.project.amount_pledged += (parseInt(this.state.amountPledged))
+        this.props.createBacking({backing_amount: this.state.amountPledged, backer_id: this.props.currentUser, project_id: this.props.project.id, reward_id: this.state.rewardId})
+            .then(() => {
+                this.props.updateProject(this.props.project)
+            }) 
+            .then(() => {
+                return this.props.path.push(`/projects/${this.props.project.id}`)
             }) 
     }
 

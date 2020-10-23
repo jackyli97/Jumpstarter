@@ -11,9 +11,11 @@ const backingReducer = (oldState = defaultState, action) => {
     let newState = Object.assign({}, oldState);
     switch (action.type) {
         case RECEIVE_ALL_BACKINGS:
-            return action.backings.backings
+            return action.backing.backing
         case RECEIVE_BACKING:
-            return action.backing.backing;
+            return action.backing.backing
+            // newState[action.backing.backing.id] = action.backing.backing
+            // return newState;
         case REMOVE_BACKING:
             delete newState[action.backingId]
             return newState;

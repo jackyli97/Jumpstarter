@@ -1,14 +1,20 @@
 import { connect } from 'react-redux';
 import ProjectShow from './ProjectShow';
-import { fetchProject, deleteProject } from '../../actions/project_actions';
+import { fetchProject, deleteProject, updateProject } from '../../actions/project_actions';
 import { createBacking } from '../../actions/backings_actions';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    let bool = false; 
+    let bool = false;
+    let backingAmt = null; 
+    debugger
     if (Object.values(state.entities.projects).length !== 0) {
+        debugger
         Object.keys((state.entities.projects[ownProps.match.params.projectId]).backings).forEach(backerId=>{
-            if (backerId === state.session.id) {
+            if (parseInt(backerId) === state.session.id) {
                 bool = true;
+                debugger
+                backingAmt = Object.values((state.entities.projects[ownProps.match.params.projectId]).backings)[state.session.id].backing_amount
             }
         })
     }
@@ -16,7 +22,8 @@ const mapStateToProps = (state, ownProps) => {
         project: state.entities.projects[ownProps.match.params.projectId],
         currentUser: state.session.id,
         path: ownProps.history,
-        currentUserBacked: bool
+        currentUserBacked: bool,
+        backingAmt: backingAmt
     };
 }
 
@@ -25,7 +32,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         fetchProject: () => dispatch(fetchProject(ownProps.match.params.projectId)),
         deleteProject: (projectId) => dispatch(deleteProject(projectId)),
         createBacking: (backing) => dispatch(createBacking(backing)),
+        updateProject: (project) => dispatch(updateProject(project))
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectShow)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProjectShow))

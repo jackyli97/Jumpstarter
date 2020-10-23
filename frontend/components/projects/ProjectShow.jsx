@@ -47,7 +47,19 @@ class ProjectShow extends React.Component {
     }
 
     render() {
-
+        debugger
+        let success = this.props.currentUserBacked ? (
+            <div className="success-container" id="success">
+                <div className="success-box">
+                    <div className="success-box-left">
+                        <span>You're a backer!</span>
+                        <span>You pledged ${this.props.backingAmt}.</span>
+                    </div>
+                    <div className="success-box-right">
+                    </div>
+                </div>
+            </div>
+        ) : <div></div>;
         let projectCheck;
         (this.props.project) ? projectCheck = this.props.project : projectCheck = null;
         let showBody = !projectCheck ? null : this.state.navPage === "campaign" ? (
@@ -75,7 +87,7 @@ class ProjectShow extends React.Component {
                 <h3>Support</h3>
                 <div className="support-container" id="support">  
                     <ol>
-                        <Rewards rewards={this.props.project.rewards} path={this.props.path} backers={this.props.project.num_backings} currentUser={this.props.currentUser} createBacking={this.props.createBacking}/>
+                        <Rewards rewards={this.props.project.rewards} project={this.props.project} updateProject={this.props.updateProject} path={this.props.path} backers={this.props.project.num_backings} currentUser={this.props.currentUser} createBacking={this.props.createBacking}/>
                     </ol>
                 </div>
                 <div className="support-container">
@@ -109,6 +121,7 @@ class ProjectShow extends React.Component {
         return (
             !projectCheck ? <div></div> : (
             <div>
+                {success}
                 <div className="show-container">
                     <div className="show-bg-grey">
                         <div className="show-main">
