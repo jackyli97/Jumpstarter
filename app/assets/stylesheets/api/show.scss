@@ -222,6 +222,7 @@
 }
 
 .support-container label{
+    font-size: 18px;
     background: none;
     position: relative;
     z-index: 1;
@@ -235,6 +236,7 @@
     color: white;
     cursor: white;
     border: #028858;
+    height: fit-content;
     width: 100%;
     font-size: 1.4rem;
     font-weight: normal;
@@ -251,10 +253,10 @@
 }
 
 .checkout button:hover {
-     background: 015738;
+    background: 015738;
     color: white;
     cursor: white;
-    border: 015738;
+    border: 015738; 
 }
 
 .checkout {
@@ -262,7 +264,7 @@
     margin: 0px 20px;
 }
 
-.moneyBox {
+.moneyBox input {
     -webkit-transition: all 300ms cubic-bezier(0.175, 0.885, 0.335, 1);
     -moz-transition: all 300ms cubic-bezier(0.175, 0.885, 0.335, 1);
     -ms-transition: all 300ms cubic-bezier(0.175, 0.885, 0.335, 1);
@@ -277,22 +279,21 @@
     border: 1px solid #DCDEDD;
     cursor: default;
     position: relative;
-    height: 42px;
+    width: 100%;
     line-height: 20px;
     box-sizing: border-box;
-    width: 100%;
     font-size: 16px;
     margin-bottom: 10px;
 }
 
 .messageBox {
-    // padding: 18px;
+    padding: 18px;
     // margin: 20px 20px;
     margin-bottom: 10px;
-
-    height: 42px;
+    font-size: 14px;
+    height: fit-content;
+    width: fit-content;
     position: relative;
-    width: 100%;
     box-sizing: border-box;
     display: flex;
     -webkit-box-pack: center;
@@ -312,12 +313,18 @@
     border: 0.1rem solid #DCDEDD;
 }
 
+.messageBox h3 {
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
 .creator-box, .support-container li{
     border-color: #E8E8E8;
     border: 0.1rem solid #DCDEDD;
     font-size: 14px;
     margin: 0px 0px 36px;
     padding: 20px 18px;
+    height: fit-content;
     width: 100%;
     position: relative;
     display: flex;

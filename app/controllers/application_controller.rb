@@ -18,7 +18,6 @@ class ApplicationController < ActionController::Base
   def current_user
     # Check for session_token
     return nil unless session[:session_token]
-
     # Return the user associated with the session_token (if token is valid)
     @current_user ||= User.find_by_session_token(session[:session_token])
   end

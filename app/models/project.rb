@@ -16,6 +16,7 @@
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #  risks_and_challenges :text             not null
+#  campaign             :text
 #
 class Project < ApplicationRecord
     validates :title, :description, :amount_pledged, :funding_goal, :end_date, :location, :risks_and_challenges, presence: true 
@@ -26,6 +27,16 @@ class Project < ApplicationRecord
         primary_key: :id,
         foreign_key: :author_id,
         class_name: :User
+
+    has_many :rewards,
+        primary_key: :id,
+        foreign_key: :project_id,
+        class_name: :Reward
+
+    has_many :backings,
+        primary_key: :id,
+        foreign_key: :project_id,
+        class_name: :Backing
 
     has_one_attached :photo
     # has_one_attached :large_photo
@@ -51,6 +62,16 @@ class Project < ApplicationRecord
             end
         end
         filtered_projs
+    end
+
+    def self.num_backings(projects)
+        if projects.is_a? Array
+            num_hash = Hash.new {|h,k| h[k] = 0}
+            projects.each {|project| num_hash[project.id] = (project.backings.length) + 200}
+        else
+            return projects.backings.length + 200
+        end
+        return num_hash
     end
 
 end

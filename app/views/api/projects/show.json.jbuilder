@@ -6,6 +6,21 @@ json.project do
     else
         json.photo_url ''
     end
+    json.num_backings @num_backings
+    json.backings do
+        @project.backings.each do |backing|
+            json.set! backing.backer_id do
+                json.extract! backing, :backing_amount
+            end
+        end
+    end
+    json.rewards do
+        @project.rewards.each do |reward|
+            json.set! reward.id do
+                json.extract! reward, :id, :title, :description, :estimated_delivery, :shipping_loc, :cost 
+            end
+        end
+    end
     json.author do
         json.extract! @project.author, :id, :name, :biography, :location
     end

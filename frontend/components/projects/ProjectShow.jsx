@@ -1,16 +1,26 @@
 import React from 'react';
+import Rewards from './Rewards';
 
 class ProjectShow extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {navPage: "campaign", article: "story"}
+        this.state = {navPage: "campaign", article: "story", amountPledged: 0}
         this.handleClick = this.handleClick.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
         this.handleClickArticle = this.handleClickArticle.bind(this)
+        this.handleInput = this.handleInput.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchProject(this.props.match.params.projectId)
+    }
+
+    handleClickScroll(e) {
+        e.preventDefault();
+        let element = document.getElementById('support')
+        element.scrollIntoView({
+            behavior: "smooth"
+        });
     }
 
     handleClick(page) {
@@ -21,7 +31,7 @@ class ProjectShow extends React.Component {
 
     handleClickArticle(article) {
         return (e) => {
-            this.setState({ navPage: page })
+            this.setState({ article })
         }
     }
 
@@ -32,7 +42,12 @@ class ProjectShow extends React.Component {
             }) 
     }
 
+    handleInput(e) {
+        this.setState({ fundingGoal: e.currentTarget.value })
+    }
+
     render() {
+
         let projectCheck;
         (this.props.project) ? projectCheck = this.props.project : projectCheck = null;
         let showBody = !projectCheck ? null : this.state.navPage === "campaign" ? (
@@ -58,21 +73,9 @@ class ProjectShow extends React.Component {
                     <div className="creator-biography">{this.props.project.author.biography}</div>
                 </div>
                 <h3>Support</h3>
-                <div className="support-container">
+                <div className="support-container" id="support">  
                     <ol>
-                        <li>
-                            <label>Pledge without a reward</label>
-                            <div className="checkout">
-                                <div className="moneyBox"></div>
-                                <div className="messageBox"></div>
-                                <button>Continue</button>
-                            </div>
-                        </li>
-                        {/* <li>
-                            <label>Pledge $20 or more</label>
-                            <div className="support-info">
-                            </div>
-                        </li> */}
+                        <Rewards rewards={this.props.project.rewards} path={this.props.path} backers={this.props.project.num_backings} currentUser={this.props.currentUser} createBacking={this.props.createBacking}/>
                     </ol>
                 </div>
                 <div className="support-container">
@@ -98,10 +101,11 @@ class ProjectShow extends React.Component {
             var timeinmilisec = date_to_reply.getTime() - today.getTime();
             return (Math.ceil(timeinmilisec / (1000 * 60 * 60 * 24)));
         }
-        let daysDisplay = !daysLeft ? null : daysLeft > "0" ? 0 : daysLeft.toString();
+        let daysDisplay = !daysLeft ? null : daysLeft < 0 ? 0 : daysLeft(this.props.project.end_date).toString();
         let productButton = !projectCheck ? null : this.props.project.author.id === this.props.currentUser ? 
         <button className="destroy-button" onClick={this.handleDelete}>Destroy this project</button>
-        : <button className="back-button">Back this project</button> ;
+
+        : <button onClick={this.handleClickScroll} className="back-button">Back this project</button> ;
         return (
             !projectCheck ? <div></div> : (
             <div>
@@ -134,7 +138,7 @@ class ProjectShow extends React.Component {
                                         </li>
                                         <li>
                                             <span>
-                                                142
+                                                {(this.props.project.num_backings)}
                                             </span>
                                             <br />
                                             <span>

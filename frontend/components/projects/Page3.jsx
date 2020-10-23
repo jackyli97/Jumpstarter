@@ -55,7 +55,8 @@ class Page3 extends React.Component {
                             <p className="main-p">Plan and manage your project's finances.</p>
                             <label>Funding Goal (USD)
                             <div className="create-funding">
-                                    <input type="number" value={this.state.fundingGoal} required={true} min="1" step="any" onKeyUp={this.handleInput} onInput={this.handleInput}/>
+                                <div className="create-dollar-sign">$</div>
+                                <input type="number" value={this.state.fundingGoal} required={true} min="0" step="any" onKeyUp={this.handleInput} onInput={this.handleInput}/>
                             </div>
                             </label>
                         </div>

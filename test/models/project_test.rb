@@ -16,6 +16,7 @@
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #  risks_and_challenges :text             not null
+#  campaign             :text
 #
 require 'test_helper'
 

@@ -4,10 +4,6 @@ import {
     REMOVE_PROJECT,
 } from '../actions/project_actions';
 
-/*
-Export a `PostsReducer` that takes in the old state and appropriately handles
-all post actions.
-*/
 const defaultState = {}
 
 const projectReducer = (oldState = defaultState, action) => {

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_15_211053) do
+ActiveRecord::Schema.define(version: 2020_10_23_001308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,19 @@ ActiveRecord::Schema.define(version: 2020_10_15_211053) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "backings", force: :cascade do |t|
+    t.integer "backing_amount", null: false
+    t.integer "backer_id", null: false
+    t.integer "reward_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "project_id", null: false
+    t.index ["backer_id"], name: "index_backings_on_backer_id"
+    t.index ["backing_amount"], name: "index_backings_on_backing_amount"
+    t.index ["project_id"], name: "index_backings_on_project_id"
+    t.index ["reward_id"], name: "index_backings_on_reward_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "title", null: false
     t.text "description", null: false
@@ -51,6 +64,18 @@ ActiveRecord::Schema.define(version: 2020_10_15_211053) do
     t.datetime "updated_at", null: false
     t.text "risks_and_challenges", null: false
     t.text "campaign"
+  end
+
+  create_table "rewards", force: :cascade do |t|
+    t.integer "project_id", null: false
+    t.string "title", null: false
+    t.text "description", null: false
+    t.date "estimated_delivery", null: false
+    t.string "shipping_loc", null: false
+    t.integer "cost", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_rewards_on_project_id"
   end
 
   create_table "users", force: :cascade do |t|

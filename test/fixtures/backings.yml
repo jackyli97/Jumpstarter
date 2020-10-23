@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: backings
+#
+#  id             :bigint           not null, primary key
+#  backing_amount :integer          not null
+#  backer_id      :integer          not null
+#  reward_id      :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  project_id     :integer          not null
+#
+
+one:
+  backing_amount: 1
+  backer_id: 1
+  reward_id: 1
+
+two:
+  backing_amount: 1
+  backer_id: 1
+  reward_id: 1

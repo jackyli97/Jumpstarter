@@ -129,7 +129,7 @@
     margin-bottom: 30px;
 }
 
-.create-title, .create-location, .create-funding{
+.create-title, .create-location{
     font-size: 14px;
     border: 0.1rem solid #DCDEDD;
     padding: 12px 18px;
@@ -140,6 +140,38 @@
     color: #656969;
     box-sizing:border-box;
     margin-top: 7px;
+}
+
+.create-funding {
+    display: flex;
+    flex-direction: row;
+}
+
+.create-funding .create-dollar-sign {
+    display: flex;
+    font-size: 12px;
+    color: #656969;
+    border: .1rem solid #E8E8E8;
+    border-right: none;
+    min-width: 72px;
+    text-align: center;
+    height: 42px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.create-funding input {
+    padding-left: 10px;
+    font-size: 14px;
+    border: 0.1rem solid #DCDEDD;
+    // padding: 12px 18px;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
+    position: relative;
+    min-width: 523px;
+    cursor: pointer;
+    color: #656969;
+    box-sizing:border-box;
 }
 
 .create-campaign textarea, .create-description textarea, .create-risks textarea{

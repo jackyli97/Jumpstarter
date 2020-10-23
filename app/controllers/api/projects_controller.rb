@@ -1,6 +1,6 @@
 class Api::ProjectsController < ApplicationController
 
-    before_action :logged_in?, only: [:create, :update]
+    before_action :logged_in?, only: [:create, :update, :destroy]
 
     def create
         @project = Project.new(project_params)
@@ -16,11 +16,13 @@ class Api::ProjectsController < ApplicationController
 
     def index
         @projects = Project.get_ten_projects
+        @num_backings = Project.num_backings(@projects)
         render :index
     end
 
     def show
         @project = Project.find(params[:id])
+        @num_backings = Project.num_backings(@project)
         render :show
     end
 

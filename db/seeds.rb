@@ -8,24 +8,28 @@
 
 User.destroy_all
 Project.destroy_all
+Backing.destroy_all
+Reward.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('projects')
+ActiveRecord::Base.connection.reset_pk_sequence!('backings')
+ActiveRecord::Base.connection.reset_pk_sequence!('rewards')
 
 
-user1 = User.create!(name: 'Demo User', email: 'demouser@aa.io', password: 'password', biography: "An entrepreneur from the Bay Area", location: "San Francisco, CA")
-user2 = User.create!(name: 'JD Buendia', email: 'buns@aa.io', password: 'password', biography: "cheetahs for life")
-user3 = User.create!(name: 'Tri Ta', email: 'mamba@aa.io', password: 'password', biography: "cheetahs for life")
-user4 = User.create!(name: 'Chris Lee', email: 'bookie@aa.io', password: 'password', biography: "cheetahs for life")
-user5 = User.create!(name: 'Jon Siu', email: '@uber.io', password: 'password', biography: "cheetahs for life")
-user6 = User.create!(name: 'Peter Min', email: '@catlover.io', password: 'password', biography: "cheetahs for life")
+user1 = User.create!(name: 'Demo User', email: 'demouser@aa.io', password: 'password', biography: "An innovative entrepreneur from the Bay Area", location: "San Francisco, CA")
+user2 = User.create!(name: 'JD Buendia', email: 'buns@aa.io', password: 'password', biography: "An innovative entrepreneur from the Bay Area")
+user3 = User.create!(name: 'Tri Ta', email: 'mamba@aa.io', password: 'password', biography: "An innovative entrepreneur from the Bay Area")
+user4 = User.create!(name: 'Chris Lee', email: 'bookie@aa.io', password: 'password', biography: "An innovative entrepreneur from the Bay Area")
+user5 = User.create!(name: 'Jon Siu', email: '@uber.io', password: 'password', biography: "An innovative entrepreneur from the Bay Area")
+user6 = User.create!(name: 'Peter Min', email: '@catlover.io', password: 'password', biography: "An innovative entrepreneur from the Bay Area")
 
 
 project1 = Project.create!(title: "Rap Academy", 
     campaign: "We develop best-in-class rappers. Join the most respected hip-hop school. Learn in-demand skills. Pay no tuition until you're signed.",
     faq: "Q: Who are some rappers that have attended your school? A: We have had many students who have gone on to have have success in the music industry,
     including, Lil Big, NFL Youngboy.", 
-    amount_pledged: 1000,
-    funding_goal: 200000, end_date: Date.new(2021,3,12), location: "San Francisco, CA", 
+    amount_pledged: 3223,
+    funding_goal: 200000, end_date: Date.new(2021,8,12), location: "San Francisco, CA", 
     risks_and_challenges: "Our school has been proven to help artists find success, but a challenge will be gaining and having the resources and
     infrastructure to hold them.",
     author_id: user2.id, category_id: 10,
@@ -33,23 +37,22 @@ project1 = Project.create!(title: "Rap Academy",
 )
 
 project2 = Project.create!(title: "The Flying Skateboard",
-        campaign: "Just like the one in Back to the Future! For the first time, every person will be able to fly anytime, anywhere. The world, your world, will change forever.",
-        risks_and_challenges: "Getting it approved for commercial use and passing states tests.",
+        campaign: "Introducing the world's first REAL hoverboard and hover developer kit. We are putting hover technology in YOUR hands..",
+        risks_and_challenges: "We have already built a working hoverboard, so the principle risk of not being able to deliver on our big promise is nil. However, there is the possibility we do not add as much functionality as we would like by the delivery date.",
         author_id: user3.id,
-        amount_pledged: 500,
-        funding_goal: 10000,
-        end_date: Date.new(2021,3,2)
+        amount_pledged: 30232,
+        funding_goal: 250000,
+        end_date: Date.new(2021,3,2),
         category_id: 13,
         location: "Austin, TX",
-        description: "Ever Imagined about flying skateboards?
-        We recently came up with a hoverboard that works with superconducters, liquid nitrogen and magnets."
+        description: "Fire. The wheel. Sliced bread. The microprocessor. Transformative inventions and discoveries that changed lives. And now, ideally, our Arx Pax Maglev technology. We've just found out that the Hendo Hoverboard is one of Time magazine's 25 Best Inventions of 2020. We're thrilled to share and happy you're a part of it. Thank you."
 )
 
 project3 = Project.create!(title: "NightPods",
         campaign: "Experience sleep like never before: Immersive, intelligent audio to help you improve and enjoy your sleep",
         risks_and_challenges: "As with any hardware product - particularly when mass manufacturing - there is always a risk of delays, with possible issues arising in any point of the design, manufacturing and certification processes.",
         author_id: user3.id,
-        amount_pledged: 35000,
+        amount_pledged: 25032,
         funding_goal: 26000,
         end_date: Date.new(2021,1,20),
         category_id: 13,
@@ -63,7 +66,7 @@ project4 = Project.create!(title: "The Smile Book",
         campaign: "Celebrate the smiley face’s impact on art, music, pop and alternative culture with The Sm;)e Book.",
         risks_and_challenges: "Spreading the word about this exciting book and raising funds for production, printing & transporting the books is being addressed through this campaign, emails, and our Instagram.",
         author_id: user5.id,
-        amount_pledged: 10700,
+        amount_pledged: 1323,
         funding_goal: 16000,
         end_date: Date.new(2021,5,20),
         category_id: 0,
@@ -75,7 +78,7 @@ project5 = Project.create!(title: "The Gravity Jacket",
         campaign: "The most versatile performance jacket for outdoor, travel, and every day.",
         risks_and_challenges: "Spreading the word about this exciting book and raising funds for production, printing & transporting the books is being addressed through this campaign, emails, and our Instagram.",
         author_id: user6.id,
-        amount_pledged: 324876,
+        amount_pledged: 12023,
         funding_goal: 10000,
         end_date: Date.new(2021,5,15),
         category_id: 2,
@@ -99,3 +102,20 @@ project4.photo.attach(io: file4, filename: "img_#{project4.id}.jpg")
 file5 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/gravityjacket.jpg")
 project5.photo.attach(io: file5, filename: "img_#{project5.id}.jpg")
 
+reward1 = Reward.create!(project_id: project1.id, title: "You are the BEST", description: "You will have a branded t-shirt with school logo", estimated_delivery: Date.new(2021,5,12), shipping_loc: "Anywhere in the world", cost: 50)
+reward2 = Reward.create!(project_id: project2.id, title: "FULLED-SIZED REPLICA HOVERBOARD", description: "Display it how you like - prominently on a wall, proudly on a stand, just don't throw it in the basement or attic!", estimated_delivery: Date.new(2021,6,12), shipping_loc: "Anywhere in the world", cost: 449)
+reward3 = Reward.create!(project_id: project3.id, title: "EarlyBird - NightPods", description: "Limited Earlybird discount. A pair of NightPods. RRP $279 (saving $130)", estimated_delivery: Date.new(2021,2,12), shipping_loc: "Only certain countries", cost: 115)
+reward4 = Reward.create!(project_id: project4.id, title: "Early Bird Special", description: "Get a special discounted price on our book celebrating the impact of the smiley face. You'll get the $20 book for $15 in advance of general release. Perfect for your night stand, coffee table, or book shelf.", estimated_delivery: Date.new(2021,6,1), shipping_loc: "Anywhere in the world", cost: 15)
+reward5 = Reward.create!(project_id: project5.id, title: "Launch Special | 1x Gravity Jacket", description: "Get ONE Gravity Jacket in the size and color of your choice (you'll choose later).", estimated_delivery: Date.new(2021,7,12), shipping_loc: "Anywhere in the world", cost: 149)
+
+backing1 = Backing.create!(backing_amount: 149, backer_id: user1.id, reward_id: reward5.id, project_id: project5.id)
+backing2 = Backing.create!(backing_amount: 449, backer_id: user6.id, reward_id: reward2.id, project_id: project2.id)
+backing3 = Backing.create!(backing_amount: 100, backer_id: user6.id, reward_id: reward4.id, project_id: project4.id)
+backing4 = Backing.create!(backing_amount: 20, backer_id: user5.id, reward_id: reward2.id, project_id: project1.id)
+backing5 = Backing.create!(backing_amount: 20, backer_id: user2.id, reward_id: reward4.id, project_id: project4.id)
+backing6 = Backing.create!(backing_amount: 25, backer_id: user2.id, project_id: project2.id)
+backing7 = Backing.create!(backing_amount: 50, backer_id: user1.id, project_id: project3.id)
+backing8 = Backing.create!(backing_amount: 449, backer_id: user4.id, reward_id: reward2.id, project_id: project2.id)
+backing9 = Backing.create!(backing_amount: 10, backer_id: user4.id, project_id: project3.id)
+backing10 = Backing.create!(backing_amount: 50, backer_id: user3.id, reward_id: reward1.id, project_id: project1.id)
+backing11 = Backing.create!(backing_amount: 149, backer_id: user1.id, reward_id: reward1.id, project_id: project5.id)
