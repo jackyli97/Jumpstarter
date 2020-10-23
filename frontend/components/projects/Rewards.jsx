@@ -36,7 +36,7 @@ class Rewards extends React.Component {
 
 
     render() {
-            let form = Object.values(this.props.rewards).map((reward, idx) => {
+            let form = !this.props.rewards ? <div></div> : Object.values(this.props.rewards).map((reward, idx) => {
                 return <li key={idx} className="reward-item-container">
                     {this.state.clicked ? null : <button id="select-reward" onClick={this.handleClick}> Select Reward</button>}
                     <div className="reward-label">

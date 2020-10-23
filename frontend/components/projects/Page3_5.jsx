@@ -21,7 +21,8 @@ class Page35 extends React.Component {
             amountPledged: 0,
             campaign: this.props.project.campaign,
             description: this.props.project.description,
-            risks_and_challenges: this.props.project.risks_and_challenges
+            risks_and_challenges: this.props.project.risks_and_challenges,
+            
         }
         this.handleInput = this.handleInput.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)

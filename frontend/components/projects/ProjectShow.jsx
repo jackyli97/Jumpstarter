@@ -47,7 +47,6 @@ class ProjectShow extends React.Component {
     }
 
     render() {
-        debugger
         let success = this.props.currentUserBacked ? (
             <div className="success-container" id="success">
                 <div className="success-box">

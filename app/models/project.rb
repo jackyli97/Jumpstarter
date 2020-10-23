@@ -67,9 +67,9 @@ class Project < ApplicationRecord
     def self.num_backings(projects)
         if projects.is_a? Array
             num_hash = Hash.new {|h,k| h[k] = 0}
-            projects.each {|project| num_hash[project.id] = (project.backings.length) + 200}
+            projects.each {|project| num_hash[project.id] = (project.backings.length)}
         else
-            return projects.backings.length + 200
+            return projects.backings.length
         end
         return num_hash
     end
