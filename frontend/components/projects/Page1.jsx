@@ -13,8 +13,17 @@ class Page1 extends React.Component {
             endDate: this.props.pageOneProps.endDate,
             photoFile: this.props.pageOneProps.photoFile,
             photoUrl: this.props.pageOneProps.photoUrl,
-            fundingGoal: 0,
-            photoValue: this.props.pageOneProps.photoValue
+            fundingGoal: this.props.pageOneProps.fundingGoal,
+            photoValue: this.props.pageOneProps.photoValue,
+            campaign: this.props.pageOneProps.campaign,
+            description: this.props.pageOneProps.description,
+            risks_and_challenges: this.props.pageOneProps.risks_and_challenges,
+            rewardTitle: this.props.pageOneProps.rewardTitle,
+            rewardDes: this.props.pageOneProps.rewardDes,
+            rewardEst: this.props.pageOneProps.rewardEst,
+            rewardShip: this.props.pageOneProps.rewardShip,
+            rewardCost: this.props.pageOneProps.rewardCost
+            
         }
         this.handleSelect = this.handleSelect.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -32,9 +41,9 @@ class Page1 extends React.Component {
 
     render() {
         let display = (this.state.page === 2) ? <Page2 pageTwoProps={this.state}
-        path={this.props.path} createProject={this.props.createProject} author={this.props.author} /> : (
+            path={this.props.path} createReward={this.props.createReward} createProject={this.props.createProject} author={this.props.author} /> : (
         <div className="create-section">
-            <nav className="create-nav">1 of 4</nav>
+            <nav className="create-nav">1 of 5</nav>
             <form className="basics-form" onSubmit={this.handleSubmit}>
                 <div className="basics-fields">
                     <div className="create-main">

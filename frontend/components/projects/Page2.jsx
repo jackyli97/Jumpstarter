@@ -15,7 +15,15 @@ class Page2 extends React.Component {
             page: 2,
             category: this.props.pageTwoProps.category,
             fundingGoal: this.props.pageTwoProps.fundingGoal,
-            photoValue: this.props.pageTwoProps.photoValue
+            photoValue: this.props.pageTwoProps.photoValue,
+            campaign: this.props.pageTwoProps.campaign,
+            description: this.props.pageTwoProps.description,
+            risks_and_challenges: this.props.pageTwoProps.risks_and_challenges,
+            rewardTitle: this.props.pageTwoProps.rewardTitle,
+            rewardDes: this.props.pageTwoProps.rewardDes,
+            rewardEst: this.props.pageTwoProps.rewardEst,
+            rewardShip: this.props.pageTwoProps.rewardShip,
+            rewardCost: this.props.pageTwoProps.rewardCost
         }
         this.handleInput = this.handleInput.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -61,9 +69,9 @@ class Page2 extends React.Component {
         const preview = this.state.photoUrl ? <img className="img-preview" src={this.state.photoUrl} /> : null;
         let display = (this.state.page === 1) ? <Page1 createProject={this.props.createProject} pageOneProps={this.state} path={this.props.path} author={this.props.authorId} />  
         : (this.state.page === 3) ? 
-        <Page3 project={this.state} path={this.props.path} author={this.props.author} createProject={this.props.createProject} /> : (
+                <Page3 project={this.state} createReward={this.props.createReward} path={this.props.path} author={this.props.author} createProject={this.props.createProject} /> : (
             <div>
-                <nav className="create-nav">2 of 4</nav>
+                <nav className="create-nav">2 of 5</nav>
                 <form className="basics-form" onSubmit={this.handleSubmit}>
                     <div className="basics-fields">
                         <div className="create-main">

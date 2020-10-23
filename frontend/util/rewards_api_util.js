@@ -2,9 +2,7 @@ export const createReward = reward => {
     return $.ajax({
         url: '/api/rewards',
         method: 'POST',
-        data: reward,
-        contentType: false,
-        processData: false
+        data: { reward }
     })
 }
 

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ProjectCreate from './ProjectCreate';
 import { createProject } from '../../actions/project_actions';
+import { createReward } from '../../actions/rewards_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -26,6 +27,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         createProject: (project) => dispatch(createProject(project)),
+        createReward: (reward) => dispatch(createReward(reward))
     };
 }
 

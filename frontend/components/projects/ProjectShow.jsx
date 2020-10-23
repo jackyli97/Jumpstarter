@@ -3,6 +3,7 @@ import Rewards from './Rewards';
 
 class ProjectShow extends React.Component {
     constructor(props) {
+        // debugger
         super(props)
         this.state = {navPage: "campaign", article: "story", amountPledged: 0}
         this.handleClick = this.handleClick.bind(this)
@@ -47,6 +48,7 @@ class ProjectShow extends React.Component {
     }
 
     render() {
+        // debugger
         let success = this.props.currentUserBacked ? (
             <div className="success-container" id="success">
                 <div className="success-box">

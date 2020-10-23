@@ -22,9 +22,9 @@ class Rewards extends React.Component {
         this.props.createBacking({backing_amount: this.state.amountPledged, backer_id: this.props.currentUser, project_id: this.props.project.id, reward_id: this.state.rewardId})
             .then(() => {
                 this.props.updateProject(this.props.project)
-            }) 
-            .then(() => {
-                return this.props.path.push(`/projects/${this.props.project.id}`)
+                .then((action) => {
+                    return this.props.path.push(`/projects/${action.project.project.id}`)
+                }) 
             }) 
     }
 

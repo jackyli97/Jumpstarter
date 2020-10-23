@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Page3 from './Page3'
+import Page3_5 from './Page3_5'
 
 class Page4 extends React.Component {
     constructor(props) {
@@ -18,7 +18,12 @@ class Page4 extends React.Component {
             campaign: this.props.project.campaign,
             description: this.props.project.description,
             risks_and_challenges: this.props.project.risks_and_challenges,
-            page: 4
+            page: 4,
+            rewardTitle: this.props.project.rewardTitle,
+            rewardDes: this.props.project.rewardDes,
+            rewardEst: this.props.project.rewardEst,
+            rewardShip: this.props.project.rewardShip,
+            rewardCost: this.props.project.rewardCost
         }
         this.handleInput = this.handleInput.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -26,7 +31,7 @@ class Page4 extends React.Component {
     }
 
     handleClick(e) {
-        this.setState({ page: 3 })
+        this.setState({ page: 35 })
     }
 
     handleSubmit(e) {
@@ -48,7 +53,11 @@ class Page4 extends React.Component {
         }
         this.props.createProject(formData)
             .then(action => {
-                return this.props.path.push(`/projects/${action.project.project.id}`)
+                this.props.createReward({title: this.state.rewardTitle, description: this.state.rewardDes,
+                estimated_delivery: this.state.rewardEst, shipping_loc: this.state.rewardShip, cost: this.state.rewardCost, project_id: action.project.project.id})
+                    .then(action => {
+                        return this.props.path.push(`/projects/${action.reward.reward.project_id}`)
+                    }) 
             }) 
     }
 
@@ -59,9 +68,9 @@ class Page4 extends React.Component {
     }
 
     render() {
-        let display = (this.state.page === 3) ? <Page3 project={this.state} path={this.props.path} author={this.props.author} createProject={this.props.createProject} /> :
+        let display = (this.state.page === 35) ? <Page3_5 project={this.state} path={this.props.path} author={this.props.author} createProject={this.props.createProject} /> :
             <div className="create-section">
-                <nav className="create-nav">4 of 4</nav>
+                <nav className="create-nav">5 of 5</nav>
                 <form className="basics-form" onSubmit={this.handleSubmit}>
                     <div className="basics-fields">
                         <div className="create-main">
@@ -72,26 +81,26 @@ class Page4 extends React.Component {
                             <p>Describe what you're raising funds to do, why you care about it, how you plan to make it happen, and who you are. Your description should tell backers everything they need to know.</p>
                             <div className="create-description">
                                     <textarea onChange={this.handleInput("description")} required={true}
-                                        placeholder="Write about your project like you're explaining it to a friend..." value={this.props.description}/>
+                                        placeholder="Write about your project like you're explaining it to a friend..." value={this.state.description}/>
                             </div>
                             </label>
                             <label>Risks and Challenges
                             <p>Be honest about the potential risks and challenges of this project and how you plan to overcome them to complete it.</p>
                             <div className="create-risks">
                                     <textarea onChange={this.handleInput("risks_and_challenges")} required={true}
-                                        placeholder="Common risks and challenges you may want to address include budgeting, timelines for rewards and the project itself, the size of your audience.... " value={this.props.risks_and_challenges}/>
+                                        placeholder="Common risks and challenges you may want to address include budgeting, timelines for rewards and the project itself, the size of your audience.... " value={this.state.risks_and_challenges}/>
                             </div>
                             </label>
                             <label>Campaign
                             <p>Have an attention grabbing slogan for your campaign that will be displayed alongside your title.</p>
                             <div className="create-campaign">
                                     <textarea onChange={this.handleInput("campaign")} required={true}
-                                        placeholder="A gorgeous system of phone cases, mounts, and accessories that brilliantly adapt your phone to every aspect of your life. " value={this.props.campaign}/>
+                                        placeholder="A gorgeous system of phone cases, mounts, and accessories that brilliantly adapt your phone to every aspect of your life. " value={this.state.campaign}/>
                             </div>
                             </label>
                         </div>
                         <div className="create-footer-section">
-                            <span onClick={this.handleClick}>Funding</span>
+                            <span onClick={this.handleClick}>Rewards</span>
                             <button>Continue</button>
                         </div>
                     </div>
