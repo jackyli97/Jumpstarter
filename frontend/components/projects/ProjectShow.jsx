@@ -14,6 +14,12 @@ class ProjectShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchProject(this.props.match.params.projectId)
+        let element = document.getElementById('success')
+        if (element) {
+            element.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
     }
 
     handleClickScroll(e) {
@@ -48,7 +54,7 @@ class ProjectShow extends React.Component {
     }
 
     render() {
-        // debugger
+        debugger
         let success = this.props.currentUserBacked ? (
             <div className="success-container" id="success">
                 <div className="success-box">

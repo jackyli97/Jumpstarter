@@ -1,9 +1,11 @@
 import React from 'react';
+import { merge } from 'lodash';
+
 
 class Rewards extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {clicked: false, amountPledged: null, rewardId: null}
+        this.state = merge({}, this.props.project, {clicked: false, amountPledged: null, rewardId: null})
         this.handleClick = this.handleClick.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleInput = this.handleInput.bind(this)
@@ -17,18 +19,20 @@ class Rewards extends React.Component {
     }
 
     handleSubmit(e) {
+        // debugger
         e.preventDefault();
-        this.props.project.amount_pledged += (parseInt(this.state.amountPledged))
+        this.state.amount_pledged += (parseInt(this.state.amountPledged))
         this.props.createBacking({backing_amount: this.state.amountPledged, backer_id: this.props.currentUser, project_id: this.props.project.id, reward_id: this.state.rewardId})
             .then(() => {
-                this.props.updateProject(this.props.project)
+                this.props.updateProject(this.state)
                 .then((action) => {
                     return this.props.path.push(`/projects/${action.project.project.id}`)
                 }) 
             }) 
     }
 
-    handleInput(rewardId=null) {
+    handleInput(rewardId) {
+        // debugger
         return e => {
             this.setState({amountPledged: e.currentTarget.value, rewardId})
         }
@@ -97,7 +101,7 @@ class Rewards extends React.Component {
                         <div className="pledge-value">
                             <div className="dollar-sign">$</div>
                             <input type="number" value={this.state.amountPledged}
-                                min="10" step="any" onKeyUp={this.handleInput()} onInput={this.handleInput()} />
+                                min="1" step="any" onKeyUp={this.handleInput} onInput={this.handleInput} />
                         </div>
                         <button id="submit-pledge" disabled={this.props.currentUser ? false : true}>Continue</button>
                         {this.props.currentUser ? null : <div id="pledge-error">Must Be Logged In To Make A Pledge</div>}

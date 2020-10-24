@@ -10,7 +10,7 @@ json.project do
     json.backings do
         @project.backings.each do |backing|
             json.set! backing.backer_id do
-                json.extract! backing, :id, :backing_amount
+                json.extract! backing, :id, :backing_amount, :backer_id
             end
         end
     end

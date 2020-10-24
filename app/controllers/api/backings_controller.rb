@@ -3,7 +3,9 @@ class Api::BackingsController < ApplicationController
 
     def create
         @backing = Backing.new(backing_params)
+        # debugger
         if @backing.save
+        # debugger
         render :show
         else
         render json: @backing.errors.full_messages, status: 401

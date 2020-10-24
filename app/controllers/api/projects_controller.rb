@@ -37,7 +37,9 @@ class Api::ProjectsController < ApplicationController
 
     def update
         @project = Project.find(params[:id])
+        # debugger
         if current_user.id && @project.update(project_params) 
+            # debugger
             render :show
         else
             render json: @project.errors.full_messages, status: 404
