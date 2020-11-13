@@ -86,12 +86,12 @@ const Footer = () => {
                             <section className="section-footer-social">
                                 <ul className="flex-social">
                                     <li>
-                                        <a href={linkedin} className="social-link">
+                                            <a href={linkedin} className="social-link" target="_blank">
                                             <img src={window.linkedin} alt="linkedin"/>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href={github} className="social-link">
+                                            <a href={github} className="social-link" target="_blank">
                                             <img src={window.github} alt="github" />
                                         </a>
                                     </li>

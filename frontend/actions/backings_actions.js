@@ -42,7 +42,6 @@ export const fetchBacking = (backingId) => {
 }
 
 export const createBacking = (backing) => {
-    // debugger
     return (dispatch) => {
         return BackingsApiUtil.createBacking(backing).then((backing) => {
             return dispatch(receiveBacking(backing))

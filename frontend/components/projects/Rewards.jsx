@@ -19,7 +19,6 @@ class Rewards extends React.Component {
     }
 
     handleSubmit(e) {
-        // debugger
         e.preventDefault();
         this.state.amount_pledged += (parseInt(this.state.amountPledged))
         this.props.createBacking({backing_amount: this.state.amountPledged, backer_id: this.props.currentUser, project_id: this.props.project.id, reward_id: this.state.rewardId})
@@ -32,7 +31,6 @@ class Rewards extends React.Component {
     }
 
     handleInput(rewardId) {
-        // debugger
         return e => {
             this.setState({amountPledged: e.currentTarget.value, rewardId})
         }

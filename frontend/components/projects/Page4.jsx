@@ -53,11 +53,16 @@ class Page4 extends React.Component {
         }
         this.props.createProject(formData)
             .then(action => {
-                this.props.createReward({title: this.state.rewardTitle, description: this.state.rewardDes,
-                estimated_delivery: this.state.rewardEst, shipping_loc: this.state.rewardShip, cost: this.state.rewardCost, project_id: action.project.project.id})
-                    .then(action => {
-                        return this.props.path.push(`/projects/${action.reward.reward.project_id}`)
-                    }) 
+                if (this.state.rewardTitle !== ""){
+                    this.props.createReward({title: this.state.rewardTitle, description: this.state.rewardDes,
+                    estimated_delivery: this.state.rewardEst, shipping_loc: this.state.rewardShip, cost: this.state.rewardCost, project_id: action.project.project.id})
+                        .then(action => {
+                            return this.props.path.push(`/projects/${action.reward.reward.project_id}`)
+                        }) 
+                }
+                else{
+                    return this.props.path.push(`/projects/${action.project.project.id}`)
+                }
             }) 
     }
 

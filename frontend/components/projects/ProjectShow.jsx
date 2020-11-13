@@ -3,7 +3,6 @@ import Rewards from './Rewards';
 
 class ProjectShow extends React.Component {
     constructor(props) {
-        // debugger
         super(props)
         this.state = {navPage: "campaign", article: "story", amountPledged: 0}
         this.handleClick = this.handleClick.bind(this)
@@ -54,7 +53,7 @@ class ProjectShow extends React.Component {
     }
 
     render() {
-        debugger
+        
         let success = this.props.currentUserBacked ? (
             <div className="success-container" id="success">
                 <div className="success-box">
@@ -120,7 +119,7 @@ class ProjectShow extends React.Component {
             var timeinmilisec = date_to_reply.getTime() - today.getTime();
             return (Math.ceil(timeinmilisec / (1000 * 60 * 60 * 24)));
         }
-        let daysDisplay = !daysLeft ? null : daysLeft < 0 ? 0 : daysLeft(this.props.project.end_date).toString();
+        let daysDisplay = !daysLeft ? null : daysLeft(this.props.project.end_date) < 0 ? "0" : daysLeft(this.props.project.end_date).toString();
         let productButton = !projectCheck ? null : this.props.project.author.id === this.props.currentUser ? 
         <button className="destroy-button" onClick={this.handleDelete}>Destroy this project</button>
 

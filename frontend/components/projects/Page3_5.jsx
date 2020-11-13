@@ -69,20 +69,21 @@ class Page3_5 extends React.Component {
                                 <h1>Add your rewards</h1>
                                 <br />
                                 <p className="main-p">Offer simple, meaningful ways to bring backers closer to your project and celebrate it coming to life.</p>
+                                <p className="rewards-message">Or if you're not ready yet, click 'Next', you can always add rewards later.</p>
                                 <label>Title
                             <       div className="create-title">
-                                        <input type="text" value={this.state.rewardTitle} required={true} onChange={this.handleInput("rewardTitle")} placeholder="Signed limited-edition" value={this.state.rewardTitle} />
+                                        <input type="text" value={this.state.rewardTitle} onChange={this.handleInput("rewardTitle")} placeholder="Signed limited-edition" value={this.state.rewardTitle} />
                                     </div>
                                 </label>
                                 <label>Amount
                                     <div className="create-funding">
                                         <div className="create-dollar-sign">USD$</div>
-                                        <input type="number" value={this.state.rewardCost} required={true} min="1" step="any" onKeyUp={this.handleKey} onInput={this.handleInput("rewardCost")} />
+                                        <input type="number" value={this.state.rewardCost} min="1" step="any" onKeyUp={this.handleKey} onInput={this.handleInput("rewardCost")} />
                                     </div>
                                 </label>
                                 <label>Description
                                     <div className="create-description">
-                                        <textarea onChange={this.handleInput("rewardDes")} required={true}
+                                        <textarea onChange={this.handleInput("rewardDes")} 
                                             placeholder="Get an early copy - hot off the presses!" value={this.state.rewardDes} />
                                     </div>
                                 </label>
@@ -90,12 +91,12 @@ class Page3_5 extends React.Component {
                                     <p>Give yourself plenty of time. It's better to deliver to backers ahead of schedule than behind.</p>
                                     <div className="create-duration">
                                         <input type="date"
-                                            value={this.state.rewardEst} required={true}
+                                            value={this.state.rewardEst} 
                                             min={this.state.rewardEst} max="2023-12-31" onChange={this.handleInput("rewardEst")} />
                                     </div>
                                 </label>
                                 <label>Shipping
-                                    <select required={true} className="shipping" onChange={this.handleSelect}>
+                                    <select className="shipping" onChange={this.handleSelect}>
                                         <option value="" selected={this.state.rewardShip ? false : true} disabled={true}>Select an option</option>
                                         <option value="No shipping" selected={this.state.rewardShip === "No shipping" ? true : false}>No shipping</option>
                                         <option value="Only certain countries" selected={this.state.rewardShip === "Only certain countries" ? true : false}>Only certain countries</option>

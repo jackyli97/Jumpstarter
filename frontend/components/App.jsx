@@ -2,6 +2,7 @@ import React from "react";
 import ProjectContainer from "./projects/ProjectContainer";
 import ProjectShowContainer from "./projects/ProjectShowContainer";
 import ProjectCreateContainer from "./projects/ProjectCreateContainer";
+import CategoryShow from "./categories/CategoryShow";
 import { Redirect, Route } from 'react-router-dom';
 import SignupFormContainer from './SignupFormContainer';
 import LoginFormContainer from './LoginFormContainer';
@@ -18,6 +19,7 @@ const App = () => {
                 <AuthRoute exact path="/login" component={LoginFormContainer} />
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
                 <ProtectedRoute exact path="/projects/start" component={ProjectCreateContainer} />
+                <Route exact path="/projects/explore/:categoryName" component={CategoryShow} />
                 <Route exact path="/projects/:projectId" component={ProjectShowContainer} />
                 <Route exact path="/" component={ProjectContainer} />
                 <Redirect to="/"> </Redirect>

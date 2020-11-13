@@ -6,7 +6,7 @@ class Api::ProjectsController < ApplicationController
         @project = Project.new(project_params)
         date = Project.convert_to_date(project_params[:end_date])
         @project.end_date = date
-        
+        @project.category_id = @project.category_id.to_i
         if @project.save
         render :show
         else
@@ -37,9 +37,7 @@ class Api::ProjectsController < ApplicationController
 
     def update
         @project = Project.find(params[:id])
-        # debugger
         if current_user.id && @project.update(project_params) 
-            # debugger
             render :show
         else
             render json: @project.errors.full_messages, status: 404
