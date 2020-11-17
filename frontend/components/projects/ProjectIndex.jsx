@@ -7,13 +7,20 @@ class ProjectIndex extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = { currentPage: 1 }
+        this.state = { currentPage: 1, type: this.props.type }
         this.changeProject = this.changeProject.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchProjects();
         this.props.fetchCategories();
+    }
+
+    componentDidUpdate(prevProps) {
+        if ((this.props.match.params.categoryName) && prevProps.match.params.categoryName !== this.props.match.params.categoryName) {
+            this.props.fetchProjects();
+            this.props.fetchCategories();
+        }
     }
 
     changeProject(e) {
@@ -58,6 +65,10 @@ class ProjectIndex extends React.Component {
             return <ProjectIndexItem key={idx} project={project} />
         })
         let project = this.props.project
+        let categoryWelcome = this.state.type === "main" ? <div></div> :
+        <div className="category-welcome">
+            <h1>{this.props.location.state}</h1>
+        </div>
         return (
             <div className="home-page">
                 <div className="categories-nav-container">
@@ -65,6 +76,7 @@ class ProjectIndex extends React.Component {
                         <Categories categories={categories} projects={this.props.projects} project={this.props.project} array={this.props.array} fetchProjects={this.props.fetchProjects} fetchCategories={this.props.fetchCategories}/>
                     </ul>
                 </div>
+                {categoryWelcome}
                 <div className="home-body-container">
                     <div className="home-flex">
                         <section className="featured-container">

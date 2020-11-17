@@ -15,7 +15,8 @@ const mapStateToProps = (state) => {
         projects: projects,
         project: projects[idx],
         array: array,
-        categories: state.entities.categories
+        categories: state.entities.categories,
+        type: "main"
     };
 }
 

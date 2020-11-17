@@ -14,6 +14,29 @@ class Api::ProjectsController < ApplicationController
         end
     end
 
+    def category
+        if params[:id] == "arts"
+           @projects = Project.where(:category_id => [0,3,11,14]) 
+        elsif params[:id] == "comics"
+           @projects = Project.where(category_id: 1) 
+        elsif params[:id] == "design"
+           @projects = Project.where(:category_id => [4,13]) 
+        elsif params[:id] == "film"
+           @projects = Project.where(category_id: 6) 
+        elsif params[:id] == "food"
+           @projects = Project.where(:category_id => [2,7,5]) 
+        elsif params[:id] == "games"
+           @projects = Project.where(category_id: 8) 
+        elsif params[:id] == "music"
+           @projects = Project.where(category_id: 10) 
+        elsif params[:id] == "publishing"
+           @projects = Project.where(:category_id => [12,9]) 
+        end
+        @projects = @projects.to_a
+        @num_backings = Project.num_backings(@projects)
+        render :index
+    end
+
     def index
         @projects = Project.get_ten_projects
         @num_backings = Project.num_backings(@projects)

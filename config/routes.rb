@@ -10,5 +10,12 @@ Rails.application.routes.draw do
     resources :rewards
     resources :backings
     resources :categories
+    
+    resources :projects do
+        member do
+            get :category
+          end
+      end
+
   end
 end

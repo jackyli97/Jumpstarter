@@ -1,5 +1,4 @@
 import React from 'react';
-import CategoryShow from './CategoryShow'
 import { Link } from 'react-router-dom';
 
 class Categories extends React.Component {
@@ -20,44 +19,42 @@ class Categories extends React.Component {
         return(
             <>
                 <li>
-                    <Link to={{pathname:"/projects/explore/arts", state: {arts:arts,
-                    categories: this.props.categories, projects: this.props.projects, project: this.props.project, array: this.props.array, fetchProjects: this.props.fetchProjects, fetchCategories: this.props.fetchCategories
-                    }}}>
+                    <Link to={{pathname:"/projects/explore/arts", state: "Arts" }}>
                         Arts
                     </Link>
                 </li>
                 <li>
-                    <Link to={{ pathname: "/projects/explore/comics", state: { comicsAndIllustration } }}>
+                    <Link to={{ pathname: "/projects/explore/comics", state: "Comics & Illustration" }}>
                         Comics & Illustration
                     </Link>
                 </li>
                 <li>
-                    <Link to={{ pathname: "/projects/explore/design", state: { designAndTech } }}>
+                    <Link to={{ pathname: "/projects/explore/design", state: "Design & Tech"}}>
                         Design & Tech
                     </Link>
                 </li>
                 <li>
-                    <Link to={{ pathname: "/projects/explore/film", state: { film } }}>
+                    <Link to={{ pathname: "/projects/explore/film", state: "Film"  }}>
                         Film
                     </Link>
                 </li>
                 <li>
-                    <Link to={{ pathname: "/projects/explore/food", state: { foodAndCraft } }}>
+                    <Link to={{ pathname: "/projects/explore/food", state: "Food & Craft"  }}>
                         Food & Craft
                     </Link>
                 </li>
                 <li>
-                    <Link to={{ pathname: "/projects/explore/games", state: { games } }}>
+                    <Link to={{ pathname: "/projects/explore/games", state:  "Games"  }}>
                         Games
                     </Link>
                 </li>
                 <li>
-                    <Link to={{ pathname: "/projects/explore/music", state: { music } }}>
+                    <Link to={{ pathname: "/projects/explore/music", state:  "Music"  }}>
                         Music
                     </Link>
                 </li>
                 <li>
-                    <Link to={{ pathname: "/projects/explore/publishing", state: { publishing } }}>
+                    <Link to={{ pathname: "/projects/explore/publishing", state:  "Publishing"  }}>
                         Publishing
                     </Link>
                 </li>

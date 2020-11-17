@@ -64,3 +64,11 @@ export const deleteProject = (projectId) => {
         })
     }
 }
+
+export const fetchProjectsByCategory = (category) => {
+    return (dispatch) => {
+        return ProjectApiUtil.fetchProjectsByCategory(category).then((projects) => {
+            dispatch(receiveAllProjects(projects))
+        })
+    }
+}
