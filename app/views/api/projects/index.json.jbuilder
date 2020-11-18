@@ -2,7 +2,7 @@
 json.projects do 
     @projects.each do |project|
         json.set! project.id do
-            json.extract! project, :id, :title, :description, :amount_pledged, :funding_goal
+            json.extract! project, :id, :title, :description, :amount_pledged, :funding_goal, :location, :end_date
             json.author do
                 json.extract! project.author, :id, :name, :biography, :location
             end
@@ -13,6 +13,9 @@ json.projects do
                         json.extract! backing, :backing_amount
                     end
                 end
+            end
+            json.category do
+                json.extract! project.category, :id, :category_name
             end
             json.rewards do
                 project.rewards.each do |reward|

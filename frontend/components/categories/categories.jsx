@@ -19,42 +19,42 @@ class Categories extends React.Component {
         return(
             <>
                 <li>
-                    <Link to={{pathname:"/projects/explore/arts", state: "Arts" }}>
+                    <Link to={{pathname:"/projects/category/arts", state: "Arts" }}>
                         Arts
                     </Link>
                 </li>
                 <li>
-                    <Link to={{ pathname: "/projects/explore/comics", state: "Comics & Illustration" }}>
+                    <Link to={{ pathname: "/projects/category/comics", state: "Comics & Illustration" }}>
                         Comics & Illustration
                     </Link>
                 </li>
                 <li>
-                    <Link to={{ pathname: "/projects/explore/design", state: "Design & Tech"}}>
+                    <Link to={{ pathname: "/projects/category/design", state: "Design & Tech"}}>
                         Design & Tech
                     </Link>
                 </li>
                 <li>
-                    <Link to={{ pathname: "/projects/explore/film", state: "Film"  }}>
+                    <Link to={{ pathname: "/projects/category/film", state: "Film"  }}>
                         Film
                     </Link>
                 </li>
                 <li>
-                    <Link to={{ pathname: "/projects/explore/food", state: "Food & Craft"  }}>
+                    <Link to={{ pathname: "/projects/category/food", state: "Food & Craft"  }}>
                         Food & Craft
                     </Link>
                 </li>
                 <li>
-                    <Link to={{ pathname: "/projects/explore/games", state:  "Games"  }}>
+                    <Link to={{ pathname: "/projects/category/games", state:  "Games"  }}>
                         Games
                     </Link>
                 </li>
                 <li>
-                    <Link to={{ pathname: "/projects/explore/music", state:  "Music"  }}>
+                    <Link to={{ pathname: "/projects/category/music", state:  "Music"  }}>
                         Music
                     </Link>
                 </li>
                 <li>
-                    <Link to={{ pathname: "/projects/explore/publishing", state:  "Publishing"  }}>
+                    <Link to={{ pathname: "/projects/category/publishing", state:  "Publishing"  }}>
                         Publishing
                     </Link>
                 </li>

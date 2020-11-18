@@ -8,7 +8,7 @@ const Nav = ({projectPath}) => {
         <div>
             <nav className="top-nav">
                 <section className="nav-container">
-                    <Link to={'/'}>Explore</Link>
+                    <Link to={'/projects/explore'}>Explore</Link>
                     {!projectPath ? 
                     <Link to={'/projects/start'}>Start a Project</Link> : <div></div>
                     }

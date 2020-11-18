@@ -28,6 +28,11 @@ class Project < ApplicationRecord
         foreign_key: :author_id,
         class_name: :User
 
+    belongs_to :category,
+        primary_key: :id,
+        foreign_key: :category_id,
+        class_name: :Category
+
     has_many :rewards,
         primary_key: :id,
         foreign_key: :project_id,

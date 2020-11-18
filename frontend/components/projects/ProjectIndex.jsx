@@ -62,7 +62,7 @@ class ProjectIndex extends React.Component {
         let categories = this.props.categories;
         let filtered = projects.slice(((this.state.currentPage)-1)*3, (this.state.currentPage*3))
         let result = filtered.map((project, idx) => {
-            return <ProjectIndexItem key={idx} project={project} />
+            return <ProjectIndexItem key={idx} project={project} type={"main"} />
         })
         let project = this.props.project
         let categoryWelcome = this.state.type === "main" ? <div></div> :

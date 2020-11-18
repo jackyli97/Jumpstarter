@@ -16,21 +16,25 @@ class Api::ProjectsController < ApplicationController
 
     def category
         if params[:id] == "arts"
-           @projects = Project.where(:category_id => [0,3,11,14]) 
+           @projects = Project.where(:category_id => [1,4,12,15]) 
         elsif params[:id] == "comics"
-           @projects = Project.where(category_id: 1) 
+           @projects = Project.where(category_id: 2) 
         elsif params[:id] == "design"
-           @projects = Project.where(:category_id => [4,13]) 
+           @projects = Project.where(:category_id => [5,14]) 
         elsif params[:id] == "film"
            @projects = Project.where(category_id: 6) 
         elsif params[:id] == "food"
-           @projects = Project.where(:category_id => [2,7,5]) 
+           @projects = Project.where(:category_id => [3,8,6]) 
         elsif params[:id] == "games"
-           @projects = Project.where(category_id: 8) 
+           @projects = Project.where(category_id: 9) 
         elsif params[:id] == "music"
-           @projects = Project.where(category_id: 10) 
+           @projects = Project.where(category_id: 11) 
         elsif params[:id] == "publishing"
-           @projects = Project.where(:category_id => [12,9]) 
+           @projects = Project.where(:category_id => [13,10])
+        elsif params[:id] == "everything"
+            @projects = Project.all
+        else
+           @projects = Project.where(category_id: params[:id])
         end
         @projects = @projects.to_a
         @num_backings = Project.num_backings(@projects)

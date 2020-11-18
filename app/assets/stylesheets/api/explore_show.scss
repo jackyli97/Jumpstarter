@@ -1,0 +1,133 @@
+.explore-container {
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    color: #282828;
+}
+
+.explore-project-image {
+    object-fit: cover;
+    min-width: 100%;
+    padding: 0px;
+    margin: 0px;
+    height: 225px;
+}
+
+.explore-body {
+    padding: 36px 60px 60px 60px;
+    margin: 0px 37px;
+}
+
+.explore-show-title{
+    font-size: 18px;
+    // margin-top: 24px;
+}
+
+.explore-show-description{
+    font-size: 14px;
+}
+
+.explore-body h3 {
+    margin-left: 18px;
+    font-size: 22px;
+    font-weight: 400;
+    padding: 12px 0px 0px;
+}
+.explore-body h3 span:last-of-type {
+    color: #037362;
+}
+
+
+
+.author-and-location{
+    margin-bottom: 18px;
+    margin-top: 18px;
+    color: #696969;
+}
+
+.author-and-location span:last-of-type{
+    margin-left: 24px;
+}
+
+.explore-project-items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.explore-project-items ul {
+    max-width: 30%;
+    margin: 18px 18px;
+    border: 1px solid #DCDEDD;
+    height: 600px;
+}
+
+.explore-project-items li:not(:first-child){
+    margin: 0px 18px;
+}
+
+.explore-project-items li:nth-of-type(2), .explore-project-items li:nth-of-type(3),
+.explore-project-items li:nth-of-type(4),.explore-project-items li:nth-of-type(5),
+.explore-project-items li:nth-of-type(6), .explore-project-items li:nth-of-type(9)
+{
+    margin-top: 20px;
+}
+
+.explore-project-items li:nth-of-type(6){
+    color: #037362;
+}
+
+.explore-project-items li:nth-of-type(3), .explore-project-items li:nth-of-type(7),.explore-project-items li:nth-of-type(8){
+    color: #696969;
+}
+
+
+.explore-progress-bar-container {
+    // padding: 0px;
+    // align-self: center;
+    // padding-right: -18px;
+    width: 90%;
+    background-color: #E8E8E8;
+}
+
+.explore-progress-bar {
+    height: 0.6rem;
+    background-color: #009E74;
+}
+
+@media (max-width: 596px) {
+    .explore-project-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .explore-body{
+        padding: 36px 24px 60px 24px;
+        margin: 0px;
+    }
+    .explore-project-items ul{
+        max-width: 100%;
+        margin: 6px 6px;
+
+    };
+}
+@media (max-width: 913px) and (min-width: 597px) {
+    .explore-project-items ul{
+        max-width: 25%;
+    }
+    .explore-body{
+        padding: 36px 24px 60px 24px;
+        margin: 0px;
+    }
+    .explore-project-items ul{
+        margin: 6px 6px;
+        
+    };
+}
+
+
+@media (max-width: 1271px) {
+    .explore-project-items ul{
+        min-width: 45%;
+    }
+}
