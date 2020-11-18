@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import Nav from './Nav'
 
 const mapStateToProps = (state, ownProps) => ({
-    projectPath: ownProps.location.pathname === "/projects/start"
+    projectPath: ownProps.location.pathname === "/projects/start",
+    explore: ownProps.location.pathname === "/projects/explore"
 });
 
 

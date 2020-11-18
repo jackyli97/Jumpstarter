@@ -1,0 +1,59 @@
+.explore-collections, .explore-sections, .explore-categories{
+    position: relative;
+    z-index: 2;
+    padding: 48px 60px 0px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    transition-delay: 100ms;
+
+}
+
+.explore-close{
+    align-self: center;
+     color: #037362;
+     font-size: medium;
+     font-weight: light;
+}
+
+
+.explore-container h1{
+    color: #037362;
+    font-weight: 400;
+    padding: 12px 0px;
+    font-size: 16px;
+}
+
+.explore-section-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 0.1rem solid #E8E8E8;
+    background: white;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+}
+
+.explore-section-header:hover{
+    cursor: pointer;
+}
+
+.explore-container ul{
+    margin-bottom: 24px;
+    padding-top: 18px;
+    z-index: -1;
+}
+
+.explore-container a{
+    color: #282828;
+    font-size: 34px;
+    font-weight: 400;
+}
+
+.explore-container li{
+    margin-bottom: 12px;
+}
+
+.explore-container a:hover{
+    color: #037362;
+    cursor: pointer;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 class Explore extends React.Component {
 
@@ -12,15 +13,23 @@ class Explore extends React.Component {
         return (
             <div className="explore-container">
                 <div className="explore-collections">
-                    <h4>Collections</h4>
+                    <div className="explore-section-header">
+                        <h1>Collections</h1>
+                        <FontAwesomeIcon icon={faTimes} onClick={()=>this.props.history.push('/')} className="explore-close"/>
+                    </div>
                     <ul>
-                        <Link to={{ pathname: "/projects/explore/everything", state: "Everything" }}>
-                        <li>Everything</li>
-                        </Link>
+                        <li>
+                            <Link to={{ pathname: "/projects/explore/everything", state: "Everything" }}>
+                                Everything
+                            </Link>
+                        </li>
                     </ul>
                 </div>
                 <div className="explore-sections">
-                    <h4>Sections</h4>
+                    <div className="explore-section-header">
+                        <h1>Sections</h1>
+                        <FontAwesomeIcon icon={faTimes} onClick={() => this.props.history.push('/')} className="explore-close"/>
+                    </div>
                     <ul>
                         <li>
                             <Link to={{ pathname: "/projects/category/arts", state: "Arts" }}>
@@ -65,7 +74,10 @@ class Explore extends React.Component {
                     </ul>
                 </div>
                 <div className="explore-categories">
-                    <h4>Categories</h4>
+                    <div className="explore-section-header">
+                        <h1>Categories</h1>
+                        <FontAwesomeIcon icon={faTimes} onClick={() => this.props.history.push('/')} className="explore-close"/>
+                    </div>
                     <ul>
                         <li>
                             <Link to={{ pathname: "/projects/explore/1", state: "Art" }}>

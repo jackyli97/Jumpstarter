@@ -3,9 +3,10 @@ import { withRouter } from 'react-router-dom';
 import GreetingContainer from "../GreetingContainer";
 import { Link } from 'react-router-dom'
 
-const Nav = ({projectPath}) => {
+const Nav = ({projectPath, explore}) => {
     return(
         <div>
+            {explore ? <div></div> : 
             <nav className="top-nav">
                 <section className="nav-container">
                     <Link to={'/projects/explore'}>Explore</Link>
@@ -22,6 +23,7 @@ const Nav = ({projectPath}) => {
                     <GreetingContainer />
                 </section>
             </nav>
+            }
         </div>
     )
 }
