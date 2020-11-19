@@ -13,7 +13,7 @@ class Featured extends React.Component {
                 <Link to={`/projects/${this.props.project.id}`}>
                     <img src={this.props.project.photo_url} className="project-img"/>
                     <li>
-                        <a href="#">{this.props.project.title}</a>
+                        {this.props.project.title}
                     </li>
                     <li>
                         {this.props.project.description}

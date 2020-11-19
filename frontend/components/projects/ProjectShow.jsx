@@ -4,11 +4,13 @@ import Rewards from './Rewards';
 class ProjectShow extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {navPage: "campaign", article: "story", amountPledged: 0}
+        this.state = {navPage: "campaign", article: "story", amountPledged: 0,
+        backingAmt: this.props.backingAmt}
         this.handleClick = this.handleClick.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
         this.handleClickArticle = this.handleClickArticle.bind(this)
         this.handleInput = this.handleInput.bind(this)
+        this.successMessage = this.successMessage.bind(this)
     }
 
     componentDidMount() {
@@ -19,6 +21,7 @@ class ProjectShow extends React.Component {
                 behavior: "smooth"
             });
         }
+        window.scrollTo(0, 0);
     }
 
     handleClickScroll(e) {
@@ -52,6 +55,11 @@ class ProjectShow extends React.Component {
         this.setState({ fundingGoal: e.currentTarget.value })
     }
 
+    successMessage(amt){
+        this.setState({backingAmt: amt});
+        window.scrollTo(0, 0);
+    }
+
     render() {
         
         let success = this.props.currentUserBacked ? (
@@ -59,7 +67,7 @@ class ProjectShow extends React.Component {
                 <div className="success-box">
                     <div className="success-box-left">
                         <span>You're a backer!</span>
-                        <span>You pledged ${this.props.backingAmt}.</span>
+                        <span>You pledged ${this.state.backingAmt}.</span>
                     </div>
                     <div className="success-box-right">
                     </div>
@@ -93,7 +101,7 @@ class ProjectShow extends React.Component {
                 <h3>Support</h3>
                 <div className="support-container" id="support">  
                     <ol>
-                        <Rewards rewards={this.props.project.rewards} project={this.props.project} updateProject={this.props.updateProject} path={this.props.path} backers={this.props.project.num_backings} currentUser={this.props.currentUser} createBacking={this.props.createBacking}/>
+                        <Rewards rewards={this.props.project.rewards} successMessage={this.successMessage} project={this.props.project} updateProject={this.props.updateProject} path={this.props.path} backers={this.props.project.num_backings} currentUser={this.props.currentUser} currentUserBacked={this.props.currentUserBacked} createBacking={this.props.createBacking}/>
                     </ol>
                 </div>
                 <div className="support-container">

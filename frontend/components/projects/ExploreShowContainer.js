@@ -5,7 +5,7 @@ import { fetchProjectsByCategory } from '../../actions/project_actions';
 const mapStateToProps = (state, ownProps) => {
     const projects = Object.values(state.entities.projects)
     return {
-        projects: projects
+        projects: projects,
     };
 }
 

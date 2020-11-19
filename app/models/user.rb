@@ -28,6 +28,10 @@ attr_reader :password
       primary_key: :id,
       foreign_key: :backer_id,
       class_name: :Backing
+
+  has_many :projects_backed,
+      through: :backings,
+      source: :project
   # This allows us to run methods before running validations
   # In this case, we need to have a session_token when a user is first created
   after_initialize :ensure_session_token

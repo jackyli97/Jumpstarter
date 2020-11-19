@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import ProjectShow from './ProjectShow';
+// import {receiveCurrentUser} from '../../actions/session_actions'
 import { fetchProject, deleteProject, updateProject } from '../../actions/project_actions';
 import { createBacking } from '../../actions/backings_actions';
 import { withRouter } from 'react-router-dom';
@@ -7,20 +8,14 @@ import { withRouter } from 'react-router-dom';
 const mapStateToProps = (state, ownProps) => {
     let bool = false;
     let backingAmt = null; 
-    if (Object.values(state.entities.projects).length !== 0) {
-        if ((state.entities.projects)[ownProps.match.params.projectId]) {
-            if (Object.keys((state.entities.projects)[ownProps.match.params.projectId]).includes("backings")) {
-                Object.keys((state.entities.projects)[ownProps.match.params.projectId].backings).forEach(backerId => {
-                    if (parseInt(backerId) === state.session.id) {
-                        bool = true;
-                        if (Object.values((state.entities.projects[ownProps.match.params.projectId]).backings)) {
-                            backingAmt = ((state.entities.projects[ownProps.match.params.projectId]).backings)[state.session.id].backing_amount
-                        }
-                    }
-                })
+    if (state.session.id) {
+        Object.values(state.entities.users[state.session.id].backings).forEach(backing=>{
+            if (backing.project.id === parseInt(ownProps.match.params.projectId)){
+                bool = true
+                backingAmt = backing.backing_amount
             }
-        }
-        }
+        })
+    }
     return {
         project: state.entities.projects[ownProps.match.params.projectId],
         currentUser: state.session.id,
@@ -35,7 +30,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         fetchProject: () => dispatch(fetchProject(ownProps.match.params.projectId)),
         deleteProject: (projectId) => dispatch(deleteProject(projectId)),
         createBacking: (backing) => dispatch(createBacking(backing)),
-        updateProject: (project) => dispatch(updateProject(project))
+        updateProject: (project) => dispatch(updateProject(project)),
+        // fetchUser: (currentUser) => dispatch(receiveCurrentUser(currentUser)),
     };
 }
 
