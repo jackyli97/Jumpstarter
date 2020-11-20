@@ -31,7 +31,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         deleteProject: (projectId) => dispatch(deleteProject(projectId)),
         createBacking: (backing) => dispatch(createBacking(backing)),
         updateProject: (project) => dispatch(updateProject(project)),
-        // fetchUser: (currentUser) => dispatch(receiveCurrentUser(currentUser)),
     };
 }
 

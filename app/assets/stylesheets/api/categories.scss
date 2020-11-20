@@ -57,3 +57,34 @@
     height: 60px;
     border-bottom: 0.1rem solid #E8E8E8;
 }
+
+.explore-categories-section a{
+    color: #4c6cf8;
+    font-size: 14px;
+    margin-right: 24px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.category-welcome{
+    margin: 60px 0px 36px;
+    padding-left: 60px;
+    font-family: "Cooper Light", Georgia, Times, "Times New Roman", serif;
+}
+
+.cateory-welcome h1{
+    font-size: 28px;
+    color: #282828;
+}
+
+.cateory-welcome p{
+    margin: 0px 0px 18px;
+    padding: 12px 0px 0px;
+    color: #656969;
+    font-size: 16px;
+}
+
+.explore-categories-section{
+    display: flex;
+    flex-direction: row;
+}
+

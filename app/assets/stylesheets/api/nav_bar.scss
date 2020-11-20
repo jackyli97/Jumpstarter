@@ -59,3 +59,24 @@
     color: #009E74;
     cursor: pointer;
 }
+
+
+.search-bar{
+    font-size: 18px;
+    border: 0.1rem solid #DCDEDD;
+    padding: 1px 2px 1px 42px;
+    background: white;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
+    position: relative;
+    min-width: 605px;
+    box-sizing:border-box;
+    z-index: 104;
+    font-weight: 500;
+    width: 100vw;
+    height: 58px;
+}
+
+.search-section:hover{
+    color: #009E74;
+    cursor: pointer;
+}

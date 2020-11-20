@@ -53,6 +53,7 @@
     padding: 0;
     height: 351px;
     width: 624px;
+    object-fit: cover;
 }
 
 @media (max-width: 800px) {
@@ -65,6 +66,7 @@
     }
     .project-img {
         min-width: 100vw;
+        object-fit: cover;
     }
 
 }
@@ -123,7 +125,8 @@
 .recommended-project-img {
     height: 90px;
     width: 176px;
-    padding-right: 24px
+    padding-right: 24px;
+    object-fit: cover;
 }
 
 .project-preview-items ul {

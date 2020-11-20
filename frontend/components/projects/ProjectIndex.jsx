@@ -2,12 +2,23 @@ import React from 'react';
 import ProjectIndexItem from './ProjectIndexItem';
 import Featured from './Featured'
 import Categories from '../categories/categories'
+import { Link } from 'react-router-dom'
+
 
 class ProjectIndex extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = { currentPage: 1, type: this.props.type }
+        this.state = { currentPage: 1, type: this.props.type,
+        arts: this.props.arts,
+        comics: this.props.comics,
+        design: this.props.design,
+        film: this.props.film,
+        food: this.props.film,
+        games: this.props.games,
+        music: this.props.music,
+        publishing: this.props.publishing
+        }
         this.changeProject = this.changeProject.bind(this)
     }
 
@@ -58,16 +69,33 @@ class ProjectIndex extends React.Component {
     }
 
     render() {
+        if (this.props.projects.length === 0 || (this.props.categories).length === 0){
+            return null;
+        }
         let projects = this.props.projects;
         let categories = this.props.categories;
+
         let filtered = projects.slice(((this.state.currentPage)-1)*3, (this.state.currentPage*3))
         let result = filtered.map((project, idx) => {
             return <ProjectIndexItem key={idx} project={project} type={"main"} />
         })
-        let project = this.props.project
+        let project = this.props.project;
+        let categoryName = this.props.match.params.categoryName;
+        
         let categoryWelcome = this.state.type === "main" ? <div></div> :
         <div className="category-welcome">
-            <h1>{this.props.location.state}</h1>
+                <h1>{categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</h1>
+                <p>{this.state[categoryName][0]}</p>
+                <div className="explore-categories-section">
+                    {this.state[categoryName][1].map((cat, idx)=> {
+                        return (
+                            <Link to={`/projects/explore/${cat[1]}`} key={idx}>
+                            Explore {cat[0]}
+                            </Link>
+                        )
+                    }
+                    )}
+                </div>
         </div>
         return (
             <div className="home-page">

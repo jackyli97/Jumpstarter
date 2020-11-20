@@ -10,8 +10,8 @@ import { Switch } from 'react-router-dom'
 import Footer from './Footer'
 import NavContainer from "./projects/NavContainer";
 import CategoryShow from "./categories/CategoryShowContainer"
-import Explore from "./projects/Explore"
 import ExploreShow from "./projects/ExploreShowContainer"
+import Explore from "./projects/Explore"
 
 const App = () => {
     return (
@@ -24,6 +24,7 @@ const App = () => {
                 <Route exact path="/projects/discover" component={Explore} />
                 <Route exact path="/projects/explore/:exploreId" component={ExploreShow} />
                 <Route exact path="/projects/category/:categoryName" component={CategoryShow} />
+                <Route exact path="/projects/search/:query" component={ExploreShow} />
                 <Route exact path="/projects/:projectId" component={ProjectShowContainer} />
                 <Route exact path="/" component={ProjectContainer} />
                 <Redirect to="/"> </Redirect>

@@ -85,7 +85,7 @@ class Page2 extends React.Component {
                             </label>
                             <label>Project Location
                             <div className="create-location">
-                                    <input type="text" value="this.state.location" required={true} onChange={this.handleInput("location")} placeholder="Start typing your location..." value={this.state.location}/>
+                                    <input type="text" value={this.state.location} required={true} onChange={this.handleInput("location")} placeholder="Start typing your location..." value={this.state.location}/>
                             </div>
                             </label>
                             <label>Project Image

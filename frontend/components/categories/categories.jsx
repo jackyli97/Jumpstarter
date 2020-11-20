@@ -8,14 +8,6 @@ class Categories extends React.Component {
     }
 
     render(){
-        let arts = [this.props.categories[1], this.props.categories[4], this.props.categories[12], this.props.categories[15]];
-        let comicsAndIllustration = [this.props.categories[2]];
-        let designAndTech = [this.props.categories[5], this.props.categories[14]];
-        let film = [this.props.categories[7]];
-        let foodAndCraft = [this.props.categories[3], this.props.categories[8], this.props.categories[6]]
-        let games = [this.props.categories[9]];
-        let music = [this.props.categories[11]];
-        let publishing = [this.props.categories[13], this.props.categories[10]];
         return(
             <>
                 <li>

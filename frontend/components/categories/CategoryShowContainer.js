@@ -5,7 +5,7 @@ import { fetchCategories } from '../../actions/categories_actions';
 
 const mapStateToProps = (state, ownProps) => {
     const projects = Object.values(state.entities.projects)
-
+    const categories = Object.values(state.entities.categories)
     let rand = Math.random()
     let idx = Math.floor(rand * (projects.length))
     let array = [];
@@ -16,8 +16,47 @@ const mapStateToProps = (state, ownProps) => {
         projects: projects,
         project: projects[idx],
         array: array,
-        categories: state.entities.categories,
-        type: "category"
+        categories: categories,
+        type: "category",
+        arts: [
+            "Discover the artists and organizations using Kickstarter to realize ambitious projects in visual art and performance.",
+            [["Art", 0], ["Dance", 3], ["Photography", 11], ["Theater", 14]]
+        ],
+        comics:
+        [
+            "Explore fantastical worlds and original characters from Kickstarter’s community of comics creators and illustrators."
+            , [["Comics",1]]
+        ],
+        design:
+        [
+            "From fine design to innovative tech, discover projects from creators working to build a more beautiful future.",
+            [["Design",4], ["Technology", 13]]
+        ],
+        film:
+        [
+            "Join forces with the intrepid filmmakers and festival creators changing the way stories get told on screen."
+            , [["Film",6]]
+        ],
+        food:
+        [
+            "See how artisans and entrepreneurs are using Kickstarter to break new ground in food, fashion, and crafts.",
+            [["Crafts",2], ["Food",7], ["Fashion",5]]
+        ],
+        games:
+        [
+            "From tabletop adventures to beloved revivals, discover the projects forging the future of gameplay.",
+            [["Games",8]]
+        ],
+        music:
+        [
+            "Discover new albums, performances, and independent venues from creators using Kickstarter to shape the future of sound.",
+            [["Music"],10]
+        ],
+        publishing:
+        [
+            "Explore how writers and publishers are using Kickstarter to bring new literature, periodicals, podcasts, and more to life.",
+            [["Publishing",12], ["Journalism"],9]
+        ]
     };
 }
 
