@@ -59,6 +59,14 @@ class ProjectIndex extends React.Component {
         }
         else{
             currentPage = li.id;
+            if (parseInt(currentPage) === 1){
+                document.getElementById('left-arrow').parentElement.className="grey-arrow";
+                document.getElementById('right-arrow').parentElement.className = "blue-arrow";
+            }
+            else if (parseInt(currentPage) === array.length){
+                document.getElementById('right-arrow').parentElement.className = "grey-arrow";
+                document.getElementById('left-arrow').parentElement.className = "blue-arrow";
+            }
         }
 
         for (let i=0; i<array.length;i++) {
@@ -118,7 +126,7 @@ class ProjectIndex extends React.Component {
                             <ul onClick={this.changeProject} className="recommendations-numbering" id="pages">
                                 <li className={
                                     this.state.currentPage === 1 ? "grey-arrow" : "blue-arrow"
-                                }>
+                                } disabled={this.state.currentPage === 1}>
                                     <i className="fas fa-chevron-left" id="left-arrow"></i>
                                 </li>
                                 {
@@ -133,7 +141,7 @@ class ProjectIndex extends React.Component {
                                 }
                                 <li className={
                                     this.state.currentPage === this.props.array.length  ? "grey-arrow" : "blue-arrow"
-                                }>
+                                } disabled={this.state.currentPage === this.props.array.length}>
                                     <i className="fas fa-chevron-right" id="right-arrow"></i>
                                 </li>
                             </ul>
