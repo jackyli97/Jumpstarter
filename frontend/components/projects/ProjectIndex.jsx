@@ -84,7 +84,7 @@ class ProjectIndex extends React.Component {
         
         let categoryWelcome = this.state.type === "main" ? <div></div> :
         <div className="category-welcome">
-                <h1>{categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</h1>
+                <h3>{categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</h3>
                 <p>{this.state[categoryName][0]}</p>
                 <div className="explore-categories-section">
                     {this.state[categoryName][1].map((cat, idx)=> {
