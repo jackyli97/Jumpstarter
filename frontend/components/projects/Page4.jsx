@@ -1,6 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Page3_5 from './Page3_5'
+import FadeIn from "react-fade-in";
+import Lottie from "react-lottie";
+import * as legoData from "../../util/legoloading.json";
 
 class Page4 extends React.Component {
     constructor(props) {
@@ -23,7 +25,8 @@ class Page4 extends React.Component {
             rewardDes: this.props.project.rewardDes,
             rewardEst: this.props.project.rewardEst,
             rewardShip: this.props.project.rewardShip,
-            rewardCost: this.props.project.rewardCost
+            rewardCost: this.props.project.rewardCost,
+            loading: false
         }
         this.handleInput = this.handleInput.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -36,6 +39,8 @@ class Page4 extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        window.scrollTo(0, 0);
+        this.setState({ loading: true })
         const formData = new FormData();
         formData.append('project[title]', this.state.title);
         formData.append('project[end_date]', this.state.endDate);
@@ -73,8 +78,16 @@ class Page4 extends React.Component {
     }
 
     render() {
+        let defaultOptions = {
+            loop: true,
+            autoplay: true,
+            animationData: legoData.default,
+            rendererSettings: {
+                preserveAspectRatio: "xMidYMid slice"
+            }
+        };
         let display = (this.state.page === 35) ? <Page3_5 project={this.state} path={this.props.path} author={this.props.author} createProject={this.props.createProject} /> :
-            <div className="create-section">
+            !this.state.loading ? <div className="create-section">
                 <nav className="create-nav">5 of 5</nav>
                 <form className="basics-form" onSubmit={this.handleSubmit}>
                     <div className="basics-fields">
@@ -110,9 +123,17 @@ class Page4 extends React.Component {
                         </div>
                     </div>
                 </form>
-            </div>
+            </div> :
+            (
+                <FadeIn>
+                    <div className="d-flex justify-content-center align-items-center">
+                        <h1 className="creating-project">Creating Project</h1>
+                        <Lottie options={defaultOptions} height={120} width={120} />
+                    </div>
+                </FadeIn>
+            )
         return (
-            <div className="create-section">
+            <div>
                 {display}
             </div>
         )

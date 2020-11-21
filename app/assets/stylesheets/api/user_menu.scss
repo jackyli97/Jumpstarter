@@ -1,0 +1,51 @@
+.user-menu{
+    color: #282828;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.user-menu h1{
+    margin-bottom: 18px;
+    font-size: 48px;
+}
+
+.user-menu p{
+    margin-bottom: 42px;
+    font-size: 22px;
+}
+
+.user-menu h2{
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.user-menu li{
+    background: #FFFFFF;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.project-card{
+    height: 110px;
+    width: 100%;
+    border-radius: 0.2rem !important;
+    border: 0.1rem solid #DCDEDD;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.user-menu-project-img{
+    object-fit: cover;
+    width: 79px;
+    height: 65px;
+}
+
+.project-cell{
+    padding: 12px 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+

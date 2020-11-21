@@ -1,0 +1,125 @@
+.top-nav{
+    position: relative;
+}
+
+#profile-container{
+    position: absolute;
+    top: 60px;
+    right: 0rem;
+    margin-right: 1.8rem;
+    margin-top: 0.6rem;
+    background: #FFFFFF;
+    padding-top: 18px;
+    padding-left: 12px;
+    width: 700px;
+    height: 500px;
+    border: 0.1rem solid #9B9E9E;
+    color: #282828;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    z-index: 120;
+    box-shadow: -1px 4px 6px 1px rgba(0, 0, 0, 0.09);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile-body{
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-logout{
+    margin: 24px 36px 0px 36px;
+    padding: 24px 0px;
+    border-top: 0.1rem solid #DCDEDD;
+}
+
+.menu-open{
+    visibility: visible;
+}
+
+.menu-close{
+    visibility: hidden;
+}
+
+.hello-user, .backed-projects, .created-projects{
+    padding: 24px 36px 0px;
+    display: flex;
+    flex-direction: column;
+}
+.hello-user span, .backed-projects span, .created-projects span{
+    align-self: center;
+}
+
+.backed-projects li, .created-projects li{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 12px;
+}
+.backed-projects ul, .created-projects ul{
+    padding: 36px 0px 18px;
+}
+
+.profile-headers{
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.8rem;
+}
+
+.profile-project-img{
+    object-fit: cover;
+    width: 50px;
+    height: 30px;
+    margin-right: 12px;
+}
+
+.profile-new-project-container{
+    display: flex;
+    flex-direction: row;
+    border-top: 0.1rem solid #DCDEDD;
+    animation: none;
+    padding: 18px 0px;
+    width: 100%;
+    transition: all 0.3s;
+    background-image: linear-gradient(to right, transparent 51%, #003BFF 49%);
+    background-position: 0 0;
+    background-size: 200%;
+    color: #4C6CF8;
+}
+
+.profile-new-project-container div{
+    width: 50px;
+    height: 30px;
+    margin-right: 12px;
+    transition: background-color 0.01s;
+}
+
+.profile-view-all-container{
+    padding: 24px 0px 36px;
+}
+
+.add-icon{
+    width: 2rem;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    margin: auto;
+}
+
+.profile-new-project-container:hover{
+    fill: #FFFFFF;
+    color: #FFFFFF;
+    transform: translateY(-1px);
+    background-image: linear-gradient(to right, transparent 50%, #003BFF 50%);
+    background-position: -100% 0;
+}
+
+
+
+.profile-logout:hover, .backed-projects li:hover, .created-projects li:hover, .profile-view-all-container:hover{
+    color: #009E74;
+    cursor: pointer; 
+    text-decoration: underline;
+}

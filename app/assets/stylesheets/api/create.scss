@@ -17,9 +17,13 @@
 }
 
 .create-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 0 60px;
-    max-width: 1366px;
-    margin: 0 auto;
+    // max-width: 1366px;
+    // // margin: 0 auto;
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -31,7 +35,8 @@
 }
 
 .create-nav {
-    padding: 0 18px;
+    align-self: flex-start;
+    // padding: 0 18px;
     margin-top: 6px;
     font-size: 14px;
     color: #282828;
@@ -143,7 +148,7 @@
 
 .create-title, .create-location, .create-image, .create-duration,
 .create-funding, .create-description, .create-risks, .create-campaign {
-    padding: 12px;
+    padding: 12px 0px;
     margin-bottom: 30px;
 }
 
@@ -180,10 +185,10 @@
 
 
 .create-funding input {
-    padding-left: 10px;
+    // padding-left: 10px;
     font-size: 14px;
     border: 0.1rem solid #DCDEDD;
-    // padding: 12px 18px;
+    padding: 12px 18px;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
     position: relative;
     min-width: 523px;
@@ -252,6 +257,12 @@
     font-size: 14px;
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+.create-project{
+    color: #282828;
+    margin-top: 24px;
+}
+
 
 
 

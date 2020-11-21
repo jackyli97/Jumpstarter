@@ -8,7 +8,7 @@ import { withRouter } from 'react-router-dom';
 const mapStateToProps = (state, ownProps) => {
     let bool = false;
     let backingAmt = null; 
-    if (state.session.id) {
+    if (state.session.id && state.entities.users[state.session.id].backings) {
         Object.values(state.entities.users[state.session.id].backings).forEach(backing=>{
             if (backing.project.id === parseInt(ownProps.match.params.projectId)){
                 bool = true

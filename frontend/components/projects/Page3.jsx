@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Page3_5 from './Page3_5'
 import Page2 from './Page2'
 

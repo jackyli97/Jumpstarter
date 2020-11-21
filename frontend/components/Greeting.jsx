@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
-import ExploreShow from './projects/ExploreShow'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import Profile from './Profile'
 
 class Greeting extends React.Component{
     constructor(props) {
@@ -10,10 +11,16 @@ class Greeting extends React.Component{
         this.state = ({clicked: false, searched: false, noResults: false, query: ""})
         this.handleChange = this.handleChange.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
+        this.openSubMenu = this.openSubMenu.bind(this);
+        this.closeSubMenu = this.closeSubMenu.bind(this);
+    }
+    
+    openSubMenu(){
+        document.getElementById('profile-container').className= "menu-open";
     }
 
-    componentDidMount() {
-        this.props.fetchProjects();
+    closeSubMenu(){
+        document.getElementById('profile-container').className = "menu-close";
     }
 
     handleSearch(e) {
@@ -39,8 +46,10 @@ class Greeting extends React.Component{
             <div className="right-nav">
                 <span className="search-section" onClick={()=>this.setState({clicked: true})}>Search  <FontAwesomeIcon icon={faSearch} className="search-icon" />
                 </span>
-                <h1>Welcome {this.props.currentUser.name}!</h1>
-                <button onClick={this.props.logout}>Logout</button>
+                <button className="profile-button" onMouseOver={this.openSubMenu}>
+                    <img src={window.avatar} alt="avatar" className="avatar-img"/>
+                    <Profile logout={this.props.logout} usersProjects={this.props.usersProjects} closeSubMenu={this.closeSubMenu} username={this.props.username} backedProjects={this.props.backedProjects}/>
+                </button>
             </div>
         ) : (
             <div className="greeting-links">
@@ -56,12 +65,13 @@ class Greeting extends React.Component{
             placeholder="Search for projects or categories"
             value={this.state.query}
             onChange={this.handleChange("query")} />
+            <FontAwesomeIcon icon={faTimes} onClick={() => this.setState({ clicked: false })} className="search-close" />
         </div>
         return (
             <div>
-                <h1>
+                <div>
                     {this.state.clicked ? searchBar : content}
-                </h1>
+                </div>
 
             </div>
         )
