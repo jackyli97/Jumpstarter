@@ -12,6 +12,7 @@ const mapStateToProps = (state, ownProps) => {
     }
     return {
         usersProjects: usersProjects,
+        userId: state.session.id,
     }
 };
 

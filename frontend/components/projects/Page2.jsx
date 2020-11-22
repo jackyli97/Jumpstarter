@@ -7,11 +7,14 @@ class Page2 extends React.Component {
         super(props)
         this.state = {
             title: this.props.pageTwoProps.title,
+            type: this.props.pageTwoProps.type,
+            projId: this.props.pageTwoProps.projId,
             location: this.props.pageTwoProps.location,
             endDate: this.props.pageTwoProps.endDate,
             photoFile: this.props.pageTwoProps.photoFile,
             photoUrl: this.props.pageTwoProps.photoUrl,
             page: 2,
+            existingPhoto: this.props.pageTwoProps.existingPhoto,
             category: this.props.pageTwoProps.category,
             fundingGoal: this.props.pageTwoProps.fundingGoal,
             photoValue: this.props.pageTwoProps.photoValue,
@@ -47,6 +50,7 @@ class Page2 extends React.Component {
     }
 
     handleFile(e) {
+        this.setState({existingPhoto: null})
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
@@ -65,10 +69,10 @@ class Page2 extends React.Component {
     }
 
     render() {
-        const preview = this.state.photoUrl ? <img className="img-preview" src={this.state.photoUrl} /> : null;
-        let display = (this.state.page === 1) ? <Page1 createProject={this.props.createProject} pageOneProps={this.state} path={this.props.path} author={this.props.authorId} />  
+        const preview = this.state.existingPhoto ? <img className = "img-preview" src = { this.state.existingPhoto } /> : this.state.photoUrl ? <img className="img-preview" src={this.state.photoUrl} /> : null;
+        let display = (this.state.page === 1) ? <Page1 projectAction={this.props.projectAction} pageOneProps={this.state} path={this.props.path} author={this.props.authorId} />  
         : (this.state.page === 3) ? 
-                <Page3 project={this.state} createReward={this.props.createReward} path={this.props.path} author={this.props.author} createProject={this.props.createProject} /> : (
+                <Page3 project={this.state} createReward={this.props.createReward} path={this.props.path} author={this.props.author} projectAction={this.props.projectAction} /> : (
             <div>
                 <nav className="create-nav">2 of 5</nav>
                 <form className="basics-form" onSubmit={this.handleSubmit}>
@@ -89,10 +93,10 @@ class Page2 extends React.Component {
                             </label>
                             <label>Project Image
                             <div className="create-image">
-                            <input type="file" className={this.state.photoUrl !== "" ? "hidden-file-form" : "file-form"} required={this.state.photoFile === null ? true : false} onChange={this.handleFile}/>
+                            <input type="file" className={this.state.existingPhoto ? "" : this.state.photoUrl !== "" ? "hidden-file-form" : "file-form"} required={this.state.existingPhoto ? false : this.state.photoFile === null ? true : false} onChange={this.handleFile}/>
                                 <div className="custom-file">
                                     <span className="custom-file-upload">Upload Image</span>
-                                    <span>{this.state.photoValue !== "" ? this.state.photoValue : "No image uploaded"}</span>
+                                    <span>{this.state.existingPhoto ? "Current Image" : this.state.photoValue !== "" ? this.state.photoValue : "No image uploaded"}</span>
                                 </div>
                                 {preview}
                             </div>

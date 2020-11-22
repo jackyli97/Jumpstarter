@@ -22,9 +22,18 @@ export const fetchProject = (projectId) => {
     })
 } 
 
-export const updateProject = project => {
+export const updateProject = (project,id) => {
     return $.ajax({
-        url: `/api/projects/${project.id}`,
+        url: `/api/projects/${id}`,
+        method: 'PATCH',
+        data: project,
+        contentType: false,
+        processData: false
+    })
+} 
+export const updateProjectNoImg = (project,id) => {
+    return $.ajax({
+        url: `/api/projects/${id}`,
         method: 'PATCH',
         data: {project}
     })

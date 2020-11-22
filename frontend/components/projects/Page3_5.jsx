@@ -7,12 +7,15 @@ class Page3_5 extends React.Component {
         super(props)
         this.state = {
             title: this.props.project.title,
+            type: this.props.project.type,
+            projId: this.props.project.projId,
             endDate: this.props.project.endDate,
             location: this.props.project.location,
             photoFile: this.props.project.photoFile,
             photoUrl: this.props.project.photoUrl,
             photoValue: this.props.project.photoValue,
             fundingGoal: this.props.project.fundingGoal,
+            existingPhoto: this.props.project.existingPhoto,
             page: 35,
             category: this.props.project.category,
             amountPledged: 0,
@@ -57,9 +60,8 @@ class Page3_5 extends React.Component {
     }
 
     render() {
-
-        let display = (this.state.page === 3) ? <Page3 project={this.state} path={this.props.path} createProject={this.props.createProject} author={this.props.author} /> :
-            (this.state.page === 4) ? <Page4 project={this.state} createReward={this.props.createReward} author={this.props.author} path={this.props.path} createProject={this.props.createProject} /> : (
+        let display = (this.state.page === 3) ? <Page3 project={this.state} path={this.props.path} projectAction={this.props.projectAction} author={this.props.author} /> :
+            (this.state.page === 4) ? <Page4 project={this.state} createReward={this.props.createReward} author={this.props.author} path={this.props.path} projectAction={this.props.projectAction} /> : (
                 <div className="create-section">
                     <nav className="create-nav">4 of 5</nav>
                     <form className="basics-form" onSubmit={this.handleSubmit}>

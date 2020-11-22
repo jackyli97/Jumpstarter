@@ -56,7 +56,7 @@
     margin-top: 18px;
     padding: 0;
     height: 351px;
-    width: 624px;
+    width: 100%;
     object-fit: cover;
 }
 
@@ -173,6 +173,11 @@
     list-style-type: none;
 }
 
+.featured-progress-bar {
+    height: 0.6rem;
+    background-color: #009E74;
+}
+
 // .featured-section {
 //     max-width: 624px;
 // }
@@ -248,7 +253,7 @@
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.featured-project-props li:nth-of-type(2) {
+.project-description {
     padding-bottom: 24px;
     font-family: "Cooper Light", Georgia, Times, "Times New Roman", serif;
     font-size: 18px;

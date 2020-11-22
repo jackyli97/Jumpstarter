@@ -14,7 +14,7 @@ class Greeting extends React.Component{
         this.openSubMenu = this.openSubMenu.bind(this);
         this.closeSubMenu = this.closeSubMenu.bind(this);
     }
-    
+
     openSubMenu(){
         document.getElementById('profile-container').className= "menu-open";
     }
@@ -48,7 +48,7 @@ class Greeting extends React.Component{
                 </span>
                 <button className="profile-button" onMouseOver={this.openSubMenu}>
                     <img src={window.avatar} alt="avatar" className="avatar-img"/>
-                    <Profile logout={this.props.logout} usersProjects={this.props.usersProjects} closeSubMenu={this.closeSubMenu} username={this.props.username} backedProjects={this.props.backedProjects}/>
+                    <Profile userId={this.props.userId} logout={this.props.logout} usersProjects={this.props.usersProjects} closeSubMenu={this.closeSubMenu} username={this.props.username} backedProjects={this.props.backedProjects}/>
                 </button>
             </div>
         ) : (

@@ -9,8 +9,11 @@ class Page3 extends React.Component {
         super(props)
         this.state = {
             title: this.props.project.title,
+            type: this.props.project.type,
+            projId: this.props.project.projId,
             endDate: this.props.project.endDate,
             location: this.props.project.location,
+            existingPhoto: this.props.project.existingPhoto,
             photoFile: this.props.project.photoFile,
             photoUrl: this.props.project.photoUrl,
             photoValue: this.props.project.photoValue,
@@ -54,9 +57,8 @@ class Page3 extends React.Component {
 
 
     render() {
-        
-        let display = (this.state.page === 2) ?  <Page2 pageTwoProps={this.state} path={this.props.path} createProject={this.props.createProject} author={this.props.author} /> :
-            (this.state.page === 35) ? <Page3_5 project={this.state} createReward={this.props.createReward} author={this.props.author} path={this.props.path} createProject={this.props.createProject} /> : (
+        let display = (this.state.page === 2) ?  <Page2 pageTwoProps={this.state} path={this.props.path} projectAction={this.props.projectAction} author={this.props.author} /> :
+            (this.state.page === 35) ? <Page3_5 project={this.state} createReward={this.props.createReward} author={this.props.author} path={this.props.path} projectAction={this.props.projectAction} /> : (
             <div className="create-section">
                 <nav className="create-nav">3 of 5</nav>
                 <form className="basics-form" onSubmit={this.handleSubmit}>

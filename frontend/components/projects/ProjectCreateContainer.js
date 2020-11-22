@@ -6,21 +6,13 @@ import { createReward } from '../../actions/rewards_actions';
 const mapStateToProps = (state, ownProps) => {
     return {
         project: {
-            title: "",
-            description: "",
-            updates: "",
-            faq: "",
-            amount_pledged: "",
-            funding_goal: "",
-            end_date: "",
-            category_id: "",
-            location: "",
-            risks_and_challenges: "",
-            campaign: "",
-            page: 1,
+            existingPhoto: null,
+            category: "", page: 1, location: "", endDate: "", title: "", photoFile: null, photoUrl: "", photoValue: "", description: "", fundingGoal: "", risks_and_challenges: "", campaign: "",
+            rewardTitle: "", rewardDes: "", rewardEst: "", rewardShip: "", rewardCost: ""
         },
         authorId: state.session.id,
-        path: ownProps.history
+        path: ownProps.history,
+        type: "create"
     };
 }
 

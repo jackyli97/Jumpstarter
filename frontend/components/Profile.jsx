@@ -59,7 +59,7 @@ class Profile extends React.Component {
                             </div>
                             <span>New</span>
                         </Link>
-                        <Link to={'profile/projects'} className="profile-view-all-container" onClick={this.props.closeSubMenu}>
+                        <Link to={`profile/projects/${this.props.userId}`} className="profile-view-all-container" onClick={this.props.closeSubMenu}>
                             View all
                         </Link>
                     </div>

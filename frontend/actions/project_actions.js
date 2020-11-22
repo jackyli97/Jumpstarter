@@ -49,12 +49,19 @@ export const createProject = (project) => {
     }
 }
 
-export const updateProject = (project) => {
+export const updateProject = (project, id, hasImg) => {
     return (dispatch) => {
-        return ProjectApiUtil.updateProject(project).then((project) => {
-            return dispatch(receiveProject(project))
-        })
-    }
+        if (hasImg){
+            return ProjectApiUtil.updateProject(project, id).then((project) => {
+                return dispatch(receiveProject(project))
+            })
+        }
+        else{
+            return ProjectApiUtil.updateProjectNoImg(project, id).then((project) => {
+                return dispatch(receiveProject(project))
+            })
+        }
+        }
 }
 
 export const deleteProject = (projectId) => {

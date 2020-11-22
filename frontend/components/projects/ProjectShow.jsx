@@ -5,7 +5,7 @@ class ProjectShow extends React.Component {
     constructor(props) {
         super(props)
         this.state = {navPage: "campaign", article: "story", amountPledged: 0,
-        backingAmt: this.props.backingAmt}
+        backingAmt: this.props.backingAmt, currentUserBacked: this.props.currentUserBacked}
         this.handleClick = this.handleClick.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
         this.handleClickArticle = this.handleClickArticle.bind(this)
@@ -56,13 +56,13 @@ class ProjectShow extends React.Component {
     }
 
     successMessage(amt){
-        this.setState({backingAmt: amt});
+        this.setState({backingAmt: amt, currentUserBacked: true});
         window.scrollTo(0, 0);
     }
 
     render() {
         
-        let success = this.props.currentUserBacked ? (
+        let success = this.state.currentUserBacked ? (
             <div className="success-container" id="success">
                 <div className="success-box">
                     <div className="success-box-left">
@@ -101,7 +101,7 @@ class ProjectShow extends React.Component {
                 <h3>Support</h3>
                 <div className="support-container" id="support">  
                     <ol>
-                        <Rewards rewards={this.props.project.rewards} successMessage={this.successMessage} project={this.props.project} updateProject={this.props.updateProject} path={this.props.path} backers={this.props.project.num_backings} currentUser={this.props.currentUser} currentUserBacked={this.props.currentUserBacked} createBacking={this.props.createBacking}/>
+                        <Rewards rewards={this.props.project.rewards} successMessage={this.successMessage} project={this.props.project} updateProject={this.props.updateProject} path={this.props.path} backers={this.props.project.num_backings} currentUser={this.props.currentUser} currentUserBacked={this.state.currentUserBacked} createBacking={this.props.createBacking}/>
                     </ol>
                 </div>
                 <div className="support-container">
