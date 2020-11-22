@@ -7,14 +7,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    // margin-top: 18px;
+  
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     color: #656969;
     padding-top: 18px;
     padding-bottom: 18px;
-    // margin: 0px 37px;
-    // padding: 18px 60px;
+
     align-items: center;
     overflow: scroll;
 }
@@ -42,7 +41,7 @@
     .categories-list li{
         padding: 0px 8px;
         font-size: 14px;
-        // margin: 18px 0px;
+  
     }
 }
 
@@ -52,8 +51,7 @@
 }
 
 .categories-nav-container{
-    // margin: 0px 37px;
-    // padding: 0px 60px;
+
     height: 60px;
     border-bottom: 0.1rem solid #E8E8E8;
 }

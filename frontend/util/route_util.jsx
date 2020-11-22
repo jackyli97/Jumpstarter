@@ -6,8 +6,6 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
     <Route
         path={path}
         exact={exact}
-        // render is typically implicit withinin Route
-        // but since we have extra logic, call render
         render={props =>
             !loggedIn ? <Component {...props} /> : <Redirect to="/" />
         }

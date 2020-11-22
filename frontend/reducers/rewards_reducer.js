@@ -14,8 +14,7 @@ const rewardReducer = (oldState = defaultState, action) => {
             return action.reward.reward
         case RECEIVE_REWARD:
             return action.reward.reward
-            // newState[action.reward.reward.id] = action.reward.reward
-            // return newState;
+
         case REMOVE_REWARD:
             delete newState[action.rewardId]
             return newState;

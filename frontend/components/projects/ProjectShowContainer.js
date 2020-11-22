@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import ProjectShow from './ProjectShow';
-// import {receiveCurrentUser} from '../../actions/session_actions'
 import { fetchProject, deleteProject, updateProject } from '../../actions/project_actions';
 import { createBacking } from '../../actions/backings_actions';
 import { withRouter } from 'react-router-dom';

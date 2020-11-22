@@ -25,9 +25,6 @@ class Rewards extends React.Component {
             .then(() => {
                 this.props.updateProject(this.state)
                 this.props.successMessage(this.state.amountPledged)
-                // .then((action) => {
-                //     this.props.successMessage(this.state.amountPledged)
-                // }) 
             }) 
     }
 
