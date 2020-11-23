@@ -20,42 +20,42 @@ const mapStateToProps = (state, ownProps) => {
         type: "category",
         arts: [
             "Discover the artists and organizations using Kickstarter to realize ambitious projects in visual art and performance.",
-            [["Art", 0], ["Dance", 3], ["Photography", 11], ["Theater", 14]]
+            [["Art", 0], ["Dance", 3], ["Photography", 11], ["Theater", 14]], "Arts"
         ],
         comics:
         [
             "Explore fantastical worlds and original characters from Kickstarter’s community of comics creators and illustrators."
-            , [["Comics",1]]
+                , [["Comics", 1]], "Comics"
         ],
         design:
         [
             "From fine design to innovative tech, discover projects from creators working to build a more beautiful future.",
-            [["Design",4], ["Technology", 13]]
+                [["Design", 4], ["Technology", 13]], "Design & Tech"
         ],
         film:
         [
             "Join forces with the intrepid filmmakers and festival creators changing the way stories get told on screen."
-            , [["Film",6]]
+            , [["Film",6]], "Film"
         ],
         food:
         [
             "See how artisans and entrepreneurs are using Kickstarter to break new ground in food, fashion, and crafts.",
-            [["Crafts",2], ["Food",7], ["Fashion",5]]
+                [["Crafts", 2], ["Food", 7], ["Fashion", 5]], "Food & Craft"
         ],
         games:
         [
             "From tabletop adventures to beloved revivals, discover the projects forging the future of gameplay.",
-            [["Games",8]]
+                [["Games", 8]], "Games"
         ],
         music:
         [
             "Discover new albums, performances, and independent venues from creators using Kickstarter to shape the future of sound.",
-            [["Music"],10]
+                [["Music", 10]], "Music"
         ],
         publishing:
         [
             "Explore how writers and publishers are using Kickstarter to bring new literature, periodicals, podcasts, and more to life.",
-            [["Publishing",12], ["Journalism"],9]
+                [["Publishing", 12], ["Journalism", 9]], "Publishing"
         ]
     };
 }

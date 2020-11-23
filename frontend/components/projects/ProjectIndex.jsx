@@ -14,7 +14,7 @@ class ProjectIndex extends React.Component {
         comics: this.props.comics,
         design: this.props.design,
         film: this.props.film,
-        food: this.props.film,
+        food: this.props.food,
         games: this.props.games,
         music: this.props.music,
         publishing: this.props.publishing
@@ -92,10 +92,9 @@ class ProjectIndex extends React.Component {
         })
         let project = this.props.project;
         let categoryName = this.props.match.params.categoryName;
-        
         let categoryWelcome = this.state.type === "main" ? <div></div> :
         <div className="category-welcome">
-                <h3>{categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</h3>
+                <h3>{this.state[categoryName][2]}</h3>
                 <p>{this.state[categoryName][0]}</p>
                 <div className="explore-categories-section">
                     {this.state[categoryName][1].map((cat, idx)=> {

@@ -38,7 +38,7 @@ class Explore extends React.Component {
                         </li>
                         <li>
                             <Link to={{ pathname: "/projects/category/comics", state: "Comics & Illustration" }}>
-                                Comics & Illustration
+                                Comics
                             </Link>
                         </li>
                         <li>

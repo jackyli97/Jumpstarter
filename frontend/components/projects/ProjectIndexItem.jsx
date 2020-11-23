@@ -11,6 +11,7 @@ class ProjectIndexItem extends React.Component {
             this.props.fetchProjects();
             this.props.fetchCategories();
         }
+        window.scrollTo(0, 0);
     }
 
     render() {

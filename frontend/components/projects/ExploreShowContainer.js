@@ -21,7 +21,7 @@ const mapStateToProps = (state, ownProps) => {
         }
     }
     if (!query && categories[ownProps.match.params.exploreId]) {
-        query = categories[ownProps.match.params.exploreId].category_name
+        query = categories[ownProps.match.params.exploreId - 1].category_name
     }
     return {
         projects: filteredProjectsList,

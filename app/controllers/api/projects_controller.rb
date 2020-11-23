@@ -22,7 +22,7 @@ class Api::ProjectsController < ApplicationController
         elsif params[:id] == "design"
            @projects = Project.where(:category_id => [5,14]) 
         elsif params[:id] == "film"
-           @projects = Project.where(category_id: 6) 
+           @projects = Project.where(category_id: 7) 
         elsif params[:id] == "food"
            @projects = Project.where(:category_id => [3,8,6]) 
         elsif params[:id] == "games"
