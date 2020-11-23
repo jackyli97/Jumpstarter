@@ -31,6 +31,7 @@ class ProjectIndex extends React.Component {
         if ((this.props.match.params.categoryName) && prevProps.match.params.categoryName !== this.props.match.params.categoryName) {
             this.props.fetchProjects();
             this.props.fetchCategories();
+            window.scrollTo(0, 0);
         }
     }
 
@@ -150,6 +151,12 @@ class ProjectIndex extends React.Component {
                         </section>
 
                     </div>
+                </div>
+
+                <div className="bottom-categories-nav-container">
+                    <ul className="bottom-categories-list">
+                        <Categories categories={categories} projects={this.props.projects} project={this.props.project} array={this.props.array} fetchProjects={this.props.fetchProjects} fetchCategories={this.props.fetchCategories} />
+                    </ul>
                 </div>
             </div>
         )
