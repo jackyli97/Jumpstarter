@@ -62,7 +62,7 @@ class ProjectIndexItem extends React.Component {
                         By {this.props.project.author.name}
                     </li>
                     <li className="explore-progress-bar-container">
-                        <div className="explore-progress-bar" style={{ width: percent }}></div>
+                    <div className="explore-progress-bar" style={{ width: `calc(1% * ${percent})`}}></div>
                     </li>
                     <li>${this.props.project.amount_pledged} pledged</li>
                     <li>{percent} % funded</li>

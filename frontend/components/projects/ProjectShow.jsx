@@ -154,7 +154,7 @@ class ProjectShow extends React.Component {
                                 </section>
                                 <section className="show-info-section">
                                     <div className="progress-bar-container">
-                                        <div className="progress-bar" style={{width: percent}}></div>
+                                            <div className="progress-bar" style={{ width: `calc(1% * ${percent})` }}></div>
                                     </div>
                                     <ul>
                                         <li>

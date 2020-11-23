@@ -16,7 +16,7 @@ class Featured extends React.Component {
                 <div className="featured-project-props" >  
                 <Link to={`/projects/${this.props.project.id}`}>
                     <img src={this.props.project.photo_url} className="project-img"/>
-                    <div className="featured-progress-bar" style={{ width: percent }}></div>
+                            <div className="featured-progress-bar" style={{ width: `calc(1% * ${percent})` }}></div>
                     <li>
                         {this.props.project.title}
                     </li>
