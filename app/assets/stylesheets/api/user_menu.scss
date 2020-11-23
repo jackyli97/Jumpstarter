@@ -38,12 +38,11 @@
     color: #2752FF;
 }
 
-.project-edit:hover{
-    color: #282828;
-    cursor: pointer; 
+.project-delete{
+    color: crimson;
 }
 
-.project-cell span:first-of-type:hover, .user-menu-project-img:hover{
+.user-project-title:hover, .user-menu-project-img:hover{
     color: #009E74;
     cursor: pointer; 
 }
@@ -75,3 +74,17 @@
     justify-content: space-between;
 }
 
+.user-project-actions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-project-actions span:hover{
+    color: #282828;
+    cursor: pointer; 
+}
+
+.user-project-actions a{
+    margin-bottom: 8px;
+}

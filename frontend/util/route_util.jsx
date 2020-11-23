@@ -35,8 +35,7 @@ const PrivateProjects = ({ component: Component, path, userMatches, exact }) => 
 
 const mapStateToProps = (state, ownProps) => {
     return { loggedIn: Boolean(state.session.id),
-        userMatches: Boolean(state.session.id === parseInt(ownProps.location.pathname[ownProps.location.pathname.length - 1]) ||
-        state.session.id === parseInt(ownProps.location.pathname[1]))
+        userMatches: Boolean(state.session.id === parseInt(ownProps.location.pathname[1]))
     };
 };
 

@@ -10,7 +10,7 @@ class Profile extends React.Component {
     }
 
     render() {
-        let backedProjs = <>
+        let backedProjs = this.props.backedProjects === null ? <div></div> : <>
             {this.props.backedProjects.map((backing,idx)=>{
                 return <Link key={idx} to={`/projects/${backing.project.id}`} onClick={this.props.closeSubMenu}>
                     <li>
@@ -20,7 +20,7 @@ class Profile extends React.Component {
                 </Link>
             })}
         </>
-        let usersProjs = <>
+        let usersProjs = this.props.usersProjects === null ? <div></div> : <>
             {this.props.usersProjects.map((project,idx)=>{
                 return <Link key={idx} to={`/projects/${project.id}`} onClick={this.props.closeSubMenu}>
                     <li>
@@ -54,12 +54,12 @@ class Profile extends React.Component {
                             {usersProjs}
                         </ul>
                         <Link to='/projects/start' className="profile-new-project-container" onClick={this.props.closeSubMenu}>
-                            <div to={'/projects/start'}>
+                            <div>
                                 <FontAwesomeIcon icon={faPlus} className="add-icon"/>
                             </div>
                             <span>New</span>
                         </Link>
-                        <Link to={`profile/projects/${this.props.userId}`} className="profile-view-all-container" onClick={this.props.closeSubMenu}>
+                        <Link to='/profile/projects' className="profile-view-all-container" onClick={this.props.closeSubMenu}>
                             View all
                         </Link>
                     </div>

@@ -1,9 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import UserMenu from './UserMenu'
+import UserMenu from './UserMenu';
+import { deleteProject } from '../../actions/project_actions';
+// import { receiveCurrentUser } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
+    debugger
     let usersProjects = null;
     if (state.session.id) {
         if (state.entities.users[state.session.id].projects) {
@@ -16,4 +19,11 @@ const mapStateToProps = (state, ownProps) => {
     }
 };
 
-export default withRouter(connect(mapStateToProps, null)(UserMenu));
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        deleteProject: (projectId) => dispatch(deleteProject(projectId)),
+        // receiveCurrentUser: () => dispatch(receiveCurrentUser(ownProps.match.params.userId))
+    };
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserMenu));
