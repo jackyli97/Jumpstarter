@@ -120,7 +120,7 @@ const Footer = () => {
                                 <option value="PLN">zł  Zloty   (PLN)</option>
                                 <option value="SEK">kr  Swedish Krona   (SEK)</option>
                                 <option value="SGD">$  Singapore Dollar   (SGD)</option>
-                                <option value="USD" selected="">$  US Dollar   (USD)</option>
+                                <option value="USD" selected>$  US Dollar   (USD)</option>
                         </select>
                     </div>
                 </section>
