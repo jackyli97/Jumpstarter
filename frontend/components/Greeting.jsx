@@ -25,7 +25,7 @@ class Greeting extends React.Component{
 
     handleSearch(e) {
         if (e.key === 'Enter') {
-            this.setState({ clicked: false })
+            this.setState({ clicked: false, query: "" })
             this.props.history.push(`/projects/search/${this.state.query}`)
         }
     }
