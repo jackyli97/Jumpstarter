@@ -5,7 +5,7 @@ Link To Live App: [Jumpstarter](https://jumpstarter-app.herokuapp.com/#/)
 
 Jumpstarter is a crowd-funding web application heavily based on Kickstarter. Here, innovators can share their work and raise the capital needed to launch their products. Users can back projects based on various reward levels. 
 
-Jumpstarter makes use of a Rails/PostgreSQL backend with React and Redux on the frontend. This single page web application was designed and developed within a two-week time period. Future features that will be implemented include Search, Cateogories, and ability to view and edit your own projects.
+Jumpstarter makes use of a Rails/PostgreSQL backend with React and Redux on the frontend. This single page web application was designed and developed within a two-week time period.
 
 ## Features
 * Implementation of frontend to backend user authentication using BCrypt.
@@ -14,6 +14,8 @@ Jumpstarter makes use of a Rails/PostgreSQL backend with React and Redux on the 
 * Dropdown on navbar that leads to user's profile where the can view their projects.
 * Users can back, create, and browse projects.
 * Backing a project updates the database and creates an association between a reward, project, and user.
+* Search projects via input in a search bar or browse by categories.
+* Users page containing created and backed projects, where one can edit and delete projects.
 
 ### Functionality of Projects
 The main purpose of Jumpstarter is to create and showcase a project. In order to effectively do this, all appropriate data and associations had to be properly passed from the back-end to the front-end. Projects, rewards, users, and backings were all separate tables that were connected through the use of a relational database. A Project `has_many` rewards, a reward `has_many` backings, and backings `belong_to` a user. The relationships were made by making a backings a joins table, with foreign keys belonging to a reward and backer. 
