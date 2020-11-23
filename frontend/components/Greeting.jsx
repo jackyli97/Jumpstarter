@@ -42,8 +42,12 @@ class Greeting extends React.Component{
         if (!this.props.path && !this.props.authPath) {
             this.props.history.push('./')
         }
-        let backedProjects = this.props.backedProjects.slice(0,3);
-        let usersProjects = this.props.usersProjects.slice(0,3);
+        let backedProjects;
+        let usersProjects;
+        if (this.props.backedProjects && this.props.usersProjects){
+            backedProjects = this.props.backedProjects.slice(0,3);
+            usersProjects = this.props.usersProjects.slice(0,3);
+        }
         const content = this.props.currentUser ? (
             <div className="right-nav">
                 <span className="search-section" onClick={()=>this.setState({clicked: true})}>Search  <FontAwesomeIcon icon={faSearch} className="search-icon" />
