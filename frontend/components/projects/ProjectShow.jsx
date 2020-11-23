@@ -107,17 +107,20 @@ class ProjectShow extends React.Component {
                 <div className="support-container">
                 </div>
             </article>
-        </div> ) : this.props.project.navPage === "faq" ? (
-            <div className="show-body-container">
+        </div> ) : this.state.navPage === "faq" ? (
+            <div className="show-faq-container">
                 <h3>Frequently Asked Questions</h3>
                 {this.props.project.faq ? (
                 <p>{this.props.project.faq}</p> ) :
                 <p>Looks like there arent't any frequently asked questions yet</p>
                 }
             </div>
-        ) : <div className="show-body-container">
+        ) : <div className="show-updates-container">
             <h3>Updates</h3>
-            <p>{this.props.project.updates}</p>
+            {this.props.project.updates ? (
+                <p>{this.props.project.updates}</p>) :
+                <p>Looks like there arent't any updates yet</p>
+            }
         </div>
         let percent = !projectCheck ? null : (((this.props.project.amount_pledged / this.props.project.funding_goal).toFixed(2)) * 100) > 100 ? 100 : 
             ((this.props.project.amount_pledged / this.props.project.funding_goal).toFixed(2)) * 100;
