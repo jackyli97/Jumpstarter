@@ -286,17 +286,199 @@ project19 = Project.create!(title: "A Walls Tale Musical",
         description: "The Musical is about a divide within a Town, which we believe can be translated to what's happening in the world at this very moment. The Musical follows Ethan who has to fight his own battles and beliefs in order to lead the uprising and rebellion. When a wall is built in his town overnight, He and the people from his side of the wall start to plan how they are going to break this divide. What they all don’t realize in doing this is that their own beliefs will be challenged; beliefs like war, fear, love, and racism. Will the Wall Stand or Will It Fall?"
 )
 
-# project17 = Project.create!(title: "",
-#         campaign: "",
-#         risks_and_challenges: "",
-#         author_id: user17.id,
-#         amount_pledged: 16752,
-#         funding_goal: 6642,
-#         end_date: Date.new(2021,10,3),
-#         category_id: category11.id,
-#         location: "",
-#         description: ""
-# )
+project20 = Project.create!(title: "Ensure MoMI’s Future",
+        campaign: "Help MoMI reopen and continue its programs dedicated to all aspects of the moving image for audiences around the world.",
+        risks_and_challenges: "As with any endeavor in the age of COVID-19, we remain cognizant of the numerous obstacles and challenges to the realization of these goals. ",
+        author_id: user1.id,
+        amount_pledged: 32569,
+        funding_goal: 35000,
+        end_date: Date.new(2021,2,3),
+        category_id: category0.id,
+        location: "New York, NY",
+        description: "We need your support for our array of online activities while we prepare to reopen the Museum so that we can bring movies, live events, exhibitions, and media education back to our local and international communities. With your help, we can continue doing the work we’ve been committed to for almost 40 years—curating, enhancing, and creating an ongoing dialogue with the history of film, television, online, and other moving image media—and further develop our existing digital platforms to expand upon this work."
+)
+
+project21 = Project.create!(title: "Tasty! A Short Comic Anthology",
+        campaign: "A scrumptious anthology of short comics by nine Chicago-based artists.",
+        risks_and_challenges: "There’s always a chance we’ll run into print problems -- formatting mistakes on our end, production errors on the printer’s end, etc -- there’s a bunch of stuff that could could slow down delivery.",
+        author_id: user2.id,
+        amount_pledged: 2738,
+        funding_goal: 2400,
+        end_date: Date.new(2021,3,2),
+        category_id: category1.id,
+        location: "Chicago, IL",
+        description: "Tasty! is a comic anthology by Let’s Make Comics!, a Chicago-based comic collective. Once a year we pull a theme out of a hat and turn our members loose on it, with weird and wonderful results. This year we explore gustatory experiences! Mm-MM!"
+)
+
+project22 = Project.create!(title: "Tin Shed Soap - Natural, ethical soaps",
+        campaign: "Scaling up Tin Shed Soap production to bring beautiful, natural and ethical soaps to everyone!",
+        risks_and_challenges: "I already make a ton of soap, and the recipes have been refined and chemically tested so your rewards are pretty much guaranteed.",
+        author_id: user3.id,
+        amount_pledged: 2202,
+        funding_goal: 1997,
+        end_date: Date.new(2021,4,12),
+        category_id: category2.id,
+        location: "Penmachno, UK",
+        description: "Yes indeedy, when it's going well it is both super slow and yet all about precise timings -  it's messy, there are hazardous chemicals involved, but I love it. And so do lots of you it seems, which has led to Tin Shed Soap inching that bit further towards being an actual proper real life business, but to get properly set up and Go big or go home I'm going to need your help!"
+)
+
+project23 = Project.create!(title: "Supporting Change. Spreading Kindness, Love & Positivity!",
+        campaign: "This is a movement of positivity. The ChadChange is accepting of all races, genders, ethnicity and orientations. We pass no judgement.",
+        risks_and_challenges: "Legal documentation to setup a foundation and cover all liabilities that could be encountered.
+Facility that would be used as base of operations.",
+        author_id: user4.id,
+        amount_pledged: 1,
+        funding_goal: 5000,
+        end_date: Date.new(2021,4,22),
+        category_id: category3.id,
+        location: "Chattanooga, TN",
+        description: "Our goal is that, through this movement, we will be able to create a foundation whose purpose will be to offer opportunities to support those that are suffering from anxiety and depression that could lead to suicide and childhood cancer."
+)
+
+project24 = Project.create!(title: "Elephant Cuppa | An Eco Tumbler For Boba and Smoothie Lovers",
+        campaign: "A reusable, portable & boba friendly eco tumbler designed to replace single-use plastic for good.",
+        risks_and_challenges: "We've spent months perfecting the design. In order to bring this project to reality, we've already invested in the tooling. We are confident that as soon as the campaign ends, we'll be able to go ahead with production without any delay.",
+        author_id: user5.id,
+        amount_pledged: 33638,
+        funding_goal: 7500,
+        end_date: Date.new(2021,5,22),
+        category_id: category4.id,
+        location: "Taipei City, Taiwan",
+        description: "At Elephant Cuppa, we design our products with convenience of use and durability in mind. We aim to help reduce the use of disposable products, minimize pollution and damage to the environment caused by plastic waste"
+)
+
+project25 = Project.create!(title: "Dinner Party Darling Cloth Napkins",
+        campaign: "A collection of luxury sustainable cloth napkins made in USA",
+        risks_and_challenges: "The main risk to this project is the COVID pandemic, which could affect timelines depending on production schedules/closures. ",
+        author_id: user6.id,
+        amount_pledged: 101,
+        funding_goal: 1700,
+        end_date: Date.new(2021,6,5),
+        category_id: category5.id,
+        location: "Greenville, SC",
+        description: "The goal is to create a sustainable and ethical business from start to finish. The fabric is printed in North Carolina, and all prints come from small independent print designers, who earn a commission from every fabric purchase. The fabric is then shipped to my production partner in Florida, a fantastic woman-owned facility outside of Fort Lauderdale."
+)
+
+project26 = Project.create!(title: "Commando Ninja II: Invasion America",
+        campaign: "Commando Ninja II: Invasion America is an indie over-the-top Action / Comedy feature, a tribute to the Action Hero Movies of the 1980s.",
+        risks_and_challenges: "COMMANDO NINJA 2 is a very ambitious project. The good news is that everything is already written and planned, we just need the money to do it!
+Casting, Locations, Crew, Script, it's READY!",
+        author_id: user1.id,
+        amount_pledged: 27300,
+        funding_goal: 59365,
+        end_date: Date.new(2021,7,5),
+        category_id: category6.id,
+        location: "Montpellier, France",
+        description: "Our movie was screened all over the world in theaters, festivals, and was acclaimed as a true and sincere tribute to the classic Action Heroes era."
+)
+
+project27 = Project.create!(title: "Cooking with Alcohol",
+        campaign: "Discover over 100 easily accessible recipes where alcohol is the key ingredient, and learn why it deserves a firm place in your kitchen",
+        risks_and_challenges: "This is a low risk project: we have already signed a contract with Lendal Press to publish this book. With a publisher secured it's one of the most substantial hurdles passed that many books face.",
+        author_id: user2.id,
+        amount_pledged: 13219,
+        funding_goal: 5592,
+        end_date: Date.new(2021,8,5),
+        category_id: category7.id,
+        location: "Bath, UK",
+        description: "We've written and photographed over 100 recipes where alcohol is the main ingredient, and we can't wait to share them with you! "
+)
+
+project28 = Project.create!(title: "Cocktail Cards: 52 Classic Cocktail Recipe Deck
+",
+        campaign: "All the cocktails you need to know in a proper deck of playing cards.
+
+",
+        risks_and_challenges: "The graphic design work has all been done in-house so we have control over that. Our manufacturer is a well-regarded and established business making a product they know better than anyone so that minimises any risk in the manufacturing process. We have also confirmed that they are still operating normally given the latest COVID-19 restrictions in the UK.",
+        author_id: user3.id,
+        amount_pledged: 35577,
+        funding_goal: 1597,
+        end_date: Date.new(2021,9,7),
+        category_id: category8.id,
+        location: "London, UK",
+        description: "The ultimate cocktail reference guide. All the cocktails you need to know, and how to make them, in one deck of quality playing cards. "
+)
+
+project29 = Project.create!(title: "W*MEN",
+        campaign: "A book about good female representation in videogames",
+        risks_and_challenges: "The book, except a few changes, is done. The design and printing shouldn't be a problem as I already know the printing shop I'll use to get the best result as possible.",
+        author_id: user4.id,
+        amount_pledged: 249,
+        funding_goal: 3086,
+        end_date: Date.new(2021,10,17),
+        category_id: category9.id,
+        location: "Milan, Italy",
+        description: " W*men was created as a thesis project for the end of my Graphic Design and Art Direction program at the Nuova Accademia di Belle Arti in Milan, Italy. It's a book about the good side of female representation in videogames."
+)
+
+project30 = Project.create!(title: "Firewatch Original Soundtrack on Vinyl
+",
+        campaign: "Help me do a new manufacturing run of the Firewatch soundtrack vinyl, which has been out of print for years!",
+        risks_and_challenges: "The biggest risk I can imagine is simply that there isn't enough demand to justify a print run—which is exactly why I'm doing this through Kickstarter. I want to ensure the interest is there.",
+        author_id: user5.id,
+        amount_pledged: 41804,
+        funding_goal: 3000,
+        end_date: Date.new(2021,11,17),
+        category_id: category10.id,
+        location: "Seatle, WA",
+        description: "In 2016, I was part of the small Campo Santo team that released Firewatch, a first-person narrative suspense game set in the Wyoming wilderness. In addition to working on its game design, story, and audio, I was the composer and performer of its original soundtrack, which we released digitally as well as on vinyl record featuring beautiful cover art by the talented Olly Moss."
+)
+
+project31 = Project.create!(title: "The Swiss Alps
+",
+        campaign: "Black and white calendar
+
+",
+        risks_and_challenges: "The layout is ready to be printed by a printer based in Switzerland.",
+        author_id: user6.id,
+        amount_pledged: 2,
+        funding_goal: 2196,
+        end_date: Date.new(2021,12,9),
+        category_id: category11.id,
+        location: "Sion, Switzerland",
+        description: "The Alps are a symbol of the Swiss landscapes. I want you to discover them through my lens. With this desk calendar, I hope you will travel, dream, escape or simply take a break from your daily routine or work. I believe that the contemplation of his photographs will provide you a brief time of thinking or relaxation."
+)
+
+project32 = Project.create!(title: "Blockchain Unchained: The Ultimate Crypto-Culture Bible
+",
+        campaign: "Fun. Irreverent. Offbeat. Inspirational. We're putting together the ultimate book democratizing blockchain and cryptocurrencies ⛓",
+        risks_and_challenges: "Our main challenge is to create a book that appeals to both blockchain-cryptocurrency enthusiasts as well as newbies who have not yet been able to grasp the issues in their entirety.",
+        author_id: user1.id,
+        amount_pledged: 16752,
+        funding_goal: 6642,
+        end_date: Date.new(2021,5,19),
+        category_id: category12.id,
+        location: "Paris, France",
+        description: "FUN. IRREVERENT. OFFBEAT. INSPIRATIONAL.
+WE'RE PUTTING TOGETHER THE ULTIMATE BOOK DEMOCRATIZING BLOCKCHAIN AND CRYPTOCURRENCIES"
+)
+
+project33 = Project.create!(title: "Light Speaker — A portable sound and light experience.",
+        campaign: "Glows like a real flame together with your music. A Bluetooth speaker, built to last a lifetime.",
+        risks_and_challenges: "Both our previous campaigns were delayed but finally delivered to great praise. It has really taught us about transparency and the bottlenecks of producing something great (without compromising anything) at scale.",
+        author_id: user1.id,
+        amount_pledged: 104851,
+        funding_goal: 44000,
+        end_date: Date.new(2022,6,18),
+        category_id: category13.id,
+        location: "Stockholm, Sweden",
+        description: "The Light Speaker is a portable bluetooth speaker inspired by a traditional lantern. It has a simple and functional form. The light feels like a real flame, glowing together with your music."
+)
+
+project34 = Project.create!(title: "My Little Caucasian Heart
+",
+        campaign: "A play about justice, love and revolution Help us to fulfill this dream!
+
+",
+        risks_and_challenges: "Risks and challenges. One of the risks that our production has is that we return to a red light and we cannot premiere.",
+        author_id: user1.id,
+        amount_pledged: 1525,
+        funding_goal: 1246,
+        end_date: Date.new(2022,7,8),
+        category_id: category14.id,
+        location: "Mexico City, Mexico",
+        description: "Since 2017 when we entered the race, we decided to create a theater company when we graduated ... the time to do it came. My Little Caucasian Heart is an adaptation written by Servando Anacarsis Ramos of the original work The Caucasian Chalk Circle by Ruth Berlau and Bertolt Brecht. We have identified a lot with this work because we are aware of what is happening in the world, especially in our country, and we refuse to sit around and do nothing about it. "
+)
 
 file1 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/rap_academy.jpeg")
 project1.photo.attach(io: file1, filename: "img_#{project1.id}.jpg")
@@ -355,6 +537,51 @@ project18.photo.attach(io: file18, filename: "img_#{project18.id}.png")
 file19 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/wall.jpg")
 project19.photo.attach(io: file19, filename: "img_#{project19.id}.png")
 
+file20 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/museum.jpg")
+project20.photo.attach(io: file20, filename: "img_#{project20.id}.png")
+
+file21 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/tasty.jpg")
+project21.photo.attach(io: file21, filename: "img_#{project21.id}.png")
+
+file22 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/soap.jpg")
+project22.photo.attach(io: file22, filename: "img_#{project22.id}.png")
+
+file23 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/kindness.jpeg")
+project23.photo.attach(io: file23, filename: "img_#{project23.id}.png")
+
+file24 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/barista.png")
+project24.photo.attach(io: file24, filename: "img_#{project24.id}.png")
+
+file25 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/napkin.jpeg")
+project25.photo.attach(io: file25, filename: "img_#{project25.id}.png")
+
+file26 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/ninja.jpg")
+project26.photo.attach(io: file26, filename: "img_#{project26.id}.png")
+
+file27 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/alcohol.png")
+project27.photo.attach(io: file27, filename: "img_#{project27.id}.png")
+
+file28 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/cocktail.png")
+project28.photo.attach(io: file28, filename: "img_#{project28.id}.png")
+
+file29 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/women.jpg")
+project29.photo.attach(io: file29, filename: "img_#{project29.id}.png")
+
+file30 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/vinyl.png")
+project30.photo.attach(io: file30, filename: "img_#{project30.id}.png")
+
+file31 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/swissalps.jpg")
+project31.photo.attach(io: file31, filename: "img_#{project31.id}.png")
+
+file32 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/blockchain.jpg")
+project32.photo.attach(io: file32, filename: "img_#{project32.id}.png")
+
+file33 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/speaker.jpg")
+project33.photo.attach(io: file33, filename: "img_#{project33.id}.png")
+
+file34 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/caucasian.jpeg")
+project34.photo.attach(io: file34, filename: "img_#{project34.id}.png")
+
 reward1 = Reward.create!(project_id: project1.id, title: "You are the BEST", description: "You will have a branded t-shirt with school logo", estimated_delivery: Date.new(2021,5,12), shipping_loc: "Anywhere in the world", cost: 50)
 reward2 = Reward.create!(project_id: project2.id, title: "FULLED-SIZED REPLICA HOVERBOARD", description: "Display it how you like - prominently on a wall, proudly on a stand, just don't throw it in the basement or attic!", estimated_delivery: Date.new(2021,6,12), shipping_loc: "Anywhere in the world", cost: 449)
 reward3 = Reward.create!(project_id: project3.id, title: "EarlyBird - NightPods", description: "Limited Earlybird discount. A pair of NightPods. RRP $279 (saving $130)", estimated_delivery: Date.new(2021,2,12), shipping_loc: "Only certain countries", cost: 115)
@@ -374,6 +601,28 @@ reward16 = Reward.create!(project_id: project16.id, title: "ALCHEMYSTIC CD", des
 reward17 = Reward.create!(project_id: project17.id, title: "The Solarcan Classic", description: "The Solarcan Classic. The original retail packaged extreme time exposure camera. Everything you need if you're a beginner!", estimated_delivery: Date.new(2021,11,23), shipping_loc: "Anywhere in the world", cost: 15)
 reward18 = Reward.create!(project_id: project18.id, title: "Gaming Fanatic", description: "Get one copy of the book, a 7x10-inch premium softcover book with approximately 250 full-color glossy pages.", estimated_delivery: Date.new(2021,8,23), shipping_loc: "Anywhere in the world", cost: 30)
 reward19 = Reward.create!(project_id: project19.id, title: "Signed Copy of the Script.", description: "Get a signed copy of the Script.", estimated_delivery: Date.new(2021,1,23), shipping_loc: "Anywhere in the world", cost: 25)
+reward20 = Reward.create!(project_id: project20.id, title: "MoMI Zoom background and Twitch emotes", description: "Bring MoMI’s atmosphere to your device with a virtual Zoom background of our Redstone Theater and MoMI emotes for Twitch for your next video chat.", estimated_delivery: Date.new(2021,1,23), shipping_loc: "Anywhere in the world", cost: 15)
+reward21 = Reward.create!(project_id: project21.id, title: "All The PDFs", description: "PDFs of TASTY! as well as our last five anthologies: THIS MAKES ME SAD, OUT OF THE DEEP, FORGOTTEN HISTORY, MYSTERY, and MARS!", estimated_delivery: Date.new(2021,3,26), shipping_loc: "Anywhere in the world", cost: 15)
+reward22 = Reward.create!(project_id: project22.id, title: "Get a full set of 8 sample size (50g) vegetarian soaps plus a sisal shower scrub bag and a 15g vegan organic lip balm.", description: "Get a full set of 8 sample size (50g) vegetarian soaps plus a sisal shower scrub bag and a 15g vegan organic lip balm.", estimated_delivery: Date.new(2021,2,13), shipping_loc: "Anywhere in the world", cost: 15)
+reward23 = Reward.create!(project_id: project23.id, title: "$100 Donation -Tik Tok Shout Out", description: "For this reward when you donation $100 you will receive a shoutout by Chad during his next live that he has. These donations go towards fund to later help establish this movement into a working foundation.", estimated_delivery: Date.new(2021,4,3), shipping_loc: "Anywhere in the world", cost: 100)
+reward24 = Reward.create!(project_id: project24.id, title: "Pledge HK$ 224 or more", description: "Get 1 Elephant Cuppa basic pack!
+US$ 29
+26% off the retail price ($39)!
+You'll select your size and color in a post-campaign survey.", estimated_delivery: Date.new(2021,5,15), shipping_loc: "Anywhere in the world", cost: 224)
+reward25 = Reward.create!(project_id: project25.id, title: "Thank You!", description: "Pledge $5 just to help support this business without a reward. Your support is greatly appreciated!", estimated_delivery: Date.new(2021,6,5), shipping_loc: "Anywhere in the world", cost: 5)
+reward26 = Reward.create!(project_id: project26.id, title: "Your Name in the End Credits", description: "Welcome to the Club! You'll be able to say to your friends 'I contributed to create the sequel of the most epic love letter to the 80's Action Movies!'
+And prove it by showing them your name in the closing credits of the movie!", estimated_delivery: Date.new(2021,7,7), shipping_loc: "Anywhere in the world", cost: 10)
+reward27 = Reward.create!(project_id: project27.id, title: "Cooking with Alcohol e-book", description: "Way more transportable, same amazing recipes!", estimated_delivery: Date.new(2021,8,27), shipping_loc: "Anywhere in the world", cost: 25)
+reward28 = Reward.create!(project_id: project28.id, title: "1 pack of Cocktail Cards", description: "Deck of cards, including 52 cocktail recipes and 2 jokers", estimated_delivery: Date.new(2021,9,28), shipping_loc: "Anywhere in the world", cost: 13)
+reward29 = Reward.create!(project_id: project29.id, title: "W*MEN - Early Bird", description: "The book at a discounted price!", estimated_delivery: Date.new(2021,10,30), shipping_loc: "Anywhere in the world", cost: 35)
+reward30 = Reward.create!(project_id: project30.id, title: "Firewatch Soundtrack on Vinyl
+", description: "A copy of the Firewatch original soundtrack on high-quality vinyl.", estimated_delivery: Date.new(2021,11,2), shipping_loc: "Anywhere in the world", cost: 30)
+reward31 = Reward.create!(project_id: project31.id, title: "Calender", description: "Desk Calendar", estimated_delivery: Date.new(2021,12,4), shipping_loc: "Anywhere in the world", cost: 33)
+reward32 = Reward.create!(project_id: project32.id, title: "CRYPTO CURIOUS", description: "Our eternal gratitude (and your name on our thank you webpage!)", estimated_delivery: Date.new(2021,4,14), shipping_loc: "Anywhere in the world", cost: 10)
+reward33 = Reward.create!(project_id: project33.id, title: "Early Bird: Light Speaker
+", description: "Receive one Light Speaker
+Retail price $370", estimated_delivery: Date.new(2021,5,22), shipping_loc: "Anywhere in the world", cost: 230)
+reward34 = Reward.create!(project_id: project34.id, title: "Thanks in our networks!", description: "Some of the members of our collective will thank you on our social networks, both on facebook and on the official instagram of Montón de Irreverentes!", estimated_delivery: Date.new(2021,6,21), shipping_loc: "Anywhere in the world", cost: 100)
 
 projects = Project.all.to_a
 backers = User.all.to_a

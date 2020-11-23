@@ -13,19 +13,19 @@ const Footer = () => {
                     <h3>About</h3>
                     <ul>
                         <li>
-                                <a href="https://www.kickstarter.com/about?ref=global-footer">About us</a>
+                                <a href="https://www.kickstarter.com/about?ref=global-footer" target="_blank">About us</a>
                         </li>
                         <li>
-                                <a href="https://www.kickstarter.com/charter?ref=global-footer">Our chapter</a>
+                                <a href="https://www.kickstarter.com/charter?ref=global-footer" target="_blank">Our chapter</a>
                         </li>
                         <li>
-                                <a href="https://www.kickstarter.com/help/stats?ref=global-footer">Stats</a>
+                                <a href="https://www.kickstarter.com/help/stats?ref=global-footer" target="_blank">Stats</a>
                         </li>
                         <li>
-                                <a href="https://www.kickstarter.com/press?ref=global-footer">Press</a>
+                                <a href="https://www.kickstarter.com/press?ref=global-footer" target="_blank">Press</a>
                         </li>
                         <li>
-                                <a href="https://www.kickstarter.com/jobs?ref=global-footer">Jobs</a>
+                                <a href="https://www.kickstarter.com/jobs?ref=global-footer" target="_blank">Jobs</a>
                         </li>
                     </ul>
                 </div>

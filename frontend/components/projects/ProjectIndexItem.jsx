@@ -37,14 +37,14 @@ class ProjectIndexItem extends React.Component {
                 </Link>
                 <ul>
                     <li>
-                        <Link to={`/projects/${this.props.project.id}`}>
+                        <Link to={`/projects/${this.props.project.id}`} className="project-preview-title">
                             {this.props.project.title}
                         </Link>
                     </li>
                     <li>{percent} % funded</li>
                     <li>
                         <Link to={`/projects/${this.props.project.id}`}>
-                            By {this.props.project.author.name}
+                            By <span className="by-author">{this.props.project.author.name}</span>
                         </Link>
                     </li>
                 </ul>
