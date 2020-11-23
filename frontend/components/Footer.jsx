@@ -79,13 +79,13 @@ const Footer = () => {
                     <span>Jumpstarter, PBC © 2020</span>
                 </section>
                 <section className="social-media">
-                    <a to="https://github.com/jackyli97" target="_blank">
+                    <a href="https://github.com/jackyli97" target="_blank">
                         <i className="fab fa-github"></i>
                     </a>
-                    <a to="https://www.linkedin.com/in/xlihuang/" target="_blank">
+                    <a href="https://www.linkedin.com/in/xlihuang/" target="_blank">
                         <i className="fab fa-linkedin-in"></i>
                     </a>
-                    <a to="https://angel.co/u/jacky-li-huang" target="_blank">
+                    <a href="https://angel.co/u/jacky-li-huang" target="_blank">
                         <i className="fab fa-angellist"></i>
                     </a>
                 </section>
