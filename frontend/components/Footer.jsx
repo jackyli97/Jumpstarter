@@ -95,31 +95,10 @@ const Footer = () => {
                     <div className="language-settings">
                         <select>
                                 <option value="en" selected>English</option>
-                                <option value="de">Deutsch</option>
-                                <option value="es">Español</option>
-                                <option value="fr">Français</option>
-                                <option value="it">Italiano</option>
-                                <option value="ja">日本語</option>
-                                <option value="zh">繁體中文</option>
-                                <option value="emojilocale">😃 ❤️ 🔥</option>
                         </select> 
                     </div>
                     <div className="currency-settings">
                         <select>
-                                <option value="EUR">€  Euro   (EUR)</option>
-                                <option value="AUD">$  Australian Dollar   (AUD)</option>
-                                <option value="CAD">$  Canadian Dollar   (CAD)</option>
-                                <option value="CHF">Fr   Swiss Franc   (CHF)</option>
-                                <option value="DKK">kr  Danish Krone   (DKK)</option>
-                                <option value="GBP">£  Pound Sterling   (GBP)</option>
-                                <option value="HKD">$  Hong Kong Dollar   (HKD)</option>
-                                <option value="JPY">¥  Japanese Yen   (JPY)</option>
-                                <option value="MXN">$  Mexican Peso   (MXN)</option>
-                                <option value="NOK">kr  Norwegian Krone   (NOK)</option>
-                                <option value="NZD">$  New Zealand Dollar   (NZD)</option>
-                                <option value="PLN">zł  Zloty   (PLN)</option>
-                                <option value="SEK">kr  Swedish Krona   (SEK)</option>
-                                <option value="SGD">$  Singapore Dollar   (SGD)</option>
                                 <option value="USD" selected>$  US Dollar   (USD)</option>
                         </select>
                     </div>
