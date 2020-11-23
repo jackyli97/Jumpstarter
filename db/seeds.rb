@@ -605,7 +605,7 @@ reward20 = Reward.create!(project_id: project20.id, title: "MoMI Zoom background
 reward21 = Reward.create!(project_id: project21.id, title: "All The PDFs", description: "PDFs of TASTY! as well as our last five anthologies: THIS MAKES ME SAD, OUT OF THE DEEP, FORGOTTEN HISTORY, MYSTERY, and MARS!", estimated_delivery: Date.new(2021,3,26), shipping_loc: "Anywhere in the world", cost: 15)
 reward22 = Reward.create!(project_id: project22.id, title: "Get a full set of 8 sample size (50g) vegetarian soaps plus a sisal shower scrub bag and a 15g vegan organic lip balm.", description: "Get a full set of 8 sample size (50g) vegetarian soaps plus a sisal shower scrub bag and a 15g vegan organic lip balm.", estimated_delivery: Date.new(2021,2,13), shipping_loc: "Anywhere in the world", cost: 15)
 reward23 = Reward.create!(project_id: project23.id, title: "$100 Donation -Tik Tok Shout Out", description: "For this reward when you donation $100 you will receive a shoutout by Chad during his next live that he has. These donations go towards fund to later help establish this movement into a working foundation.", estimated_delivery: Date.new(2021,4,3), shipping_loc: "Anywhere in the world", cost: 100)
-reward24 = Reward.create!(project_id: project24.id, title: "Pledge HK$ 224 or more", description: "Get 1 Elephant Cuppa basic pack!
+reward24 = Reward.create!(project_id: project24.id, title: "1 x Elephant Cuppa | Super Early Bird", description: "Get 1 Elephant Cuppa basic pack!
 US$ 29
 26% off the retail price ($39)!
 You'll select your size and color in a post-campaign survey.", estimated_delivery: Date.new(2021,5,15), shipping_loc: "Anywhere in the world", cost: 224)
