@@ -31,6 +31,12 @@ user10 = User.create!(name: 'Leroy Bernardo', email: 'leroy@aa.io', password: 'p
 user11 = User.create!(name: 'Cleve Oines', email: 'cleve@aa.io', password: 'password', biography: "A guy who cooks. Appreciator of good kitchen tools.")
 user12 = User.create!(name: 'Desiree Dupuis', email: 'desiree@aa.io', password: 'password', biography: "I created VOES as a platform to showcase the love I feel for humanity and the love I feel for animals.")
 user13 = User.create!(name: 'The Garage Learning', email: 'garage@aa.io', password: 'password', biography: "The Garage Learning is an NYC-based Online Education company.")
+user14 = User.create!(name: 'Jim Lam', email: 'jim@aa.io', password: 'password', biography: "Jim is a lifelong lover of great food and drink and avid outdoorsman.")
+user15 = User.create!(name: 'Bragelonne Games', email: 'bragelonne@aa.io', password: 'password', biography: "Founded in 2000, Bragelonne is the curious story of a bunch of friends who, rich of nothing but their passion for the genre, a coffee machine and an addiction to Warcraft : Frozen Throne, became in just a handful of years the first independent publishers of fantasy fiction in French language.")
+user16 = User.create!(name: 'Kingston Wire', email: 'kingston@aa.io', password: 'password', biography: "Kingston Wire is a non-partisan, independent news publication covering the people, news and events of the city Kingston, New York.")
+user17 = User.create!(name: 'Sam Cornwell', email: 'sam@aa.io', password: 'password', biography: "Artist | Photographer | Astronomer")
+user18 = User.create!(name: 'Raster Scroll', email: 'raster@aa.io', password: 'password', biography: "Raster Scroll is a book publisher focusing on Japanese video game history.")
+user19 = User.create!(name: 'Gavin Polkinghorne', email: 'gavin@aa.io', password: 'password', biography: "Next to working in hospitality, he is currently pursuing his dream of writing and performing a musical.")
 
 category0 = Category.create!(category_name: "Art");
 category1 = Category.create!(category_name: "Comics");
@@ -194,8 +200,103 @@ project12 = Project.create!(title: "THE GARAGE LEARNING: The Next Generation Onl
         description: "We are creating THE GARAGE LEARNING  with one fundamental idea in mind, to teach you how to make amazing commercial videos from start to finish. We will do this through Online Courses, Fun Learning Kits, and robust in-person weekend workshops."
 )
 
+project13 = Project.create!(title: "Cusa Coffee - Mocha and Dirty Chai",
+        campaign: "Cold Brew instant coffee using a patented new dehydration technology. We are adding Mocha and Dirty Chai flavors.",
+        risks_and_challenges: "I don't anticipate many risks for this project because we have already done dozens of rounds of production for Cusa Coffee.",
+        author_id: user14.id,
+        amount_pledged: 8356,
+        funding_goal: 5000,
+        end_date: Date.new(2021,8,7),
+        category_id: category7.id,
+        location: "Boulder, CO",
+        description: "What do you get when you mix amazing coffee beans with revolutionary botanical extraction technology? You get one of the best cups of coffee you've ever had!
 
+Hi everyone! My name is Jim Lam, the founder and CEO of Cusa Coffee and Tea. I developed the world’s first cold-brew instant coffee because I wanted to create an instant coffee that doesn’t taste burnt, bitter or acidic, but rather as smooth as a fresh cup of gourmet coffee. The best part? My instant coffee mixes beautifully with water of any temperature - hot or iced."
+)
 
+project14 = Project.create!(title: "Cthulhu Dark Arts Tarot 🐙",
+        campaign: "A complete lavish Cthulhu Mythos tarot deck!",
+        risks_and_challenges: "This is our first Kickstarter campaign. As rookies, we knew that we needed support to propose a well-builded campaign and answer to backers expectations. That's why we decided to teamed with veterans as The Crowdfunding Agency who provide us great help and advises in this exciting first project.",
+        author_id: user15.id,
+        amount_pledged: 180409,
+        funding_goal: 41498,
+        end_date: Date.new(2021,2,7),
+        category_id: category8.id,
+        location: "Issoire, France",
+        description: "This complete tarot contains 78 illustrated cards including 22 major and 56 minor arcana. Each card will be composed of an illustration and its name in english, with as reference the divinatory Tarot of Marseille."
+)
+
+project15 = Project.create!(title: "The Kingston Wire",
+        campaign: "A new digital publication all about the City of Kingston, New York.",
+        risks_and_challenges: "For any reader supported publication, the biggest risk is the most basic — not enough subscribers. Building and sustaining a paying readership is the central challenge of any digital publication, with success dependent on the quality of the content and the nature of the market.",
+        author_id: user16.id,
+        amount_pledged: 3576,
+        funding_goal: 11947,
+        end_date: Date.new(2021,2,11),
+        category_id: category9.id,
+        location: "Kingston, NY",
+        description: "This complete tarot contains 78 illustrated cards including 22 major and 56 minor arcana. Each card will be composed of an illustration and its name in english, with as reference the divinatory Tarot of Marseille."
+)
+
+project16 = Project.create!(title: "ALCHEMYSTIC - A new album from Dan Bailey Tribe",
+        campaign: "A full length studio album with some of the Tribe's best songs ft special guests Chad Smith, G. Love and Bakithi Kumalo",
+        risks_and_challenges: "At first the pandemic gave us the time and space to focus on these songs during the lockdown, allowing us to take the project as far as we could on our own. As independent artists, we have funded all the recording and studio costs ourselves and spent countless hours working on it in our own home studios.",
+        author_id: user1.id,
+        amount_pledged: 14765,
+        funding_goal: 12345,
+        end_date: Date.new(2021,3,11),
+        category_id: category10.id,
+        location: "Montauk, NY",
+        description: "ALCHEMYSTIC can be thought of as a spiritual transformation from darkness into lightness through the healing vibrations of music"
+)
+
+project17 = Project.create!(title: "Solarcan Colours",
+        campaign: "A colorful trio of the world's simplest camera, capable of capturing the path of the Sun over days, weeks, months or years.",
+        risks_and_challenges: "We have already sourced and put on hold enough stock to run the first 1000 Solarcan Colours packs and don't believe this to be an issue.",
+        author_id: user17.id,
+        amount_pledged: 16752,
+        funding_goal: 6642,
+        end_date: Date.new(2021,10,3),
+        category_id: category11.id,
+        location: "The Scottish Borders, UK",
+        description: "Solarcan Colours took the original concept and turbo-charged it! We've redesigned the look of Solarcan for a more colourful appearance and made some adjustments inside, with each one producing a different result."
+)
+
+project18 = Project.create!(title: "Legends of 16-Bit Game Development",
+        campaign: "A book that celebrates the history of Japanese video game developer Treasure and their games on the Sega Mega Drive / Genesis.",
+        risks_and_challenges: "There are risks associated with any project like this, especially related to maintaining the time schedule to get the books in backers’ hands.",
+        author_id: user18.id,
+        amount_pledged: 3485,
+        funding_goal: 15000,
+        end_date: Date.new(2021,6,3),
+        category_id: category12.id,
+        location: "Louisville, KY",
+        description: "Legends of 16-Bit Game Development tells the remarkable story of a small Japanese development studio finding its way in the 1990s video game industry. "
+)
+
+project19 = Project.create!(title: "A Walls Tale Musical",
+        campaign: "A Musical following the rise of a reluctant hero and the fall of a divide.",
+        risks_and_challenges: "There are plenty of risks and challenges with putting on a musical and telling a story. The main one being will people like our story and will they come to see it.",
+        author_id: user19.id,
+        amount_pledged: 54,
+        funding_goal: 7113,
+        end_date: Date.new(2021,1,3),
+        category_id: category14.id,
+        location: "Munich, Germany",
+        description: "The Musical is about a divide within a Town, which we believe can be translated to what's happening in the world at this very moment. The Musical follows Ethan who has to fight his own battles and beliefs in order to lead the uprising and rebellion. When a wall is built in his town overnight, He and the people from his side of the wall start to plan how they are going to break this divide. What they all don’t realize in doing this is that their own beliefs will be challenged; beliefs like war, fear, love, and racism. Will the Wall Stand or Will It Fall?"
+)
+
+# project17 = Project.create!(title: "",
+#         campaign: "",
+#         risks_and_challenges: "",
+#         author_id: user17.id,
+#         amount_pledged: 16752,
+#         funding_goal: 6642,
+#         end_date: Date.new(2021,10,3),
+#         category_id: category11.id,
+#         location: "",
+#         description: ""
+# )
 
 file1 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/rap_academy.jpeg")
 project1.photo.attach(io: file1, filename: "img_#{project1.id}.jpg")
@@ -215,23 +316,44 @@ project5.photo.attach(io: file5, filename: "img_#{project5.id}.jpg")
 file6 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/batpurse.png")
 project6.photo.attach(io: file6, filename: "img_#{project6.id}.png")
 
-file7 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/batpurse.png")
+file7 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/beef_bros.jpg")
 project7.photo.attach(io: file7, filename: "img_#{project7.id}.png")
 
-file8 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/batpurse.png")
+file8 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/knife.jpeg")
 project8.photo.attach(io: file8, filename: "img_#{project8.id}.png")
 
-file9 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/batpurse.png")
+file9 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/temper_tantrum.jpg")
 project9.photo.attach(io: file9, filename: "img_#{project9.id}.png")
 
-file10 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/batpurse.png")
+file10 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/pepper.jpg")
 project10.photo.attach(io: file10, filename: "img_#{project10.id}.png")
 
-file11 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/batpurse.png")
+file11 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/boots.png")
 project11.photo.attach(io: file11, filename: "img_#{project11.id}.png")
 
-file12 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/batpurse.png")
+file12 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/garage.gif")
 project12.photo.attach(io: file12, filename: "img_#{project12.id}.png")
+
+file13 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/coffee.jpg")
+project13.photo.attach(io: file13, filename: "img_#{project13.id}.png")
+
+file14 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/tarot.jpeg")
+project14.photo.attach(io: file14, filename: "img_#{project14.id}.png")
+
+file15 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/kingston.png")
+project15.photo.attach(io: file15, filename: "img_#{project15.id}.png")
+
+file16 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/alchemystic.jpg")
+project16.photo.attach(io: file16, filename: "img_#{project16.id}.png")
+
+file17 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/solarcan.jpg")
+project17.photo.attach(io: file17, filename: "img_#{project17.id}.png")
+
+file18 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/16bit.jpg")
+project18.photo.attach(io: file18, filename: "img_#{project18.id}.png")
+
+file19 = open("https://jumpstarter-seed.s3-us-west-1.amazonaws.com/wall.jpg")
+project19.photo.attach(io: file19, filename: "img_#{project19.id}.png")
 
 reward1 = Reward.create!(project_id: project1.id, title: "You are the BEST", description: "You will have a branded t-shirt with school logo", estimated_delivery: Date.new(2021,5,12), shipping_loc: "Anywhere in the world", cost: 50)
 reward2 = Reward.create!(project_id: project2.id, title: "FULLED-SIZED REPLICA HOVERBOARD", description: "Display it how you like - prominently on a wall, proudly on a stand, just don't throw it in the basement or attic!", estimated_delivery: Date.new(2021,6,12), shipping_loc: "Anywhere in the world", cost: 449)
@@ -245,15 +367,41 @@ reward9 = Reward.create!(project_id: project9.id, title: "Digital Download", des
 reward10 = Reward.create!(project_id: project10.id, title: "$31 OFF the Pepper Cannon", description: "Get $31 OFF the Pepper Cannon MSRP of $199 for only $169 with FREE SHIPPING anywhere in the US (international shipping is $22).", estimated_delivery: Date.new(2021,5,23), shipping_loc: "Anywhere in the world", cost: 25)
 reward11 = Reward.create!(project_id: project11.id, title: "Early Bird VIP Pricing", description: "Special VIP pricing of our designer boots made from vegan Cactus Leather for the first 25 backers.", estimated_delivery: Date.new(2021,8,23), shipping_loc: "Anywhere in the world", cost: 150)
 reward12 = Reward.create!(project_id: project12.id, title: "1 Yr Intermediate/Advanced Subscription", description: "For The Garage Learning's first year, you'll have access to all Beginner & Intermediate/Advanced level classes.", estimated_delivery: Date.new(2021,8,23), shipping_loc: "Anywhere in the world", cost: 199)
+reward13 = Reward.create!(project_id: project13.id, title: "14 Servings of Coffee", description: "Get 14 total cups of coffee, 7 Mocha and 7 Dirty Chai. That's $1.07 per cup!", estimated_delivery: Date.new(2021,9,23), shipping_loc: "Anywhere in the world", cost: 15)
+reward14 = Reward.create!(project_id: project14.id, title: "INNSMOUTH EDITION", description: "All 78 cards printed in colors (85 x 165 mm / 3.34 x 6.49) packed in an tuck box + a booklet", estimated_delivery: Date.new(2021,3,23), shipping_loc: "Anywhere in the world", cost: 30)
+reward15 = Reward.create!(project_id: project15.id, title: "One Year Digital Subscription", description: "Read all of Kingston Wire on your desktop or mobile device for one year, with optional daily alerts and an email digest.", estimated_delivery: Date.new(2021,3,23), shipping_loc: "Anywhere in the world", cost: 55)
+reward16 = Reward.create!(project_id: project16.id, title: "ALCHEMYSTIC CD", description: "Be the first to get your hands on a physical copy of the new ALCHEMYSTIC album on CD. Also included in all physical rewards over $22.", estimated_delivery: Date.new(2021,4,23), shipping_loc: "Anywhere in the world", cost: 22)
+reward17 = Reward.create!(project_id: project17.id, title: "The Solarcan Classic", description: "The Solarcan Classic. The original retail packaged extreme time exposure camera. Everything you need if you're a beginner!", estimated_delivery: Date.new(2021,11,23), shipping_loc: "Anywhere in the world", cost: 15)
+reward18 = Reward.create!(project_id: project18.id, title: "Gaming Fanatic", description: "Get one copy of the book, a 7x10-inch premium softcover book with approximately 250 full-color glossy pages.", estimated_delivery: Date.new(2021,8,23), shipping_loc: "Anywhere in the world", cost: 30)
+reward19 = Reward.create!(project_id: project19.id, title: "Signed Copy of the Script.", description: "Get a signed copy of the Script.", estimated_delivery: Date.new(2021,1,23), shipping_loc: "Anywhere in the world", cost: 25)
 
-backing1 = Backing.create!(backing_amount: 149, backer_id: user1.id, reward_id: reward5.id, project_id: project5.id)
-backing2 = Backing.create!(backing_amount: 449, backer_id: user6.id, reward_id: reward2.id, project_id: project2.id)
-backing3 = Backing.create!(backing_amount: 100, backer_id: user6.id, reward_id: reward4.id, project_id: project4.id)
-backing4 = Backing.create!(backing_amount: 20, backer_id: user5.id, reward_id: reward2.id, project_id: project1.id)
-backing5 = Backing.create!(backing_amount: 20, backer_id: user2.id, reward_id: reward4.id, project_id: project4.id)
-backing6 = Backing.create!(backing_amount: 25, backer_id: user2.id, project_id: project2.id)
-backing7 = Backing.create!(backing_amount: 50, backer_id: user1.id, project_id: project3.id)
-backing8 = Backing.create!(backing_amount: 449, backer_id: user4.id, reward_id: reward2.id, project_id: project2.id)
-backing9 = Backing.create!(backing_amount: 10, backer_id: user4.id, project_id: project3.id)
-backing10 = Backing.create!(backing_amount: 50, backer_id: user3.id, reward_id: reward1.id, project_id: project1.id)
-backing11 = Backing.create!(backing_amount: 149, backer_id: user1.id, reward_id: reward1.id, project_id: project5.id)
+projects = Project.all.to_a
+backers = User.all.to_a
+backings_hash = Hash.new {|h,k| h[k] = []}
+
+projects.each do |project|
+        until backings_hash[project.id].length == 2
+                backer = backers.sample
+                if !backings_hash[project.id].include?(backer.id) && project.author_id != backer.id
+                        backings_hash[project.id] << backer.id
+                end
+        end
+        backings_hash[project.id].each do |backer|
+                Backing.create!(backing_amount: project.rewards[0].cost, backer_id: backer, reward_id: project.rewards[0].id, project_id: project.id)
+        end
+        backer = backers.sample
+        amount = rand(1..1000)
+        Backing.create!(backing_amount: amount, backer_id: backer.id, project_id: project.id)
+end
+
+# backing1 = Backing.create!(backing_amount: 149, backer_id: user1.id, reward_id: reward5.id, project_id: project5.id)
+# backing2 = Backing.create!(backing_amount: 449, backer_id: user6.id, reward_id: reward2.id, project_id: project2.id)
+# backing3 = Backing.create!(backing_amount: 100, backer_id: user6.id, reward_id: reward4.id, project_id: project4.id)
+# backing4 = Backing.create!(backing_amount: 20, backer_id: user5.id, reward_id: reward2.id, project_id: project1.id)
+# backing5 = Backing.create!(backing_amount: 20, backer_id: user2.id, reward_id: reward4.id, project_id: project4.id)
+# backing6 = Backing.create!(backing_amount: 25, backer_id: user2.id, project_id: project2.id)
+# backing7 = Backing.create!(backing_amount: 50, backer_id: user1.id, project_id: project3.id)
+# backing8 = Backing.create!(backing_amount: 449, backer_id: user4.id, reward_id: reward2.id, project_id: project2.id)
+# backing9 = Backing.create!(backing_amount: 10, backer_id: user4.id, project_id: project3.id)
+# backing10 = Backing.create!(backing_amount: 50, backer_id: user3.id, reward_id: reward1.id, project_id: project1.id)
+# backing11 = Backing.create!(backing_amount: 149, backer_id: user1.id, reward_id: reward1.id, project_id: project5.id)

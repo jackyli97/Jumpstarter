@@ -57,10 +57,10 @@ class Project < ApplicationRecord
         Date.new((string[0..3]).to_i, (string[5..6]).to_i, (string[8..9]).to_i)
     end
 
-    def self.get_ten_projects()
+    def self.get_nine_projects()
         projects = Project.all.to_a
         filtered_projs = []
-        until filtered_projs.length == 5
+        until filtered_projs.length == 9
             sample = projects.sample
             if !filtered_projs.include?(sample)
                 filtered_projs.append(sample)

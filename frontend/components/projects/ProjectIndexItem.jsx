@@ -6,8 +6,21 @@ class ProjectIndexItem extends React.Component {
         super(props)
     }
 
+    componentDidMount(){
+        if (this.props.fetchProjects && this.props.fetchCategories){
+            this.props.fetchProjects();
+            this.props.fetchCategories();
+        }
+    }
+
     render() {
-        let percent = ((this.props.project.amount_pledged / this.props.project.funding_goal).toFixed(2)) * 100
+        if (!this.props.project){
+            return null;
+        }
+        let percent = ((this.props.project.amount_pledged / this.props.project.funding_goal).toFixed(2)) * 100;
+        if (percent > 100) {
+            percent = 100
+        }
         let daysLeft = (date) => {
             var today = new Date();
             var date_to_reply = new Date(date);
@@ -37,17 +50,20 @@ class ProjectIndexItem extends React.Component {
             </div> :
                 <ul>
                     <li>
-                        <Link to={`/projects/${this.props.project.id}`}>
-                            <img src={this.props.project.photo_url} alt="" className="explore-project-image"/>
-                        </Link>
+                    <Link to={`/projects/${this.props.project.id}`}>
+                        <img src={this.props.project.photo_url} alt="" className="explore-project-image"/>
+                    </Link>
                     </li>
-                    <li>
-                        <Link to={`/projects/${this.props.project.id}`} className="explore-show-title">
-                            {this.props.project.title}
-                        </Link>
+                    <li className="explore-show-title">
+                    <Link to={`/projects/${this.props.project.id}`}>
+                        {this.props.project.title}
+                    </Link>
                     </li>
+
                     <li className="explore-show-description">
-                        {this.props.project.description}
+                    <Link to={`/projects/${this.props.project.id}`}>
+                        {this.props.project.campaign.length > 110 ? this.props.project.campaign.slice(0,110) + "..." : this.props.project.campaign}
+                    </Link>
                     </li>
                     <li>
                         By {this.props.project.author.name}
@@ -59,7 +75,7 @@ class ProjectIndexItem extends React.Component {
                     <li>{percent} % funded</li>
                     <li>{daysDisplay} days to go</li>
                     <li className="author-and-location">
-                        <span>{this.props.project.author.name}</span>
+                        <span>{this.props.project.category.category_name}</span>
                         <span>{this.props.project.location}</span>
                     </li>
                 </ul>

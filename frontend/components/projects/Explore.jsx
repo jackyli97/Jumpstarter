@@ -42,7 +42,7 @@ class Explore extends React.Component {
                             </Link>
                         </li>
                         <li>
-                            <Link to={{ pathname: "/projects/ecategorydesign", state: "Design & Tech" }}>
+                            <Link to={{ pathname: "/projects/category/design", state: "Design & Tech" }}>
                                 Design & Tech
                             </Link>
                         </li>

@@ -19,7 +19,7 @@ class Explore extends React.Component {
     render() {
         let projects = this.props.projects
         let result = projects.map((project, idx) => {
-            return <ProjectIndexItem key={idx} project={project} type={"explore"} />
+            return <ProjectIndexItem key={idx} project={project} type={"explore"} fetchCategories={this.props.fetchCategories} fetchProjects={this.props.fetchProjects}/>
         })
         let numProjects = projects.length;
         let noResults =
@@ -33,13 +33,13 @@ class Explore extends React.Component {
                 <span className="see-more-message">Check out a collection of popular and recommended options below</span>
             </div>
         return (
-            <div className="explore-container">
+            <div className="explore-show-container">
                 <div className="show-me-section">
                     <span>Show me</span>
-                    <span>{this.props.query ? this.props.query : this.props.category}</span>
+                    <span>{this.props.match.params.exploreId === "everything" ? "All Categories" : this.props.query ? this.props.query : this.props.category}</span>
                     <span>projects</span>
                 </div>
-                <div className="no-results-section">
+                <div className= {this.props.noResults ? "no-results-section" : ""}>
                     {this.props.noResults ? noResults : ""}
                 </div>
                 <div className="explore-body">

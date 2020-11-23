@@ -4,7 +4,6 @@ import { fetchProjects } from '../../actions/project_actions';
 import { fetchCategories } from '../../actions/categories_actions';
 
 const mapStateToProps = (state) => {
-    debugger
     const projects = Object.values(state.entities.projects)
     let rand = Math.random()
     let idx = Math.floor(rand * (projects.length)) 

@@ -26,7 +26,7 @@ const mapStateToProps = (state, ownProps) => {
     return {
         projects: filteredProjectsList,
         noResults: noResults,
-        query: query
+        query: query,
     };
 }
 

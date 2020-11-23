@@ -121,6 +121,9 @@ class ProjectShow extends React.Component {
         </div>
         let percent = !projectCheck ? null : (((this.props.project.amount_pledged / this.props.project.funding_goal).toFixed(2)) * 100) > 100 ? 100 : 
             ((this.props.project.amount_pledged / this.props.project.funding_goal).toFixed(2)) * 100;
+        if (percent > 100) {
+            percent = 100
+        }
         let daysLeft = !projectCheck ? null : (date) => {
             var today = new Date();
             var date_to_reply = new Date(date);

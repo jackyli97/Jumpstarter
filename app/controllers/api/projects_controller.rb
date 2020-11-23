@@ -42,7 +42,7 @@ class Api::ProjectsController < ApplicationController
     end
 
     def index
-        @projects = Project.get_ten_projects
+        @projects = Project.get_nine_projects
         @num_backings = Project.num_backings(@projects)
         render :index
     end

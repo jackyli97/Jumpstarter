@@ -5,7 +5,6 @@ import UserMenu from './UserMenu';
 import { deleteProject } from '../../actions/project_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     let usersProjects = [];
     if (state.session.id) {
         if (state.entities.users[state.session.id].projects) {

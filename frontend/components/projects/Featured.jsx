@@ -6,6 +6,9 @@ class Featured extends React.Component {
         let projectCheck;
         (this.props.project) ? projectCheck = this.props.project : projectCheck = null;
         let percent = ((this.props.project.amount_pledged / this.props.project.funding_goal).toFixed(2)) * 100
+        if (percent > 100){
+            percent = 100
+        }
         return (
             !projectCheck ? <div></div> : (
             <div className="featured-section">
@@ -18,7 +21,7 @@ class Featured extends React.Component {
                         {this.props.project.title}
                     </li>
                     <li className="project-description">
-                        {this.props.project.description}
+                        {this.props.project.campaign}
                     </li>
                     <li>By <span>
                             {this.props.project.author.name}

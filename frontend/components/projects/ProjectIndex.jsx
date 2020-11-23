@@ -46,15 +46,15 @@ class ProjectIndex extends React.Component {
                 currentPage = 1
             }
             else{
-                currentPage = (this.state.currentPage) - 1
+                currentPage = parseInt(this.state.currentPage) - 1
             }
         }
         else if (li.id === 'right-arrow') {
-            if (this.state.currentPage === array.length) {
-                currentPage = array.length
+            if (parseInt(this.state.currentPage) === 3) {
+                currentPage = 3
             }
             else {
-                currentPage = (this.state.currentPage) + 1
+                currentPage = parseInt(this.state.currentPage) + 1
             }
         }
         else{
@@ -67,13 +67,16 @@ class ProjectIndex extends React.Component {
                 document.getElementById('right-arrow').parentElement.className = "grey-arrow";
                 document.getElementById('left-arrow').parentElement.className = "blue-arrow";
             }
+            else{
+                document.getElementById('right-arrow').parentElement.className = "blue-arrow";
+                document.getElementById('left-arrow').parentElement.className = "blue-arrow";
+            }
         }
-
         for (let i=0; i<array.length;i++) {
             array[i].className = "unhighlighted-numbering"
         }
         array[currentPage - 1].className = "highlighted-numbering"
-        this.setState({ currentPage });
+        this.setState({ currentPage: parseInt(currentPage) });
     }
 
     render() {
@@ -140,8 +143,8 @@ class ProjectIndex extends React.Component {
                                     )})
                                 }
                                 <li className={
-                                    this.state.currentPage === this.props.array.length  ? "grey-arrow" : "blue-arrow"
-                                } disabled={this.state.currentPage === this.props.array.length}>
+                                    this.state.currentPage === 3  ? "grey-arrow" : "blue-arrow"
+                                } disabled={this.state.currentPage === 3}>
                                     <i className="fas fa-chevron-right" id="right-arrow"></i>
                                 </li>
                             </ul>
