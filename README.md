@@ -32,6 +32,8 @@ Project Show Page and Backing a project demo:
 <br/>
 
 Project Creation Form:
+![Show](https://github.com/jackyli97/Jumpstarter/blob/main/app/assets/images/75b4b4319fa9206f5dcd88c07d51af83.gif?raw=true)
+
 <br/>
 
 Search Functionality:
