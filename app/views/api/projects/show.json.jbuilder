@@ -14,6 +14,9 @@ json.project do
             end
         end
     end
+    json.category do
+        json.extract! @project.category, :id, :category_name
+    end
     json.rewards do
         @project.rewards.each do |reward|
             json.set! reward.id do

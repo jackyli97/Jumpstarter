@@ -6,14 +6,6 @@ class ProjectIndexItem extends React.Component {
         super(props)
     }
 
-    componentDidMount(){
-        if (this.props.fetchProjects && this.props.fetchCategories){
-            this.props.fetchProjects();
-            this.props.fetchCategories();
-        }
-        window.scrollTo(0, 0);
-    }
-
     render() {
         if (!this.props.project){
             return null;
