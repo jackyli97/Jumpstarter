@@ -15,7 +15,7 @@ Jumpstarter makes use of a Rails/PostgreSQL backend with React and Redux on the 
 * Users can back, create, and browse projects.
 * Backing a project updates the database and creates an association between a reward, project, and user.
 * Search projects via input in a search bar or browse by categories.
-* Users page containing created and backed projects, where one can edit and delete projects.
+* User navigation leads to created and backed projects, where one can edit and delete projects.
 
 ### Functionality of Projects
 The main purpose of Jumpstarter is to create and showcase a project. In order to effectively do this, all appropriate data and associations had to be properly passed from the back-end to the front-end. Projects, rewards, users, and backings were all separate tables that were connected through the use of a relational database. A Project `has_many` rewards, a reward `has_many` backings, and backings `belong_to` a user. The relationships were made by making a backings a joins table, with foreign keys belonging to a reward and backer. 
@@ -43,9 +43,10 @@ Search Functionality:
 
 <br/>
 
-<p align="center">
-  <img width="100%" src="https://github.com/jackyli97/Jumpstarter/blob/main/app/assets/images/75b4b4319fa9206f5dcd88c07d51af83.gif?raw=true">
-</p>
+User's profile navigation:
+![Show](https://github.com/jackyli97/Jumpstarter/blob/main/app/assets/images/profile.gif?raw=true)
+
+<br/>
 
 The backend passed up the data while avoiding N+1 queries. This was done by prefetching the required data prior to sending the response to the front-end. To maintain efficiency when fetching projects to be displayed on the splash page, not every project in the database was fethced, rather the filtering was done in the back-end:
 
