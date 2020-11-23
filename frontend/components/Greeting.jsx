@@ -42,13 +42,15 @@ class Greeting extends React.Component{
         if (!this.props.path && !this.props.authPath) {
             this.props.history.push('./')
         }
+        let backedProjects = this.props.backedProjects.slice(0,3);
+        let usersProjects = this.props.usersProjects.slice(0,3);
         const content = this.props.currentUser ? (
             <div className="right-nav">
                 <span className="search-section" onClick={()=>this.setState({clicked: true})}>Search  <FontAwesomeIcon icon={faSearch} className="search-icon" />
                 </span>
                 <button className="profile-button" onMouseOver={this.openSubMenu}>
                     <img src={window.avatar} alt="avatar" className="avatar-img"/>
-                    <Profile userId={this.props.userId} logout={this.props.logout} usersProjects={this.props.usersProjects} closeSubMenu={this.closeSubMenu} username={this.props.username} backedProjects={this.props.backedProjects}/>
+                    <Profile userId={this.props.userId} logout={this.props.logout} usersProjects={usersProjects} closeSubMenu={this.closeSubMenu} username={this.props.username} backedProjects={backedProjects}/>
                 </button>
             </div>
         ) : (
