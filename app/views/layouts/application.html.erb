@@ -4,7 +4,7 @@
     <title>Jumpstarter</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta property="og:image" content="featured-image.png" data-addsearch="no_crop">
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= favicon_link_tag asset_path('favicon.png') %>
@@ -13,13 +13,11 @@
       window.github = "<%= image_url('github.png') %>";
       window.avatar = "<%= image_url('missing_user_avatar.png') %>";
       window.favicon = "<%= image_url('favicon.png') %>";
-    </script>
-    
+    </script>    
     <script
       src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
       data-auto-a11y="true"
     ></script>
-
     <script
     src="https://kit.fontawesome.com/fc31dedf63.js"
     crossorigin="anonymous"
