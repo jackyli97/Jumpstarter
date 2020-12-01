@@ -4,7 +4,9 @@
     <title>Jumpstarter</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta property="og:image" content="<%= image_url('featured-image.png') %>" data-addsearch="no_crop"/>
+    <meta property="og:image" content="<%= image_url('featured-image.png') %>">
+    <meta property="og:description" content="A Kickstarter Clone. Bring projects to life.">
+    <meta property="og:url" content="https://jumpstarter-app.herokuapp.com/#/">
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= favicon_link_tag asset_path('favicon.png') %>
