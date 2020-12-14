@@ -13,34 +13,8 @@
     padding-top: 18px;
     padding-bottom: 18px;
     align-items: center;
-    overflow: scroll;
 }
 
-.bottom-categories-list{
-    display: flex;
-    flex-direction: row;
-    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color: #282828;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    align-items: center;
-    overflow: scroll;
-}
-
-@media (min-width: 795px) {
-    .categories-list{
-        padding: 18px 60px;
-         margin: 0px 37px;
-    }
-}
-
-@media (min-width: 600px) {
-    .categories-list{
-        padding: 18px 24px;
-        margin: auto;
-    }
-}
 @media (max-width: 700px) {
     .categories-list{
         max-width: 600px;
@@ -51,7 +25,6 @@
     .categories-list li{
         padding: 0px 8px;
         font-size: 14px;
-  
     }
 }
 
