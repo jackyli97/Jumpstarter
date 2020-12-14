@@ -48,7 +48,7 @@ User's profile navigation:
 
 <br/>
 
-The backend passed up the data while avoiding N+1 queries. This was done by prefetching the required data prior to sending the response to the front-end. To maintain efficiency when fetching projects to be displayed on the splash page, not every project in the database was fethced, rather the filtering was done in the back-end:
+The backend passed up the data while avoiding N+1 queries. This was done by prefetching the required data prior to sending the response to the front-end. To maintain efficiency when fetching projects to be displayed on the splash page, not every project in the database was fetched, rather the filtering was done in the back-end:
 
 ```ruby
 //project controller
